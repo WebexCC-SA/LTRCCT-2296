@@ -35,8 +35,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  logo: template_assets/webexLogo91.png
-  favicon: template_assets/webex75.png
+  logo: template_assets/cisco_logo.png
+  favicon: template_assets/cisco_logo.png
 extra:
   generator: false
 extra_css:
@@ -46,10 +46,10 @@ extra_javascript:
   - js/attendee-id.js
 plugins:
   - search
-  - with-pdf:
-      cover_title: LTRCCT-2296
-      cover_subtitle: "From Good to Great: Enhancing Customer Experience with the Webex Contact Center Flow Designer"
-      cover_logo: template_assets/Cisco-Live-White-Blue-APJC.svg
+  # - with-pdf:
+  #     cover_title: LTRCCT-2296
+  #     cover_subtitle: "From Good to Great: Enhancing Customer Experience with the Webex Contact Center Flow Designer"
+  #     cover_logo: template_assets/Cisco-Live-White-Blue-APJC.svg
   - glightbox:
       touchNavigation: true
       loop: false

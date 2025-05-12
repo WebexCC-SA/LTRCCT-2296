@@ -96,7 +96,7 @@ In this lab, you will:
 
 - **Leverage AI and Automation:** Explore integrations with pre-configured AI tools such as **Webex AI Agent** or interactive customer interactions and **Cisco Text-to-Speech** for dynamic responses.
 
-- **Optimize Routing Logic:** Implement advanced routing capabilities, such as callback handling, last agent routing and using Global ariables to facilitate routing logic .
+- **Optimize Routing Logic:** Implement advanced routing capabilities, such as callback handling, last agent routing and using global variables to facilitate routing logic .
 
 - **Invoking Flow API:** Advance decision-making by using the Analyzer database on the fly.
 
