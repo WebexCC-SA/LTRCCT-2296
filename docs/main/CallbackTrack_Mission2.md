@@ -102,6 +102,16 @@ Your mission is to: </br>
     >
     > Click the Add Text-to-Speech Message button and paste text: ***You entered*** *{{NewNumber.DigitsEntered}}****. Press 1 if the number is correct. Press 2 if you want to re-enter the number.***<span class="copy-static" data-copy-text="You entered {{NewNumber.DigitsEntered}}. Press 1 if the number is correct. Press 2 if you want to re-enter the number."><span class="copy" title="Click to copy!"></span></span>
     >
+    >
+    > Request Body:  
+    ```JSON
+    <speak>
+    You entered <say-as interpret-as="telephon">{{NewNumber.DigitsEntered}}</say-as>. 
+    Press 1 if the number is correct. 
+    Press 2 if you want to re-enter the number. 
+    </speak>
+    ```
+
     > Delete the selection for Audio File
     >    
     > Custom Menu Links:
