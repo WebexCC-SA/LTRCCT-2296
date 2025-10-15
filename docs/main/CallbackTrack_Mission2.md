@@ -100,13 +100,11 @@ Your mission is to: </br>
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***You entered*** *{{NewNumber.DigitsEntered}}****. Press 1 if the number is correct. Press 2 if you want to re-enter the number.***<span class="copy-static" data-copy-text="You entered {{NewNumber.DigitsEntered}}. Press 1 if the number is correct. Press 2 if you want to re-enter the number."><span class="copy" title="Click to copy!"></span></span>
+    > Click the Add Text-to-Speech Message button and paste the following:
     >
-    >
-    > Request Body:  
     ```JSON
     <speak>
-    You entered <say-as interpret-as="telephon">{{NewNumber.DigitsEntered}}</say-as>. 
+    You entered <say-as interpret-as="telephone">{{NewNumber.DigitsEntered}}</say-as>. 
     Press 1 if the number is correct. 
     Press 2 if you want to re-enter the number. 
     </speak>
