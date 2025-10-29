@@ -21,7 +21,7 @@ The Autonomous AI Agent for performing actions can handle various tasks, includi
 
 ## Story
 
-As a visitor to Melbourne, you want to quickly find restaurants offering various international cuisines in the city and easily figure out how to get to them from your current location at the RAI.
+As a visitor to Melbourne, you want to quickly find restaurants offering various international cuisines in the city and easily figure out how to get to them from your current location at the Melbourne Convention Center.
 
 ### Call Flow Overview
 
@@ -91,7 +91,7 @@ Your mission is to:
 
     ![Profiles](../graphics/Lab1/AITrack_AIAgentaMapKB.gif)
 
-14. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to RAI."**<span class="copy-static" title="Click to copy!" data-copy-text="I'm looking for an Italian restaurant close to RAI."><span class="copy"></span></span>
+14. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to Melbourne Convention Center."**<span class="copy-static" title="Click to copy!" data-copy-text="I'm looking for an Italian restaurant close to Melbourne Convention Center."><span class="copy"></span></span>
 
 ![Profiles](../graphics/Lab1/AITrack_AIAgentPreview.gif)
 
