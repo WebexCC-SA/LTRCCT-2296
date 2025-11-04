@@ -38,11 +38,4 @@ The Callback track includes a series of labs focused on various callback scenari
 
 ![profiles](../graphics/overview/CallBackTrack.png)
 
-## Track 4: AI Agent Track
-
-Although the smallest, but challenging track. It involves configuring Cisco’s native AI agent (bot) and integrating it with Flow Designer to enable flow customization.
-
-![profiles](../graphics/overview/AITrack.png)
-
-
 <script src='../template_assets/load.js'><script>
