@@ -234,7 +234,7 @@ We will retrieve information about your newly created address book using a GET A
     If you need to convert a regular date/time into Epoch format or vice versa, you can use this online converter: [https://www.epochconverter.com/](https://www.epochconverter.com/){:target="_blank"}</br>
     Ensure that your queries and filters use the correct time format to retrieve accurate results.
 
-1. Switch to **Developer Portal** then locate and select **Search** from **API REFERENCE** menu
+1. Switch to **Developer Portal** then locate and select **Data** then select **Search** from **API REFERENCE** menu
 
 2. Click on **Search tasks** and then switch to **Try Out** tab
   ![profiles](../graphics/Lab2/DevPortal_SearchAPI1.gif)
