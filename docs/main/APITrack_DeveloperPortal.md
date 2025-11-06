@@ -13,7 +13,7 @@ Webex Contact Center APIs enable automation, customization, and integration with
 
 
 ## Mission Details
-In this mission, attendees will learn how to interact with Webex Contact Center APIs by performing API calls via the  [**Developer Portal**](https://developer.webex-cx.com/){:target="_blank"}. Specifically, we will work with the Address Book feature.
+In this mission, attendees will learn how to interact with Webex Contact Center APIs by performing API calls via the  [**Developer Portal**](https://developer.webex.com/){:target="_blank"}. Specifically, we will work with the Address Book feature.
 
 **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
 
@@ -58,7 +58,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
 ### Create a New Address Book entity by using POST
 
-1. Open [**Developer Portal**](https://developer.webex-cx.com/){:target="_blank"} and click on **Sign In**. 
+1. Open [**Developer Portal**](https://developer.webex.com/){:target="_blank"} and click on **Sign In**. 
    Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
 2. Click on **Documentation** which is on top right corner of the portal page.
