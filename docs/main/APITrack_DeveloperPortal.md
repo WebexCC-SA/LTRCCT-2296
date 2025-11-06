@@ -65,13 +65,13 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortalLogin.gif)
 
-3. On Menu pannel on the left, scroll down to **API Reference** section and click on **Adress Book**. Observe available API calls
+3. On Menu pannel on the left, scroll down to **API Reference** section and click on **Configuration** then **Adress Book**. Observe available API calls
 
     !!!Note
         **Address Book Overview**</br>
         Address Book is available in the Webex Contact Center Agent Desktop. Agents can make outbound calls using Address Books, selecting numbers from pre-configured lists instead of entering them manually in the 'Start a New Call' field. Administrators can configure and manage Address Books via the Webex Contact Center APIs.
 
-4. Scroll down and click on **Create a new Address Book**, then click on **Try Out**.
+4. Scroll down and click on **Create a new Address Book**, then click on **Request Body (JSON)**.
 
     ![profiles](../graphics/Lab2/DevPortal_TryOut.gif)
 
@@ -114,9 +114,9 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortal_gotoABEntry.gif)
 
-10. Click on **Create a new Address Book Entry**, then switch to **Try Out** tab within the same page. 
+10. Click on **Create a new Address Book Entry**, then switch to **Try Out section** within the same page and click on **Request Body (JSON)**. 
 
-11. In the **Parameters** section paste **ID** you copied on **Step 8** of the current mission.
+11. In the **Parameters** section paste **addressBookId** you copied on **Step 8** of the current mission.
 
 12. Clear **Request Body** content and paste the following body, then click on **Run** button.
 
