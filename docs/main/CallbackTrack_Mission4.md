@@ -27,7 +27,7 @@ If a caller who already has a scheduled callback contacts the contact center aga
 Your mission is to:
 
 1. Enhance the functionality of the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
-2. Use **Search API** request to fetch the data from Analyzer database. For more details see [**Search API**](https://developer.webex.com/documentation/search/v1/search-tasks){:target="_blank"} for details.
+2. Use **Search API** request to fetch the data from Analyzer database. For more details see [**Search API**](https://developer.webex.com/webex-contact-center/docs/api/v1/tasks-call-control/create-task){:target="_blank"} for details.
 
 
 ## Build

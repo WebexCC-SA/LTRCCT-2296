@@ -184,7 +184,7 @@ Your mission is to:
     ![profiles](../graphics/Lab2/AM2_SimulateGlobalError.gif)    
 
 7. Navigate to **Event Flows** and delete connection from **OnGlobalError** to **EndFlow**.
-8. Add **HTTP Request** node to the flow. In this step we are going to build a **Create Task** API POST request. See [**Create Task API**](https://developer.webex.com/documentation/tasks/v1/create-task){:target="_blank"} for details.
+8. Add **HTTP Request** node to the flow. In this step we are going to build a **Create Task** API POST request. See [**Create Task API**](https://developer.webex.com/webex-contact-center/docs/api/v1/tasks-call-control/create-task){:target="_blank"} for details.
 
     > Activity Label: **CallBackAPI_HTTPRequest**<span class="copy-static" data-copy-text="CallBackAPI_HTTPRequest"><span class="copy" title="Click to copy!"></span></span>
     >
