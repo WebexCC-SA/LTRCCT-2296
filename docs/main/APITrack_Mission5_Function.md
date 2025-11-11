@@ -40,7 +40,7 @@ Your mission is to:
 
 ## Building Function 
 
-1. Switch to Control Hub, then navigate to **Functions**, click on **Create a function**.t. 
+1. Switch to Control Hub, then navigate to **Functions**, click on **Create a function**. 
 
 2. New Tab will be opened. Select **Start Fresh** and provide name **<span class="attendee-id-container">Function_<span class="attendee-id-placeholder" data-prefix="Function_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Leave **Function Language** as **JavaScript**, then click **Create Function**.
 
