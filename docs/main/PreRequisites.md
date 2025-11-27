@@ -17,7 +17,7 @@ icon: material/bullseye-arrow
 2. The majority of the configuration in Control Hub is already set up, allowing you to focus primarily on Flow Design. Of course, there may still be some elements to adjust, but these should be minimal, letting you concentrate on building and refining the flow logic rather than spending time on initial setup.
 3. The Agents have been configured for you. You will be performing the rest of the configurations to route voice calls
 4. All your configurations should contain your attendee ID so the lab users don't step over each other's configurations
-5. Each of you has been provided with the phone number to dial (Entry point DN), 1 agents, 1 Supervisor and 1 admin.
+5. Each of you has been provided with the phone number to dial (Entry Point DN), 1 Agent, 1 Supervisor and 1 Admin account.
 6. We are going to use built-in Cisco Text to Speech for playing all messages in the lab.
 7. Please ask for help when you need it. You can do it by clicking on **"Ask a Question"** or by raising your hand and calling the proctor.
 
