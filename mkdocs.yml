@@ -127,15 +127,25 @@ nav:
             - "Mission 3: CallBack on Global Error": ./main/CallbackTrack_Mission3.md
             - "Mission 4: Preventing Callback duplication": ./main/CallbackTrack_Mission4.md
       - Conclusion: ./main/CallbackTrack_Conclusion.md
+##  - AI ASSISTANT TRACK:
+##      - Lab Guide:
+##            - "Mission 1: Agent Wellbeing (Burnout)": ./main/AI_Assistant_AgentWellbeing.md
+##            - "Mission 2: Call Drop and Transfer Summary": ./main/AI_Assistant_CallDropSummary.md
+##            - "Mission 3: Auto WrapUp": ./main/AI_Assistant_Auto_WrapUp.md
+##            - "Mission 4: Real-time Transcriptions": ./main/AI_Assistant_RT_Transcriptions.md
+##            - "Mission 5: Suggested Responses": ./main/AI_Assistant_Suggested_Responses.md
+##            - "Mission 6: Auto CSAT": ./main/AI_Assistant_AutoCSAT.md
+##            - "Mission 7: Topic Analytics": ./main/AI_Assistant_Topic_Analytics.md
+##      - Conclusion: ./main/AIAgentTrack_Conclusion.md
 ##  - AI AGENT TRACK:
 ##      - Lab Guide:
 ##            - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
 ##            - "Mission 2: AI in Action (Scripted Agent)": ./main/AIAgentTrack_Mission2.md
 ##            - "Mission 3: Seamless AI to Human Agent Handoffs": ./main/AIAgentTrack_Mission3.md
 ##      - Conclusion: ./main/AIAgentTrack_Conclusion.md
-##  - FINAL CHALLENGE:
-##      - Troubleshooting Mission:
-##            - "Final Challenge: Production flow is failing!": ./main/FinalBossFight_Mission.md
+  - FINAL CHALLENGE:
+      - Troubleshooting Mission:
+            - "Final Challenge: Production flow is failing!": ./main/FinalBossFight_Mission.md
 ##            - "Hint for Final Challenge Mission!": ./main/FinalBossFight_Hint1.md
 ##            - "Solution Guidance for Final Challenge Fight Mission!": ./main/FinalBossFight_Solution.md
   - Quick Links: quicklinks.md
