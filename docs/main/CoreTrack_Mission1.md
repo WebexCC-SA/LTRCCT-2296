@@ -48,7 +48,7 @@ Flow Templates are designed to empower developers, speed up the development life
 
 
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+   Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with Webex logo on it where you may need to enter the email address again and the password provided to you.
 
     ![profiles](../graphics/Lab1/1-CH_Login.gif)
 
@@ -81,7 +81,7 @@ Flow Templates are designed to empower developers, speed up the development life
   
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-12. In popped-up window, click on dropdown menu to select **Latest** label, then click **Publish**.
+12. In popped-up window, make sure the **Latest** label is selected in **Add Label Label(s)** dropdown list, then click **Publish**.
 
 13. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
 14. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
@@ -110,6 +110,8 @@ Flow Templates are designed to empower developers, speed up the development life
 4. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
 
    ![profiles](../graphics/Lab1/WxApp_Test.gif)
+
+5. Ensure that you hear a welcome prompt configured in your flow and receive an incoming call in your agent desktop. Answer the call in the agent desktop and confirm that it has been successfully established. Subsequently, end the call in the Webex app, select any value from the **Wrap Up Reasons** dropdown list on the agent desktop, and press the **Submit Wrap Up** button.
 
 ---
 
