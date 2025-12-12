@@ -109,7 +109,8 @@ Flow Templates are designed to empower developers, speed up the development life
 
 4. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
 
-   ![profiles](../graphics/Lab1/WxApp_Test.gif)
+    ![profiles](../graphics/Lab1/WxApp_Test.gif)
+
 5. Ensure that you hear a welcome prompt configured in your flow and receive an incoming call in your agent desktop. Answer the call in the agent desktop and confirm that it has been successfully established. Subsequently, end the call in the Webex app, select any value from the **Wrap Up Reasons** dropdown list on the agent desktop, and press the **Submit Wrap Up** button.
 
 ---
