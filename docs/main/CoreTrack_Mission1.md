@@ -161,7 +161,7 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
 4. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
 
-   ![profiles](../graphics/Lab1/WxApp_Test.gif)
+    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
 5. Verify if the TTS language changed
 
