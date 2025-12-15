@@ -47,17 +47,16 @@ More pre-configured entities will be mentioned during the lab missions if they h
 
 #### Agent Desktop
 
-Use Agent Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) pre-installed on your workstation to login your agent. In addition, Desktop profile was configured in a way where you don't need to select a Telephony line. By default only Desktop Audio (WebRTC) has been enabled.
-
+Use Agent Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) pre-installed on your workstation to login your agent. In addition, the Desktop profile has been set up so that you don't need to manually select a Team or Telephony option. By default, only the **Desktop** telephony option (also known as WebRTC) is enabled for each agent, allowing call audio to be delivered directly to the Agent Desktop app. Agents do not need to use any other tools, such as softphone, desk phone, or mobile phone to manage calls. Therefore, the Desktop telephony option, along with a pre-configured dedicated Team, will be automatically selected upon sign-in.
 
 #### Calling to Contact Center
-All call to Webex Contact center should be done from Webex App which has been pre-installed for you as well as pre-logined to it.
+All calls to Webex Contact center should be done from Webex App which has been pre-installed for you as well as pre-logined to it.
 To make a test just open Webex App and dial the provided Support Number assigned to you.
 
-   ![profiles](../graphics/Lab1/WxApp_Test.gif)
-
 !!! Note
+    By default, the Support Number is not linked to any flow in Webex CC prior to this. Therefore, you will hear an error tone or prompt if you attempt to call that number before finishing corresponding lab task.
     International dialing is not allowed so you won't be able to dial your cell phones unless you have a US number.
 
----
+![profiles](../graphics/Lab1/WxApp_Test.gif)
 
+---
