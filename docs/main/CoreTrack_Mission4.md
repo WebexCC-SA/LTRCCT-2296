@@ -86,7 +86,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
 
     > Screen Pop URL: **[https://www.webex.com/us/en/products/customer-experience/contact-center.html](https://www.webex.com/us/en/products/customer-experience/contact-center.html){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.webex.com/us/en/products/customer-experience/contact-center.html"><span class="copy"></span></span>
     >
-    > Screen Pop Desktop Label: **Webex CC - What's New**<span class="copy-static" title="Click to copy!" data-copy-text="Webex CC - What's New"><span class="copy"></span></span>
+    > Screen Pop Desktop Label: **Webex Contact Center**<span class="copy-static" title="Click to copy!" data-copy-text="Webex Contact Center"><span class="copy"></span></span>
     >
     > Display Settings: **New browser tab**
   
@@ -114,7 +114,7 @@ We recommend removing the ScreenPop node after testing. Otherwise, every time yo
 
 2. Navigate to **Even Flows** and delete **Screenpop** node
 
-3. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
+3. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in **Add Label Label(s)** dropdown list, then click **Publish**.
 
 ![profiles](../graphics/Lab1/AM2_Screenpop_delete.gif)
 
