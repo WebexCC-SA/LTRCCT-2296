@@ -152,7 +152,7 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
   > 
   > Set Value:  **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>
   
-4. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
+4. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in **Add Label Label(s)** dropdown list, then click **Publish**.
 
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 

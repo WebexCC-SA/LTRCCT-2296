@@ -84,7 +84,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
     
 5. Modify **Screenpop** configuration in the same flow
 
-    > Screen Pop URL: **[https://help.webex.com/en-us/article/nv7abhz/What's-new-for-administrators-in-Webex-Contact-Center](https://help.webex.com/en-us/article/nv7abhz/What's-new-for-administrators-in-Webex-Contact-Center){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.ciscolive.com/apjc/faqs.html"><span class="copy"></span></span>
+    > Screen Pop URL: **[https://www.webex.com/us/en/products/customer-experience/contact-center.html](https://www.webex.com/us/en/products/customer-experience/contact-center.html){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.webex.com/us/en/products/customer-experience/contact-center.html"><span class="copy"></span></span>
     >
     > Screen Pop Desktop Label: **Webex CC - What's New**<span class="copy-static" title="Click to copy!" data-copy-text="Webex CC - What's New"><span class="copy"></span></span>
     >
@@ -92,8 +92,9 @@ Event flows enable a wide range of scenarios, with one common use case being the
   
     ![profiles](../graphics/Lab1/AM2_Screenpop.gif)
     
-6. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
-    
+6. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in **Add Label Label(s)** dropdown list, then click **Publish**.
+
+
 ## Testing
     
 1. Make sure you're logged into Webex CC Desktop application as Agent **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and set status to **Available**.
