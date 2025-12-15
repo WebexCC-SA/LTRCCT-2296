@@ -45,7 +45,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
-4. Go back to your flow and navigate to **Even Flows** tab, delete **EndFlow_xkf** node which is connected to **AgentDisconnect** 
+4. Go back to your flow and navigate to **Event Flows** tab, delete **EndFlow_xkf** node which is connected to **AgentDisconnect** 
 
 5. Add **HTTPRequest** and **DisconnectContact** node in between these nodes.
       
@@ -84,11 +84,11 @@ Event flows enable a wide range of scenarios, with one common use case being the
     
 5. Modify **Screenpop** configuration in the same flow
 
-    > Screen Pop URL: **[https://www.ciscolive.com/apjc/faqs.html](https://www.ciscolive.com/apjc/faqs.html){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.ciscolive.com/apjc/faqs.html"><span class="copy"></span></span>
+    > Screen Pop URL: **[https://help.webex.com/en-us/article/nv7abhz/What's-new-for-administrators-in-Webex-Contact-Center](https://help.webex.com/en-us/article/nv7abhz/What's-new-for-administrators-in-Webex-Contact-Center){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.ciscolive.com/apjc/faqs.html"><span class="copy"></span></span>
     >
-    > Screen Pop Desktop Label: **Cisco Live Sydney 2025 FAQ**<span class="copy-static" title="Click to copy!" data-copy-text="Cisco Live Sydney 2025 FAQ"><span class="copy"></span></span>
+    > Screen Pop Desktop Label: **Webex CC - What's New**<span class="copy-static" title="Click to copy!" data-copy-text="Webex CC - What's New"><span class="copy"></span></span>
     >
-    > Display Settings: **Inside Desktop**
+    > Display Settings: **New browser tab**
   
     ![profiles](../graphics/Lab1/AM2_Screenpop.gif)
     
