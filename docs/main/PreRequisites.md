@@ -54,8 +54,8 @@ All calls to Webex Contact center should be done from Webex App which has been p
 To make a test just open Webex App and dial the provided Support Number assigned to you.
 
 !!! Note
-    By default, the Support Number is not linked to any flow in Webex CC prior to this. Therefore, you will hear an error tone or prompt if you attempt to call that number before finishing corresponding lab task.
-    International dialing is not allowed so you won't be able to dial your cell phones unless you have a US number.
+     - By default, the Support Number is not linked to any flow in Webex CC prior to this. Therefore, you will hear an error tone or prompt if you attempt to call that number before finishing corresponding lab task.
+     - International dialing is not allowed so you won't be able to dial your cell phones unless you have a US number.
 
 ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
