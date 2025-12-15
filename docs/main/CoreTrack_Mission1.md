@@ -50,9 +50,9 @@ Flow Templates are designed to empower developers, speed up the development life
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
    Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with Webex logo on it where you may need to enter the email address again and the password provided to you.
 
-    ![profiles](../graphics/Lab1/1-CH_Login.gif)
+    ![profiles](../graphics/Lab1/L1M1_Admin_Login.gif)
 
-    !!! Note 
+    !!! Note
         Remember to take up the offer from Chrome to save your password
 
 2. This is the **Administration interface** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
@@ -113,6 +113,8 @@ Flow Templates are designed to empower developers, speed up the development life
 
 5. Ensure that you hear a welcome prompt configured in your flow and receive an incoming call in your agent desktop. Answer the call in the agent desktop and confirm that it has been successfully established. Then end the call, select any value from the **Wrap Up Reasons** dropdown list on the agent desktop, and press the **Submit Wrap Up** button.
 
+    ![profiles](../graphics/Lab1/L1M1_Agent_Answer.gif)
+
 ---
 
 ## Enhance Your Flow by adding Language
@@ -163,6 +165,6 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
     ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
-5. Verify if the TTS language changed
+5. Listen to the welcome prompt to confirm the TTS language has changed.
 
 **Congratulations on completing another mission.**
