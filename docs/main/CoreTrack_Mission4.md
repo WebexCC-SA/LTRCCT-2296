@@ -26,12 +26,12 @@ Event flows enable a wide range of scenarios, with one common use case being the
 3. Configure an API call to trigger on the AgentDisconnect event.</br>
 
 !!! Note
-    In this mission, we’ll utilize **[Webhook.site](https://webhook.site/){:target="_blank"}**, a free online tool that generates a temporary, unique URL for capturing and inspecting HTTP requests. It’s widely used by developers and testers for debugging and testing webhooks or other HTTP-based APIs.
+    In this mission, we’ll utilize **[Webhook-Test Site](https://webhook-test.com/){:target="_blank"}**, a free online tool that generates a temporary, unique URL for capturing and inspecting HTTP requests. It’s widely used by developers and testers for debugging and testing webhooks or other HTTP-based APIs.
 
 ## Build
 
 !!! Note
-    The **Global Variable** with name **WhoIsCalling** that we are going to use in this mission has been already created. Switch to **Control Hub** and navigate to **Flows** under Customer Experience section. Select Global Variables on top and search for **WhoIsCalling** to observe it's configuration. You <span style="color: red;">**DO NOT**</span> need to modify it here.
+    The **Global Variable** with name **WhoIsCalling** that we are going to use in this mission has been already created. Switch to **Control Hub** and navigate to **Flows** under Customer Experience section. Select Global Variables on top and search for **WhoIsCalling** to observe it's configuration. Please <span style="color: red;">**DO NOT**</span> modify it here.
              
 1. Open you your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** or refresh the Flow Designer page to make sure new created Global Variables are being populated. Make sure **Edit** toggle is **ON**
 
@@ -40,12 +40,12 @@ Event flows enable a wide range of scenarios, with one common use case being the
     ![profiles](../graphics/Lab1/AM2_GV.gif)
     
 
-3. Open New Browser tab and paste the following URL **[Webhook.site](https://webhook.site/){:target="_blank"}**. Then click on **Your unique URL** to make a copy of URL. 
-**<span style="color: red;">DO NOT close this Tab</span>**
+3. Open New Browser tab and paste the following URL **[Webhook-Test Site](https://webhook-test.com/){:target="_blank"}**. Then click on purple copy icon next to **Your Unique Webhook URL** to make a copy of URL.
+**<span style="color: red;">Please keep this browser tab open to avoid changing your unique Webhook URL</span>**
 
     ![profiles](../graphics/Lab1/AM2_webhooksite.gif)
     
-4. Go back to your flow and navigate to **Event Flows** tab, delete **EndFlow_xkf** node which is connected to **AgentDisconnect** 
+4. Go back to your flow and navigate to **Event Flows** tab, delete **EndFlow** node which is connected to **AgentDisconnect** event. 
 
 5. Add **HTTPRequest** and **DisconnectContact** node in between these nodes.
       
@@ -60,7 +60,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
     >
     > Use Authenticated Endpoint: **Off**
     >
-    > Request URL: *<span style="color: red;">Paste your unique URL copied on Step 3 from https://webhook.site/</span>*.
+    > Request URL: *<span style="color: red;">Paste your unique URL copied on Step 3 from https://webhook-test.com/</span>*.
     >
     > Method: **POST**
     >
@@ -69,11 +69,11 @@ Event flows enable a wide range of scenarios, with one common use case being the
     > Request Body:  
     ```JSON
     {
-    "DNIS": "{{NewPhoneContact.DNIS}}",
-    "ANI": "{{NewPhoneContact.ANI}}",
-    "InteractionId": "{{NewPhoneContact.InteractionId}}",
-    "Language": "{{Global_Language}}",
-    "WhoCalls": "{{WhoIsCalling}}"
+        "DNIS": "{{NewPhoneContact.DNIS}}",
+        "ANI": "{{NewPhoneContact.ANI}}",
+        "InteractionId": "{{NewPhoneContact.InteractionId}}",
+        "Language": "{{Global_Language}}",
+        "WhoCalls": "{{WhoIsCalling}}"
     }
     ```
 
