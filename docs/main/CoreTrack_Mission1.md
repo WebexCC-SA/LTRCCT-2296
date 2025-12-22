@@ -81,7 +81,7 @@ Flow Templates are designed to empower developers, speed up the development life
   
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-12. In popped-up window, make sure the **Latest** label is selected in **Add Label Label(s)** dropdown list, then click **Publish**.
+12. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
 
 13. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
 14. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
@@ -152,7 +152,7 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
   > 
   > Set Value:  **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>
   
-4. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in **Add Label Label(s)** dropdown list, then click **Publish**.
+4. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
 
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 

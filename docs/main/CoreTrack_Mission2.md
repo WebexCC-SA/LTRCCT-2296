@@ -68,7 +68,7 @@ Your mission is to:
     >
     > Delete the Selection for Audio File
 
-7. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in **Add Label Label(s)** dropdown list, then click **Publish**.
+7. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
      
     !!! Note
         We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
