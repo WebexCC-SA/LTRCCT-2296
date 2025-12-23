@@ -152,7 +152,7 @@ Your mission is to: </br>
 
 
 
-8. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
+8. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in **Add Label Label(s)** dropdown list, then click **Publish**.
 
     
 ## Testing

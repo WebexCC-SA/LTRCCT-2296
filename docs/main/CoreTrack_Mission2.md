@@ -31,7 +31,7 @@ Your mission is to:
 
 ## Build
 
-1. Switch to **Control Hub** and navigate to **Business Hours** under Customer Experience section. Locate your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>**. You will see that currently only **Working Hours** are configured for every working day between 12:00 AM to 11:59 PM".
+1. Switch to **Control Hub** and navigate to **Business Hours** under Customer Experience section. Locate your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy" title="Click to copy!"></span></span>** You will see that currently only **Working Hours** are configured for every working day between 12:00 AM to 11:59 PM".
 
     ![profiles](../graphics/Lab1/8-BH_Entity.gif)
 
@@ -68,7 +68,7 @@ Your mission is to:
     >
     > Delete the Selection for Audio File
 
-7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
+7. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
      
     !!! Note
         We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
