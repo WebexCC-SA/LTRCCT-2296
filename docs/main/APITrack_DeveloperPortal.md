@@ -98,7 +98,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
     
     <script>
       const attendID = localStorage.getItem('attendeeID');
-      
+      let json;
       if (attendID) {
         json = {
           name: `AddressBook_${attendID}`,
