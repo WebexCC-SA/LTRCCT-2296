@@ -79,7 +79,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortalLogin.gif)
 
-3. On Menu pannel on the left, scroll down to **API Reference** section and click on **Configuration** then **Adress Book** and look at the list of available API calls.
+3. On Menu pannel on the left, scroll down to **API Reference** section and click on **Configuration** then **Adress Book**. Look at the list of available API calls.
 
     !!!Note
         **Address Book Overview**</br>
@@ -89,29 +89,29 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortal_TryOut.gif)
 
-5. Clear **Request Body** content. Paste the following body and replace the *<Your_Attendee_ID>* with your **attendee ID**. Click on **Run**.
+5. Clear **Request Body** content. Paste the following body and replace the **<Your_Attendee_ID>** with your 3-digit **Attendee ID**. Then scroll down and click on **Run**.
 
     > 
     > Request Body:
     
     <pre><code id="json-addr-book" class="language-json"></code></pre>
     
-    <script>
-      const attendID = localStorage.getItem('attendeeID');
-      let json;
-      if (attendID) {
-        json = {
-          name: `AddressBook_${attendID}`,
-          parentType: "ORGANIZATION"
-        };
-      } else {
-        json = {
-          name: `AddressBook_<Your_Attendee_ID>`,
-          parentType: "ORGANIZATION"
-        };
-      }
-      document.getElementById("json-addr-book").textContent = JSON.stringify(json, null, 2);
-    </script>
+<script>
+  const attendID = localStorage.getItem('attendeeID');
+  let json;
+  if (attendID) {
+    json = {
+      name: `AddressBook_${attendID}`,
+      parentType: "ORGANIZATION"
+    };
+  } else {
+    json = {
+      name: `AddressBook_<Your_Attendee_ID>`,
+      parentType: "ORGANIZATION"
+    };
+  }
+  document.getElementById("json-addr-book").textContent = JSON.stringify(json, null, 2);
+</script>
 
     ``` JSON
     {
@@ -144,15 +144,15 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortal_VerifyAB.gif)
 
-9. Switch to **Developer Portal** and select **Address Book** again from left menu pane.
+9. Switch back to **Developer Portal** and select **Address Book** again from left menu pane.
 
     ![profiles](../graphics/Lab2/DevPortal_gotoABEntry.gif)
 
-10. Click on **Create a new Address Book Entry**, then switch to **Try Out section** within the same page and click on **Request Body (JSON)**. 
+10. Click on **Create a new Address Book Entry**, then click on **Request Body (JSON)**. 
 
 11. In the **Parameters** section paste **addressBookId** you copied on **Step 8** of the current mission.
 
-12. Clear **Request Body** content and paste the following body, then click on **Run** button.
+12. Clear **Request Body** content and paste the following body, then scroll down click on **Run** button.
 
     > 
     > Request Body:
