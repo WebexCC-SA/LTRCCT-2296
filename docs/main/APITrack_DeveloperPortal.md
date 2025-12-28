@@ -2,8 +2,20 @@
 #icon: material/folder-open-outline
 icon: material/medal
 ---
-
-
+<script>
+  const attendID = localStorage.getItem('attendeeID');
+   
+  if (attendID) {
+    const json = {
+      name: `AddressBook_${attendID}`,
+      parentType: "ORGANIZATION"
+    };
+    
+    document.getElementById("json-addr-book").textContent = JSON.stringify(json, null, 2);
+  } else {
+    document.getElementById("json-addr-book").textContent = "Your_Attendee_ID";
+  }
+</script>
 
 # Using Webex Contact Center Developer Portal
 
@@ -61,15 +73,15 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 1. Open [**Developer Portal**](https://developer.webex.com/){:target="_blank"} and click on **Sign In**. 
    Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
 
-2. Click on the little arrow next to **Documentation**, choose Webex Contact Center under Customer Experience. 
+2. Click on the little arrow next to **Documentation**, choose **Webex Contact Center** under **Customer Experience** section. 
 
     ![profiles](../graphics/Lab2/DevPortalLogin.gif)
 
-3. On Menu pannel on the left, scroll down to **API Reference** section and click on **Configuration** then **Adress Book**. Observe available API calls
+3. On Menu pannel on the left, scroll down to **API Reference** section and click on **Configuration** then **Adress Book** and look at the list of available API calls.
 
     !!!Note
         **Address Book Overview**</br>
-        Address Book is available in the Webex Contact Center Agent Desktop. Agents can make outbound calls using Address Books, selecting numbers from pre-configured lists instead of entering them manually in the 'Start a New Call' field. Administrators can configure and manage Address Books via the Webex Contact Center APIs.
+        Address Book is available in the Webex Contact Center Agent Desktop. Agents can make outbound calls using Address Books, selecting numbers from pre-configured lists instead of entering them manually in the **Start a New Call** field. Administrators can configure and manage Address Books via the Webex Contact Center APIs.
 
 4. Scroll down and click on **Create a new Address Book**, then click on **Request Body (JSON)**.
 
@@ -79,6 +91,9 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     > 
     > Request Body:
+    
+    <pre><code id="json-addr-book" class="language-json"></code></pre>
+    
     ``` JSON
     {
         "name": "AddressBook_<Your_Attendee_ID>",

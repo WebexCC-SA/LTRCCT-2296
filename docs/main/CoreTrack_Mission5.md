@@ -60,7 +60,7 @@ Your mission is to:
 > 
 > - In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
 > 
-> - Enter survey name in **Survey name** field. Make sure **IVR survey** is selected. Then click next 
+> - Enter survey name as **PCS_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in **Survey name** field. Make sure **IVR survey** is selected. Then click next 
 >
 >    ![profiles](../graphics/Lab1/PCS1.gif) 
 >
