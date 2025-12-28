@@ -96,6 +96,23 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
     
     <pre><code id="json-addr-book" class="language-json"></code></pre>
     
+    <script>
+      const attendID = localStorage.getItem('attendeeID');
+      
+      if (attendID) {
+        const json = {
+          name: `AddressBook_${attendID}`,
+          parentType: "ORGANIZATION"
+        };
+      } else {
+        const json = {
+          name: `AddressBook_<Your_Attendee_ID>`,
+          parentType: "ORGANIZATION"
+        };
+      }
+      document.getElementById("json-addr-book").textContent = JSON.stringify(json, null, 2);
+    </script>
+
     ``` JSON
     {
         "name": "AddressBook_<Your_Attendee_ID>",
