@@ -91,10 +91,9 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     > 
     > Request Body:
-    ``` HTML
+    
     <pre><code id="json-addr-book" class="language-json"></code></pre>
-    ```
-
+    
     ``` JSON
     {
         "name": "AddressBook_<Your_Attendee_ID>",
