@@ -85,7 +85,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
         **Address Book Overview**</br>
         Address Book is available in the Webex Contact Center Agent Desktop. Agents can make outbound calls using Address Books, selecting numbers from pre-configured lists instead of entering them manually in the **Start a New Call** field. Administrators can configure and manage Address Books via the Webex Contact Center APIs.
 
-4. Scroll down and click on **Create a new Address Book**, then click on **Request Body (JSON)**.
+4. Scroll down and click on **Create a new Address Book**, then click on **Request Body (JSON)** on the right.
 
     ![profiles](../graphics/Lab2/DevPortal_TryOut.gif)
 
@@ -93,26 +93,6 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     > 
     > Request Body:
-    
-    <pre><code id="json-addr-book" class="language-json"></code></pre>
-    
-<script>
-  const attendID = localStorage.getItem('attendeeID');
-  let json;
-  if (attendID) {
-    json = {
-      name: `AddressBook_${attendID}`,
-      parentType: "ORGANIZATION"
-    };
-  } else {
-    json = {
-      name: `AddressBook_<Your_Attendee_ID>`,
-      parentType: "ORGANIZATION"
-    };
-  }
-  document.getElementById("json-addr-book").textContent = JSON.stringify(json, null, 2);
-</script>
-
     ``` JSON
     {
         "name": "AddressBook_<Your_Attendee_ID>",
@@ -131,12 +111,11 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
       "createdTime": 1738585491913,
       "lastUpdatedTime": 1738585491913
     }
-
     ```
 
     ![profiles](../graphics/Lab2/DevPortal_AddressBookCreate.gif)
 
-6. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"} and navigate to **Address Book** under **Desktop Experience Section**. Locate your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+6. Switch to [Webex Control Hub](https://admin.webex.com){:target="\_blank"} and navigate to **Address Book** under **Desktop Experience Section**. Locate your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
 
 7. You should see your new created **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. There are still no Address Book entries so let's add them.
 
@@ -144,11 +123,11 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortal_VerifyAB.gif)
 
-9. Switch back to **Developer Portal** and select **Address Book** again from left menu pane.
+9. Switch to **Developer Portal** and select **Address Book** again from left menu pane.
 
     ![profiles](../graphics/Lab2/DevPortal_gotoABEntry.gif)
 
-10. Click on **Create a new Address Book Entry**, then click on **Request Body (JSON)**. 
+10. Click on **Create a new Address Book Entry**, then click on **Request Body (JSON)** on the right. 
 
 11. In the **Parameters** section paste **addressBookId** you copied on **Step 8** of the current mission.
 
@@ -163,7 +142,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
     }
     ```
     >
-    > Expected Response: **201 Response**
+    > Example of the expected Response: **201 Response**
     ``` JSON
     {
       "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
@@ -178,11 +157,9 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortal_CreateABEntry.gif)
 
-12. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. Your **Addres Book** configuration page should still be open. **Refresh** the page.
+13. Switch to [Webex Control Hub](https://admin.webex.com){:target="\_blank"}. Open the configuration page of your **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and **refresh** the page.
 
-13. But if not open, locate and open your **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
-
-14. You should see your new created **Entry List** with Name **Tac Number** and Contact Number **+14085267209**.
+15. You should see your new created **Entry List** with Name **TAC Number** and Contact Number **+14085267209**.
 
     ![profiles](../graphics/Lab2/DevPortal_VerifyABEntry.gif)
 
@@ -194,14 +171,14 @@ We will retrieve information about your newly created address book using a GET A
 
 1. Switch to **Developer Portal** and select **Address Book** again from left menu pane.
 
-2. Locate and open **Get specific Address Book by ID**, then switch to **Try Out** tab.
+2. Locate and open **Get specific Address Book by ID**, then switch to **Parameters** section on the right.
 
     ![profiles](../graphics/Lab2/DevPortal_GET_Entry1.gif)
 
-3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** **ID** into **id** cell of **Parameters** section. You can quickly copy it by switching back to Control Hub. Then click **Run**.
+3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** **ID** into **id** field of the **Parameters** section. You can quickly copy it by switching back to Control Hub. Then click **Run** at the bottom.
 
     >
-    > Expected Response: **200 Response**
+    > Example of the expected Response: **200 Response**
     ``` JSON
     {
       "id": "115358d7-5c46-4988-9a50-e7f40c3b7daf",
@@ -215,21 +192,21 @@ We will retrieve information about your newly created address book using a GET A
     ![profiles](../graphics/Lab2/DevPortal_GET_Entry2.gif)
 
 
-### Update Address Book Description by using PUT
+### Update Address Book Description
 
 1. Switch to **Developer Portal** and select **Address Book** again from left menu pane.
 
-2. Locate and open **Update specific Address Book by ID**, then switch to **Try Out** tab.
+2. Locate and open **Update specific Address Book by ID**, then switch to **Parameters** section on the right.
 
     ![profiles](../graphics/Lab2/DevPortal_PUT_ABNavigate.gif)
 
-3. Paste the same **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** ID into **id** cell of **Parameters** section. You can quickly copy **name** and **id** by switching back to Control Hub. 
+3. Paste the same ID of your **AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>** into **id** cell of **Parameters** section. You can quickly copy **ID** of your address book by switching back to Control Hub. 
 
 4. Clear **Request Body** content and paste the following body. Then click **Run**.
     
     > Replace value ***YourAddressBook_Name*** to your **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
-    > Replace ***YouAddressBook_ID*** to actual AddressBook_<span class="attendee-id-placeholder">AddressBook_</span> **ID**
+    > Replace ***YouAddressBook_ID*** to actual **ID** of your AddressBook_<span class="attendee-id-placeholder">AddressBook_</span>
     > 
     > Request Body:
     ``` JSON
@@ -237,11 +214,11 @@ We will retrieve information about your newly created address book using a GET A
       "name": "YourAddressBook_Name",
       "id": "YouAddressBook_ID",
       "parentType": "ORGANIZATION",
-      "description": "Testing PUT requests from Develeper Portal"
+      "description": "Testing PUT requests from Developer Portal"
     }
     ```
     > 
-    > Expected Response: **200 Response**
+    > Example of the expected Response: **200 Response**
     ``` JSON
     {
       "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
@@ -255,7 +232,7 @@ We will retrieve information about your newly created address book using a GET A
     }
     ```
 
-5. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. You **Addres Book** configuration page should still be open. **Refresh** the page to validate Description change.
+5. Switch to [Webex Control Hub](https://admin.webex.com){:target="\_blank"}. Open the configuration page of your **<span class="attendee-id-container">AddressBook_<span class="attendee-id-placeholder" data-prefix="AddressBook_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and **refresh** the page to validate updated **Description** field.
 
 ![profiles](../graphics/Lab2/DevPortal_PUT_ABDescription.gif)
 
@@ -264,7 +241,7 @@ We will retrieve information about your newly created address book using a GET A
 ### Use Search API to retrieve data from Analyzer DB.
 
 !!! Note
-    When working with Webex Contact Center (WxCC) GraphQL queries, timestamps are represented in **Epoch time (Unix timestamp)** format. This format counts the number of seconds (or milliseconds) that have elapsed since **January 1, 1970 (UTC)**. </br>
+    When working with Webex Contact Center (Webex CC) GraphQL queries, timestamps are represented in **Epoch time (Unix timestamp)** format. This format counts the number of seconds (or milliseconds) that have elapsed since **January 1, 1970 (UTC)**. </br>
     If you need to convert a regular date/time into Epoch format or vice versa, you can use this online converter: [https://www.epochconverter.com/](https://www.epochconverter.com/){:target="_blank"}</br>
     Ensure that your queries and filters use the correct time format to retrieve accurate results.
 
@@ -282,13 +259,13 @@ We will retrieve information about your newly created address book using a GET A
       #Global CAD Variables: Usage of taskDetails Object to retrieve the Value of Global Variables
       taskDetails(
         # NOTE: from and to are mandatory arguments that take the Epoch timestamp in milliseconds
-        from: 1738833921000 #This can be set to Date.now() - (days * 24 * 60 * 60 * 1000) for lookback in days
-        to: 1738834701000 #This can be set to Date.now() in millis
+        from: 1770624000000 #This can be set to Date.now() - (days * 24 * 60 * 60 * 1000) for lookback in days
+        to: 1771012800000 #This can be set to Date.now() in millis
         filter: {
           #Filter the type of Task
           and: [
             { channelType: { equals: telephony } } #Telephony calls only
-            { origin: { equals: "+14694097607" } } #Customer ANI
+            { origin: { equals: "+19302017961" } } #Customer ANI
             { status: { equals: "ended" } } #Final Disposition
             { direction: { equals: "inbound" } } #Inbound call only
             { isActive: { equals: false } } #Resolved call only
@@ -320,18 +297,18 @@ We will retrieve information about your newly created address book using a GET A
     !!! Note
         Current query is configured to search calls with following details from Analyzer database:
 
-        1. Time range: From **Thursday, February 6, 2025 9:25:21 AM** to **Thursday, February 6, 2025 10:38:21 AM GMT+01:00**.
+        1. Time range: From **Monday, February 9, 2026 8:00:00 AM** to **Friday, February 13, 2026 8:00:00 PM**.
 
         2. Telephony inbound calls only.
 
-        3. Calls only from **+14694097607**.
+        3. Calls only from **+19302017961**.
 
         4. Ended calls only.
 
         5. Calls that were assigned to an owner (agent).
 
      > 
-    > Expected Response: **200 Response**
+    > Example of the expected response: **200 Response**
     ``` JSON
     {
       "data": {
@@ -361,7 +338,7 @@ We will retrieve information about your newly created address book using a GET A
     !!! Note 
         Output of the query is configured to represent the following information
 
-        1. **ID** of the call
+        1. Unique ID of the call
         
         2. Status of the call
         
@@ -371,14 +348,14 @@ We will retrieve information about your newly created address book using a GET A
         
         5. Destination of the call. Entry Point number.
         
-        6. Agent, whoc accepted the call: ID and Name
+        6. Agent, who accepted the call: ID and Name
         
         7. Language selected by the caller. Represented as **Global_Language** variable
 
     ![profiles](../graphics/Lab2/DevPortal_SearchAPI2.gif)
 
 
-4. Open JSON Path tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} to test your **GraphQL** response. Clear the content from **Document** section and from **JSONPath Query** adress line.
+4. Open JSON Path tool [https://jsonpath.com/](https://jsonpath.com/){:target="\_blank"} to test your **GraphQL** response. Clear the content from **Document** section and from **JSONPath Query** adress line.
 
 5. Switch to **Developer Portal** and copy the response 
 
