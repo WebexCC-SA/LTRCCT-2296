@@ -89,7 +89,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortal_TryOut.gif)
 
-5. Clear **Request Body** content. Paste the following body and replace the **<Your_Attendee_ID>** with your 3-digit **Attendee ID**. Then scroll down and click on **Run**.
+5. Clear **Request Body** content. Paste the following body and replace the **\<Your_Attendee_ID\>** with your 3-digit **Attendee ID**. Then scroll down and click on **Run**.
 
     > 
     > Request Body:
