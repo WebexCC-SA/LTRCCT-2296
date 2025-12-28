@@ -101,7 +101,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
     }
     ```
     > 
-    > Expected Response: **201 Response**
+    > Example of the expected response: **201 Response**
     ``` JSON
     {
       "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
