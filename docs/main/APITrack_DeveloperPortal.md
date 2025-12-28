@@ -100,12 +100,12 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
       const attendID = localStorage.getItem('attendeeID');
       
       if (attendID) {
-        const json = {
+        json = {
           name: `AddressBook_${attendID}`,
           parentType: "ORGANIZATION"
         };
       } else {
-        const json = {
+        json = {
           name: `AddressBook_<Your_Attendee_ID>`,
           parentType: "ORGANIZATION"
         };
