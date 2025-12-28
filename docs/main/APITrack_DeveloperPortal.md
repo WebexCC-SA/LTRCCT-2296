@@ -10,11 +10,13 @@ icon: material/medal
       name: `AddressBook_${attendID}`,
       parentType: "ORGANIZATION"
     };
-    
-    document.getElementById("json-addr-book").textContent = JSON.stringify(json, null, 2);
   } else {
-    document.getElementById("json-addr-book").textContent = "Your_Attendee_ID";
+    const json = {
+      name: `AddressBook_<Your_Attendee_ID>`,
+      parentType: "ORGANIZATION"
+    };
   }
+  document.getElementById("json-addr-book").textContent = JSON.stringify(json, null, 2);
 </script>
 
 # Using Webex Contact Center Developer Portal
