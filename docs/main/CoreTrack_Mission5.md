@@ -48,7 +48,7 @@ Your mission is to:
 
 ### Pre-configured entities      
      
-> Survey: **PCS-2025**
+> Survey: **Webex CC 2025**
 >
 > System defined GlobalVariable: **Global_FeedbackSurveyOptIn**. 
 >
@@ -74,7 +74,7 @@ Your mission is to:
 >
 > - Add more questions if you want.
 > 
-> - Click *Next**. You can ignore **Error Handling** configuration page. Click **Save**
+> - Click **Next**. You can ignore **Error Handling** configuration page. Click **Save**.
 > 
 >    ![profiles](../graphics/Lab1/PCS_questions.gif) 
 > 
@@ -89,12 +89,10 @@ Your mission is to:
 3. Add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
   ![profiles](../graphics/Lab1/L1M4_PCS_Add_GV.gif)
 
-
-4. Delete the connection between the **NewPhoneContact** node and the first **SetVariable** node we used to set language preference. Then drag new **Set Variable** node from the activity library on the left to flow canvas, put it between **NewPhoneContact** and existing **SetVariable** nodes and connect all three nodes into a chain.
-
+4. Delete the connection between the **NewPhoneContact** node and the first **Set Variable** node we used to set language preference. Then drag new **Set Variable** node from the activity library on the left to flow canvas, put it between **NewPhoneContact** and existing **Set Variable** nodes and connect all three nodes into a chain.
   ![profiles](../graphics/Lab1/L1M4_PCS_Add_SetVariable.gif)
 
-5. Click on the new **SetVariable** node you have just added and configure the following fields:
+5. Click on the new **Set Variable** node you have just added and configure the following fields:
 
     > - Variable: **Global_FeedbackSurveyOptIn**<span class="copy-static" title="Click to copy!" data-copy-text="Global_FeedbackSurveyOptIn"><span class="copy"></span></span>
     >
@@ -102,15 +100,15 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M4_PCS_Set_GV.gif)
 
-6. Open **Event FLows**  tab and locate **AgentDisconected** node. If you completed previous mission you should have **HTTPRequest** node connected to it. Delete the connection between **HTTPRequest** and **DisconnectContact** nodes.
+6. Open **Event FLows**  tab and locate **AgentDisconected** node. If you completed previous mission you should have **HTTP Request** node connected to it. Delete the connection between **HTTP Request** and **DisconnectContact** nodes.
 
-7. Drag **FeedbackV2** from the activity library on the left, place it between **HTTPRequest** and **DisconnectContact** nodes and connect all three nodes into a chain. Then click on **FeedbackV2** node and configure the following field:
+7. Drag **Feedback V2** from the activity library on the left, place it between **HTTP Request** and **DisconnectContact** nodes and connect all three nodes into a chain. Then click on **Feedback V2** node and configure the following field:
     
     > - Survey Method -> Voice Based:  **Webex CC PCS**<span class="copy-static" title="Click to copy!" data-copy-text="Webex CC PCS"><span class="copy"></span></span>
 
     ![profiles](../graphics/Lab1/L1M4_PCS_FeedbackV2.gif)
             
-8. Let's configure the voice message that will be played to the caller if something goes wrong with **Webex CC PCS** survey. Drag **Play Message** node from the activity library and place it below **FeedbackV2** node you have just added. Connect **Undefined Error** output of the **FeedbackV2** node to the input of the **Play Message** node, also connect the output of the **Play Message** node to the **DisconnectContact** node. Then click on **Play Message** node and configure the following fields:
+8. Let's configure the voice message that will be played to the caller if something goes wrong with **Webex CC PCS** survey. Drag **Play Message** node from the activity library and place it below **Feedback V2** node you have just added. Connect **Undefined Error** output of the **Feedback V2** node to the input of the **Play Message** node, also connect the output of the **Play Message** node to the **DisconnectContact** node. Then click on **Play Message** node and configure the following fields:
     
     > - Enable Text-To-Speech
     >
@@ -119,8 +117,6 @@ Your mission is to:
     > - Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***<span class="copy-static" title="Click to copy!" data-copy-text="Something went wrong on Feedback node. Please call later."><span class="copy"></span></span>
     >
     > - Delete the selection for Audio File
-    >
-    > - Connect **Play Message** created to **Disconnect Contact** node
 
     ![profiles](../graphics/Lab1/L1M4_PCS_PlayMessage.gif)            
 
