@@ -58,19 +58,21 @@ Your mission is to:
 
 > **<details><summary>Create your own Survey <span style="color: orange;">[Optional]</span></summary>**
 > 
+> - Download audio prompts from the [shared folder](https://drive.google.com/drive/folders/1vS2aXgaCzorGAmGdQ7bP2NJMHNQx2ais?usp=sharing){:target="_blank"}. 
+>
 > - In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
 > 
 > - Enter survey name as **PCS_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in **Survey name** field. Make sure **IVR survey** is selected. Then click next 
 >
 >    ![profiles](../graphics/Lab1/PCS1.gif) 
 >
-> - Edit **Welcome note** and **Thank you note** by uploading the following files. Download files to your desktop prior uploading to survey. 
+> - Edit **Welcome note** and **Thank you note** by uploading respective audio prompts to the survey. 
 >
 >    ![profiles](../graphics/Lab1/PCS_Welcome.gif) 
 >
-> - Click on **Add a question** which is in the middle between **Welcome note** and **Thank you note**. Choose either NPS, CSAT or CES type of question.
-> 
-> - Upload respective audio prompts. Prompts can be downloaded from [shared folder](https://drive.google.com/drive/folders/1vS2aXgaCzorGAmGdQ7bP2NJMHNQx2ais?usp=sharing){:target="_blank"}.
+> - Click on **Add a question** which is in the middle between **Welcome note** and **Thank you note**. Choose either NPS, CSAT or CES type of question and upload respective audio prompt to the survey.
+>
+> - Add more questions if you want.
 > 
 > - Click *Next**. You can ignore **Error Handling** configuration page. Click **Save**
 > 
@@ -79,69 +81,58 @@ Your mission is to:
 </details>
 
 ## Build
-1. Switch to the Control Hub then go to **Contact Center**. Navigate to the **Surveys** under the **Customer Experience** section. Locate **PCS-2025** Survey and click on it to familiarise yourself with it's configuration.  
-  ![profiles](../graphics/Lab1/PCS_Explore.gif)
+1. Switch to the Control Hub then go to **Contact Center**. Navigate to the **Surveys** under the **Customer Experience** section. Locate **Webex CC PCS** survey and click on it to familiarise yourself with its configuration.  
+  ![profiles](../graphics/Lab1/L1M4_PCS_Explore.gif)
 
 2. Switch to the Flow Designer. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, make sure **Edit** toggle is **ON**.
 
 3. Add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
-  ![profiles](../graphics/Lab1/PCS_addGV.gif)
+  ![profiles](../graphics/Lab1/L1M4_PCS_Add_GV.gif)
 
 
-4. Drag **Set Variable** node to canvas:
+4. Delete the connection between the **NewPhoneContact** node and the first **SetVariable** node we used to set language preference. Then drag new **Set Variable** node from the activity library on the left to flow canvas, put it between **NewPhoneContact** and existing **SetVariable** nodes and connect all three nodes into a chain.
 
-    > Activity Name: **FeedbackSet**<span class="copy-static" title="Click to copy!" data-copy-text="FeedbackSet"><span class="copy"></span></span>
+  ![profiles](../graphics/Lab1/L1M4_PCS_Add_SetVariable.gif)
+
+5. Click on the new **SetVariable** node you have just added and configure the following fields:
+
+    > - Variable: **Global_FeedbackSurveyOptIn**<span class="copy-static" title="Click to copy!" data-copy-text="Global_FeedbackSurveyOptIn"><span class="copy"></span></span>
     >
-    > Variable: **Global_FeedbackSurveyOptIn**<span class="copy-static" title="Click to copy!" data-copy-text="Global_FeedbackSurveyOptIn"><span class="copy"></span></span>
-    >
-    > Set Value: **true**
-    > 
-    > Delete connection between **NewPhoneContact** and **Set Variable** on which we configured Language while doing the Main Lab.
-    >
-    > Connect **NewPhoneContact** to the front of the **FeedbackSet** node
-    >
-    > Connect **FeedbackSet** to the front of the **Set Variable** node
+    > - Set Value: **true**
 
-    ![profiles](../graphics/Lab1/PCS_SetVar.gif)
+    ![profiles](../graphics/Lab1/L1M4_PCS_Set_GV.gif)
 
-5. Open **Event FLows**  tab and locate **AgentDisconected** node. If you completed previous mission you should have **HTTPRequest** node connected to it. Delete the connection between **HTTPRequest** node and **DisconnectContact**.
+6. Open **Event FLows**  tab and locate **AgentDisconected** node. If you completed previous mission you should have **HTTPRequest** node connected to it. Delete the connection between **HTTPRequest** and **DisconnectContact** nodes.
 
-6. Drag **FeedbackV2** and **Play Message**
+7. Drag **FeedbackV2** from the activity library on the left, place it between **HTTPRequest** and **DisconnectContact** nodes and connect all three nodes into a chain. Then click on **FeedbackV2** node and configure the following field:
     
-    **FeedbacV2**
-    
-    > SurveyMethod -> VoiceBased:  **PCS-2025**<span class="copy-static" title="Click to copy!" data-copy-text="PCS-2025"><span class="copy"></span></span>
-    >        
-    > Connect **HTTPRequest** to **FeedbackV2** node
-    >
-    > Connect **FeedbackV2** node to **Disconnect** node
-    >
-    > Connect **FeedbackV2** Undefined Error to **Play Message** node
+    > - Survey Method -> Voice Based:  **Webex CC PCS**<span class="copy-static" title="Click to copy!" data-copy-text="Webex CC PCS"><span class="copy"></span></span>
+
+    ![profiles](../graphics/Lab1/L1M4_PCS_FeedbackV2.gif)
             
-    **Play Message**
+8. Let's configure the voice message that will be played to the caller if something goes wrong with **Webex CC PCS** survey. Drag **Play Message** node from the activity library and place it below **FeedbackV2** node you have just added. Connect **Undefined Error** output of the **FeedbackV2** node to the input of the **Play Message** node, also connect the output of the **Play Message** node to the **DisconnectContact** node. Then click on **Play Message** node and configure the following fields:
     
-    > Enable Text-To-Speech
+    > - Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > - Connector: Cisco Cloud Text-to-Speech
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***<span class="copy-static" title="Click to copy!" data-copy-text="Something went wrong on Feedback node. Please call later."><span class="copy"></span></span>
+    > - Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***<span class="copy-static" title="Click to copy!" data-copy-text="Something went wrong on Feedback node. Please call later."><span class="copy"></span></span>
     >
-    > Delete the selection for Audio File
+    > - Delete the selection for Audio File
     >
-    > Connect **Play Message** created to **Disconnect Contact** node
-    >       
+    > - Connect **Play Message** created to **Disconnect Contact** node
 
-    ![profiles](../graphics/Lab1/PCS_FeedbackConfig.gif)            
+    ![profiles](../graphics/Lab1/L1M4_PCS_PlayMessage.gif)            
 
-7. Validate the flow by clicking **Validate**, **Publish** and select the **Latest** version of the flow
+9. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
 
 
 ## Testing
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
 2. Make a test call to the Support Number and accept the call by Agent.
 3. Finish the call by Agent so the caller could stay on the line. 
-4. Now the caller should hear prompts configured in **PCS-2025**. Complete the survey.
-5. To check survey responses, switch to the **Control Hub** and navigate to the **Surveys** under **Customer Experience** section. Locate the **PCS-2025** survey and click on the **Download** button on the right hand side to download a CSV file with the provided Survey responses.
+4. Now the caller should hear prompts configured in **Webex CC PCS**. Complete the survey.
+5. To check survey responses, switch to the **Control Hub** and navigate to the **Surveys** under **Customer Experience** section. Locate the **Webex CC PCS** survey and click on the **Download** button on the right hand side to download a CSV file with the provided Survey responses.
     
     !!! Note
         If you create your own survey, as described in the Optional section of this mission, you might not see the survey responses immediately, as there is a delay in edited surveys.
