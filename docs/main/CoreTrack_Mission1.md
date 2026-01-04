@@ -46,7 +46,6 @@ Flow Templates are designed to empower developers, speed up the development life
 
 ### Build
 
-
 1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
    Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with Webex logo on it where you may need to enter the email address again and the password provided to you.
 
@@ -59,37 +58,43 @@ Flow Templates are designed to empower developers, speed up the development life
 3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 4. New Tab will be opened. Navigate to **Flow Templates**
 5. Choose **Simple Inbound Call to Queue** template and click **Next**. You can open View Details and to see observe flow structure and read flow description
-6. Name your flow as <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** Then click on Create Flow
+6. Name your flow as <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** Then click on **Create Flow**.
 
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
-7. **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On**. Select **Play Message** node with label **WelcomePrompt** and on the node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
+7. If **Discover New Features** popup window appears in front of flow canvas, set the checkbox **Don't show this again** at the bottom and press **Get Started** button to close it and and go to the flow designer.
+    
+    ![profiles](../graphics/Lab1/L1M1_Close_Popup.gif)
 
-8. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list
+8. **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On**. Select **Play Message** node with label **WelcomePrompt** and on the node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
+
+9. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list
     
     !!! Note
         As mentioned in **Getting Started**, all queues have been pre-configured so you don't need to change them at current step.
 
-9. <span style="color: orange;">[Optional]</span> Select **Play Message** node (the one which goes after Queue and Play Music nodes) and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
+10. <span style="color: orange;">[Optional]</span> Select **Play Message** node (the one which goes after Queue and Play Music nodes) and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
 
-10. On bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
+11. On bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
 
     !!! Note
         You can ignore recommendations but cannot skip errors.
 
-11. Click **Publish** Flow
+12. Click **Publish** Flow
   
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-12. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
+13. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
 
-13. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-14. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-15. In **Entry Point** settings section change the following, then click **Save** button:
+14. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+15. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+16. In **Entry Point** settings section change the following, then click **Save** button:
 
-    > Routing Flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
-
-    > Version Label: **Latest**
+    > Routing flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+    >
+    > Music on hold: **defaultmusic_on_hold.wav**
+    >
+    > Version label: **Latest**
 
 
 ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
@@ -131,7 +136,6 @@ Your mission is to:
 All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contact-Center](https://help.webex.com/en-us/article/ntkjqhw/Text-to-Speech-(TTS)-in-Webex-Contact-Center){:target="_blank"} 
 </details>
 
-
 ### Build
 
 1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
@@ -140,20 +144,20 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
-3. Add a **Set Variable** with following configuration. 
-
-  > Delete connection between **NewPhoneContact** and **WelcomePrompt**
-  >  
-  > Connect **NewPhoneContact** to **Set Variable**
-  > 
-  > Connect **Set Variable** to **WelcomePrompt**
-  > 
-  > Variable: **Global_Language**<span class="copy-static" data-copy-text="Global_Language"><span class="copy" title="Click to copy!"></span></span>
-  > 
-  > Set Value:  **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>
+3. Add a **Set Variable** with following configuration:
+  
+    > Delete connection between **NewPhoneContact** and **WelcomePrompt**
+    >  
+    > Connect **NewPhoneContact** to **Set Variable**
+    > 
+    > Connect **Set Variable** to **WelcomePrompt**
+    > 
+    > Variable: **Global_Language**<span class="copy-static" data-copy-text="Global_Language"><span class="copy" title="Click to copy!"></span></span>
+    > 
+    > Set Value:  **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>
   
 4. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
-
+    
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 
 
