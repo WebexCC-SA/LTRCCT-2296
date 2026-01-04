@@ -52,7 +52,7 @@ Your mission is to:
     > Select the value: **Static**
     > Value (drop-down list): **3**
 
-  ![profiles](../graphics/Lab1/L1M2_Conf_SBR_Q.gif)
+    ![profiles](../graphics/Lab1/L1M2_Conf_SBR_Q.gif)
 
 3. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
 
@@ -69,7 +69,7 @@ Your mission is to:
 2. Make a test call to the Support Number, ensure the call is assigned to your Agent and answer it.
 3. Finish the call.
 
-## "Hello, I need a real expert here!" - Raise skill requirements
+## "Hello, I need a real expert here!" - Raise skill requirement
 
 !!! Note
     Let's raise skill requirement to see what happens if there are no agents with the appropriate skill level available. 
@@ -78,7 +78,7 @@ Your mission is to:
 
 1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there. Then scroll down to the **Skill Requirements** section and raise skill requirement **Webex CC Lab Expert >= 7**:
   
-  ![profiles](../graphics/Lab1/L1M2_Raise_Skill_Req.gif)
+    ![profiles](../graphics/Lab1/L1M2_Raise_Skill_Req.gif)
 
 2. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
 
@@ -114,7 +114,7 @@ Your mission is to:
     > Select the value: **Static**
     > Value (drop-down list): **4**
   
-  ![profiles](../graphics/Lab1/L1M2_Set_Skill_Relax.gif)
+    ![profiles](../graphics/Lab1/L1M2_Set_Skill_Relax.gif)
 
 2. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
 
@@ -135,7 +135,7 @@ Your mission is to:
 
 1. <span style="color: red;">**[IMPORTANT]**</span> Now we need to revert the configuration of **Queue** node in your flow to the **non-SBR** queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue** as we are going to use same flow in upcoming tasks. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **None** from **Override** dropdown list. Then click **Save**.
 
-  ![profiles](../graphics/Lab1/L1M2_Revert_Non_SBR.gif) 
+    ![profiles](../graphics/Lab1/L1M2_Revert_Non_SBR.gif) 
 
 2. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
 3. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state.
