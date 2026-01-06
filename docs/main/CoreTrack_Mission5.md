@@ -120,7 +120,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M4_PCS_PlayMessage.gif)            
 
-9. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
+9. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 
 ## Testing
@@ -132,5 +132,5 @@ Your mission is to:
     
     !!! Note
         If you create your own survey, as described in the Optional section of this mission, you might not see the survey responses immediately, as there is a delay in edited surveys.
-        
+
 **Congratulations on completing another mission where we have learnt how Post Call Survey can be implemented.**

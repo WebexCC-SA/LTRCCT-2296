@@ -54,19 +54,25 @@ Flow Templates are designed to empower developers, speed up the development life
     !!! Note
         Remember to take up the offer from Chrome to save your password
 
-2. This is the **Administration interface** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click it
-3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
-4. New Tab will be opened. Navigate to **Flow Templates**
-5. Choose **Simple Inbound Call to Queue** template and click **Next**. You can open View Details and to see observe flow structure and read flow description
+2. This is the **Administration interface** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click on it.
+3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**.
+4. **Create a new flow** tab will be opened. Navigate to **Flow Templates**.
+5. Choose **Simple Inbound Call to Queue** template and click **Next**.
+
+    !!! Note
+        You can press **View Details** link under the temaplte name to observe flow structure and read flow description before proceeding with the template.
+
 6. Name your flow as <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** Then click on **Create Flow**.
 
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
 7. If **Discover New Features** popup window appears in front of flow canvas, set the checkbox **Don't show this again** at the bottom and press **Get Started** button to close it and and go to the flow designer.
-    
+    !!! Note
+        **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On** at the top of the page.
+
     ![profiles](../graphics/Lab1/L1M1_Close_Popup.gif)
 
-8. **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On**. Select **Play Message** node with label **WelcomePrompt** and on the node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
+8. Select **Play Message** node with label **WelcomePrompt** and on the node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
 
 9. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list
     
@@ -80,15 +86,13 @@ Flow Templates are designed to empower developers, speed up the development life
     !!! Note
         You can ignore recommendations but cannot skip errors.
 
-12. Click **Publish** Flow
+12. Click **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
   
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-13. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
-
-14. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-15. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-16. In **Entry Point** settings section change the following, then click **Save** button:
+13. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+14. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+15. In **Entry Point** settings section change the following, then click **Save** button:
 
     > Routing flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     >
@@ -96,8 +100,7 @@ Flow Templates are designed to empower developers, speed up the development life
     >
     > Version label: **Latest**
 
-
-![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
+    ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
 
 --- 
 
@@ -156,7 +159,7 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
     > 
     > Set Value:  **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>
   
-4. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
+4. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
     
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 

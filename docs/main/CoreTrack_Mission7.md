@@ -38,8 +38,13 @@ Your mission is to:
 >
 > Skill Profile is associated with your agent account **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**.
 
-## Build - Section #1
+## Part 1 - Add Skill-Based Queue
+
+### Build
 1. Switch to the Flow Designer. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, make sure **Edit** toggle is **ON**.
+
+    !!! Note
+        If you closed browser tab with Flow Designer before, switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click on it. Then navigate to **Flows**, search for your flow <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and click on it to open it in the flow designer.
 
 2. Click on **Queue** node and select **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue<span class="copy" title="Click to copy!"></span></span>** Then scroll down to the **Skill Requirements** section and configure the following fields in the **Skill Requirement** block:
 
@@ -54,11 +59,9 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M2_Conf_SBR_Q.gif)
 
-3. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
+3. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
---- 
-
-### Checkpoint Test #1
+### Checkpoint Test
 
 !!! Note
     The skill requirement we have set for **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** is applied to every call that lands in that queue.
@@ -69,18 +72,20 @@ Your mission is to:
 2. Make a test call to the Support Number, ensure the call is assigned to your Agent and answer it.
 3. Finish the call.
 
-## "Hello, I need a real expert here!" - Raise skill requirement
+---
+
+## Part 2 - Raise Skill Requirement
 
 !!! Note
     Let's raise skill requirement to see what happens if there are no agents with the appropriate skill level available. 
 
-## Build - Section #2
+### Build
 
 1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there. Then scroll down to the **Skill Requirements** section and raise skill requirement **Webex CC Lab Expert >= 7**:
   
     ![profiles](../graphics/Lab1/L1M2_Raise_Skill_Req.gif)
 
-2. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
+2. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 ### Checkpoint Test #2
 
@@ -93,13 +98,13 @@ Your mission is to:
 3. Make sure the call stays in the queue and not assigned to your agent even though the agent is available.
 4. Finish the call.
 
-## Enhance call handling flexibility by adding Skill Relaxation rule
+## Part 3 - Add Skill Relaxation Rule
 
 !!! Note
     The skill relaxation rule allows for lowering the skill requirements for the call after a certain period of time. This helps to reduce the waiting time for callers by engaging less qualified agents when all more qualified agents are busy.
     Since our current skill requirement is **Webex CC Lab Expert >= 7** and our agent account has skill profiviency **Webex CC Lab Expert = 5**, let's configure the skill relaxation rule to lower the skill requirement to **Webex CC Lab Expert >= 4** after 15 seconds.
 
-### Build - Section #3
+### Build
 
 1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there along with skill requirement **Webex CC Lab Expert >= 7**. Then scroll down to the **Skill Relaxation** section, turn on **Enable Skill Relaxation** toggle and lower skill requirement **Webex CC Lab Expert** by configuring the following fields of **Skill Relaxation Step 1** block:
 
@@ -116,9 +121,9 @@ Your mission is to:
   
     ![profiles](../graphics/Lab1/L1M2_Set_Skill_Relax.gif)
 
-2. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
+2. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
-### Checkpoint Test #3
+### Final mission test
 
 !!! Note
     We have lowered the skill requirement for **Webex CC Lab Expert** from **>= 7** to **>= 4** after 15 seconds in the queue. Since the current skill proficiency of **Webex CC Lab Expert** for your agent is still **5**, the agent does not meet the skill requirement for the call when it lands in the queue and **should not** be selected to answer it. Therefore, the call will remain in the queue. However, after 15 seconds, the skill requirement will be lowered to **Webex CC Lab Expert >= 4**, and the agent should be selected to answer it. 
@@ -130,6 +135,7 @@ Your mission is to:
 4. Answer the call and verify that it works.
 5. Finish the call.
 
+---
 
 ## Post Testing steps
 
@@ -137,7 +143,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M2_Revert_Non_SBR.gif) 
 
-2. Validate the flow by clicking **Validate**, then press **Publish**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish**.
+2. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 3. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state.
 4. Make another test call to the Support Number and confirm that the caller hears the welcome message, and then the call is instantly assigned to your agent after entering the queue.
         
