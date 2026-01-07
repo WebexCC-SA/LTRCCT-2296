@@ -105,10 +105,10 @@ Your mission is to:
 ### Checkpoint Test
 
 !!! Note
-    Since we called the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** with our custom parameters the caller should hear the following:<br/>
-    - Repeated 3 times: 5 seconds of music in queue + our custom message for the subflow ***Thanks for your patience. Please hold on while we find an expert for you.*** + 5 more seconds of music in queue.<br/>
-    - The message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***</br>
-    - Then the subflow should be called again and start playing 5 seconds of music in queue again.</br>
+    Since we called the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** with our custom parameters the caller should hear the following:
+    - Repeated 3 times: 5 seconds of music in queue + our custom message for the subflow ***Thanks for your patience. Please hold on while we find an expert for you.*** + 5 more seconds of music in queue.
+    - The message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***
+    - Then the subflow should be called again and start playing 5 seconds of music in queue again.
     Let's test this.
 
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**.
