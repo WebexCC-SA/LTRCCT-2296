@@ -68,9 +68,8 @@ Your mission is to:
     > - Name: **subDuration**
     > - Variable Type: **Integer**
     > - Default Value: **5**
-    > - Turn on the toggle **Enable External Override**. Make sure **Resource Type** is set as **None (default)**  
-  
-  
+    > - Turn on the toggle **Enable External Override**. Make sure **Resource Type** is set as **None (default)**
+    > <br/><br>
     > - Name: **subMessage**
     > - Variable Type: **String**
     > - Default Value: **Thanks for your patience. Please hold on while we find an expert for you.**
@@ -93,9 +92,7 @@ Your mission is to:
     
     > - Current flow variable: **subDuration**
     > - Subflow Input Variable: **musicDuration**
-
-  <br/><br/>
-
+    > <br/><br/>
     > - Current flow variable: **subMessage**
     > - Subflow Input Variable: **queueMessage**
 
@@ -137,8 +134,9 @@ Your mission is to:
 
 4. Modify these variables in the following way and save changes:
 
-    > Variable **subDuration**: Turn on **Override value** toggle in the **Value** column and set new value as **15**.
-    > Variable **subMessage**: Turn on **Override value** toggle in the **Value** column and set new value as ***Thanks for staying with us. Your call will be answered by the next available agent.***.
+    > - Variable **subDuration**: Turn on **Override value** toggle in the **Value** column and set new value as **15**.
+    > <br/><br/>
+    > - Variable **subMessage**: Turn on **Override value** toggle in the **Value** column and set new value as ***Thanks for staying with us. Your call will be answered by the next available agent.***.
 
     !!! Note
         Please keep in mind that there is **no need to validate and publish your flow** one more time after you have overridden flow variables at the channel level.
