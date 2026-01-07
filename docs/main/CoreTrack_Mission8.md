@@ -70,6 +70,7 @@ Your mission is to:
     > - Default Value: **5**
     > - Turn on the toggle **Enable External Override**. Make sure **Resource Type** is set as **None (default)**
     >
+    >
     > - Name: **subMessage**
     > - Variable Type: **String**
     > - Default Value: **Thanks for your patience. Please hold on while we find an expert for you.**
@@ -92,7 +93,7 @@ Your mission is to:
     
     > - Current flow variable: **subDuration**
     > - Subflow Input Variable: **musicDuration**
-    >
+    
     > - Current flow variable: **subMessage**
     > - Subflow Input Variable: **queueMessage**
 
@@ -106,15 +107,18 @@ Your mission is to:
 
 !!! Note
     Since we called the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** with our custom parameters the caller should hear the following:
+
     - Repeated 3 times: 5 seconds of music in queue + our custom message for the subflow ***Thanks for your patience. Please hold on while we find an expert for you.*** + 5 more seconds of music in queue.
+
     - The message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***
+
     - Then the subflow should be called again and start playing 5 seconds of music in queue again.
+
     Let's test this.
 
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**.
-2. <span style="color: red;">Please pay your attention that the agent does not need to take call during this mission. Thus select any Idle state code in the agent desktop before making test calls. For example, **Busy**.</span>
-3. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
-4. Finish the call.
+1. <span style="color: red;">Please keep in mind that the agent does not need to take call during this mission. Thus if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.</span>
+2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
+3. Finish the call.
 
 ---
 
@@ -150,9 +154,8 @@ Your mission is to:
     
     Let's test this.
 
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**.
-2. <span style="color: red;">Please pay your attention that the agent does not need to take call during this mission. Thus select any Idle state code in the agent desktop before making test calls. For example, **Busy**.</span>
-3. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
-4. Finish the call.
+<span style="color: red;">1. Please keep in mind that the agent does not need to take call during this mission. Thus if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.</span>
+2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
+3. Finish the call.
 
 **Congratulations on completing another mission where we have learnt how Post Call Survey can be implemented.**
