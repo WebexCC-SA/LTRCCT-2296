@@ -92,7 +92,7 @@ Your mission is to:
     
     > - Current flow variable: **subDuration**
     > - Subflow Input Variable: **musicDuration**
-    <br/>
+    <br/><br/>
     > - Current flow variable: **subMessage**
     > - Subflow Input Variable: **queueMessage**
 
