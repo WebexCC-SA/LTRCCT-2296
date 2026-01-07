@@ -69,7 +69,8 @@ Your mission is to:
     > - Variable Type: **Integer**
     > - Default Value: **5**
     > - Turn on the toggle **Enable External Override**. Make sure **Resource Type** is set as **None (default)**
-    > <br/><br/>
+
+
     > - Name: **subMessage**
     > - Variable Type: **String**
     > - Default Value: **Thanks for your patience. Please hold on while we find an expert for you.**
@@ -92,7 +93,9 @@ Your mission is to:
     
     > - Current flow variable: **subDuration**
     > - Subflow Input Variable: **musicDuration**
-    <br/><br/>
+
+<br/><br/>
+
     > - Current flow variable: **subMessage**
     > - Subflow Input Variable: **queueMessage**
 
