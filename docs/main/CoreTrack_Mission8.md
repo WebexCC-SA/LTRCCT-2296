@@ -139,13 +139,16 @@ Your mission is to:
 
 ### Checkpoint Test
 
-**<details><summary>Note<span style="color: orange;">[Optional]</span></summary>**
-Since we have overridden **subDuration** and **subMessage** variables at the channel level the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** is now being called with these new values. Thus the caller should hear updated logic:</br>
-- Repeated 3 times: 10 seconds of music in queue + our overrided custom message for the subflow ***Thanks for staying with us. Your call will be answered by the next available agent.*** + 10 more seconds of music in queue.</br>
-- The same message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***</br>
-- Then the subflow should be called again and start playing 10 seconds of music in queue again.</br>
-Let's test this.
-</details>
+!!! Note
+    Since we have overridden **subDuration** and **subMessage** variables at the channel level the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** is now being called with these new values. Thus the caller should hear updated logic:
+    
+    - Repeated 3 times: 10 seconds of music in queue + our overrided custom message for the subflow ***Thanks for staying with us. Your call will be answered by the next available agent.*** + 10 more seconds of music in queue.
+    
+    - The same message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***
+
+    - Then the subflow should be called again and start playing 10 seconds of music in queue again.
+    
+    Let's test this.
 
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**.
 2. <span style="color: red;">Please pay your attention that the agent does not need to take call during this mission. Thus select any Idle state code in the agent desktop before making test calls. For example, **Busy**.</span>
