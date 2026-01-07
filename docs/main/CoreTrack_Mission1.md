@@ -90,7 +90,7 @@ Flow Templates are designed to empower developers, speed up the development life
   
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-13. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)** - Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+13. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
 14. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
 15. In **Entry Point** settings section change the following, then click **Save** button:
 

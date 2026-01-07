@@ -16,9 +16,9 @@ In the scope of this misson you will use subflow template to automate queue trea
 2. The flow executes the logic and places the call into a queue.</br>
 3. Once the call is placed in the queue, the main flow calls subflow sending few parameters to it.
 4. The subflow executes the following logic **three times** based on the received parameters:
-   - Plays a music in queue. The duration is defined by the parameter.</br>
-   - Plays a Text-To-Speech message. The text is fetched from the parameter.</br>
-   - Plays a music in queue of the same duration again.</br>
+   > - Plays a music in queue. The duration is defined by the parameter.</br>
+   > - Plays a Text-To-Speech message. The text is fetched from the parameter.</br>
+   > - Plays a music in queue of the same duration again.</br>
 
 ## Mission Details
 
@@ -69,7 +69,7 @@ Your mission is to:
     > - Variable Type: **Integer**
     > - Default Value: **5**
     > - Turn on the toggle **Enable External Override**. Make sure **Resource Type** is set as **None (default)**
-
+    >
     > - Name: **subMessage**
     > - Variable Type: **String**
     > - Default Value: **Thanks for your patience. Please hold on while we find an expert for you.**
@@ -92,22 +92,23 @@ Your mission is to:
     
     > - Current flow variable: **subDuration**
     > - Subflow Input Variable: **musicDuration**
-
+    >
     > - Current flow variable: **subMessage**
     > - Subflow Input Variable: **queueMessage**
 
 14. Click on the **PlayMessage** node. Go to the node settings pane on the right and paste the following message into the **Text-to-Speech Message** field:
-    > **We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.**
+    
+    > ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***<span class="copy-static" title="Click to copy!"data-copy-text="We apologize, but all our agents are currently busy. Your waiting time may be longer than expected."><span class="copy"></span></span>
 
 15. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 ### Checkpoint Test
 
 !!! Note
-    Since we called the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** with our custom parameters the caller should hear the following:
-    - Repeated 3 times: 5 seconds of music in queue + our custom message for the subflow **Thanks for your patience. Please hold on while we find an expert for you.** + 5 more seconds of music in queue.
-    - The message in the main flow: **We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.**
-    - Then the subflow should be called again and start playing 5 seconds of music in queue again.
+    Since we called the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** with our custom parameters the caller should hear the following:</br>
+    - Repeated 3 times: 5 seconds of music in queue + our custom message for the subflow ***Thanks for your patience. Please hold on while we find an expert for you.*** + 5 more seconds of music in queue.</br>
+    - The message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***</br>
+    - Then the subflow should be called again and start playing 5 seconds of music in queue again.</br>
     Let's test this.
 
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**.
@@ -115,17 +116,34 @@ Your mission is to:
 3. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
 4. Finish the call.
 
+---
+
 ## Part 2 - Override flow variables at the channel level
 
 ### Build
 
+1. Switch back to **Contact Center** settings on [Webex Control Hub](https://admin.webex.com){:target="_blank"}.
+2. Navigate to **Channels** in the left pane. Search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and click on it.
+3. Scroll down to the **Entry point settings** section and look at **Override flow settings** part of it. You should see two variables there:
+
+    > - **subDuration**
+    > - **subMessage**
+
+4. Modify these variables in the following way and save changes:
+
+    > Variable **subDuration**: Turn on **Override value** toggle in the **Value** column and set new value as **15**.
+    > Variable **subMessage**: Turn on **Override value** toggle in the **Value** column and set new value as ***Thanks for staying with us. Your call will be answered by the next available agent.***.
+
+    !!! Note
+        Please keep in mind that there is **no need to validate and publish your flow** one more time after you have overridden flow variables at the channel level.
+
 ### Checkpoint Test
 
 !!! Note
-    Since we overrided **subDuration** and **subMessage** message at the channel level the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** is now called with our new custom parameters. Thus the caller should hear updated logic:
-    - Repeated 3 times: 10 seconds of music in queue + our overrided custom message for the subflow **Thanks for your patience. Please hold on while we find an expert for you.** + 10 more seconds of music in queue.
-    - The same message in the main flow: **We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.**
-    - Then the subflow should be called again and start playing 10 seconds of music in queue again.
+    Since we have overridden **subDuration** and **subMessage** variables at the channel level the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** is now being called with these new values. Thus the caller should hear updated logic:</br>
+    - Repeated 3 times: 10 seconds of music in queue + our overrided custom message for the subflow ***Thanks for staying with us. Your call will be answered by the next available agent.*** + 10 more seconds of music in queue.</br>
+    - The same message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***</br>
+    - Then the subflow should be called again and start playing 10 seconds of music in queue again.</br>
     Let's test this.
 
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**.
