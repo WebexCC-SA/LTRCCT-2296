@@ -248,9 +248,11 @@ We will retrieve information about your newly created address book using a GET A
 1. Switch to **Developer Portal** then locate and select **Data** then select **Search** from **API REFERENCE** menu
 
 2. Click on **Search tasks** and then switch to **Try Out** tab
+
+3. Make sure **Authorization** toggle to *Use personal access token* is **ON**
   ![profiles](../graphics/Lab2/DevPortal_SearchAPI1.gif)
 
-3. Click on **Maximize Screen**, clear the text from **GraphQL** query window. Then paste the following query. 
+4. Click on **Maximize Screen**, clear the text from **GraphQL** query window. Then paste the following query. 
 
 
     > Request Body:
@@ -259,13 +261,13 @@ We will retrieve information about your newly created address book using a GET A
       #Global CAD Variables: Usage of taskDetails Object to retrieve the Value of Global Variables
       taskDetails(
         # NOTE: from and to are mandatory arguments that take the Epoch timestamp in milliseconds
-        from: 1770624000000 #This can be set to Date.now() - (days * 24 * 60 * 60 * 1000) for lookback in days
-        to: 1771012800000 #This can be set to Date.now() in millis
+        from: 1767864600000 #This can be set to Date.now() - (days * 24 * 60 * 60 * 1000) for lookback in days
+        to: 1767868200000 #This can be set to Date.now() in millis
         filter: {
           #Filter the type of Task
           and: [
             { channelType: { equals: telephony } } #Telephony calls only
-            { origin: { equals: "+19302017961" } } #Customer ANI
+            { origin: { equals: "+31204854646" } } #Customer ANI
             { status: { equals: "ended" } } #Final Disposition
             { direction: { equals: "inbound" } } #Inbound call only
             { isActive: { equals: false } } #Resolved call only
@@ -297,11 +299,11 @@ We will retrieve information about your newly created address book using a GET A
     !!! Note
         Current query is configured to search calls with following details from Analyzer database:
 
-        1. Time range: From **Monday, February 9, 2026 8:00:00 AM** to **Friday, February 13, 2026 8:00:00 PM**.
+        1. Time range set to 1 hour: From **Thursday, January 8, 2026 10:30:00 AM** to **11:30:00 AM**.
 
         2. Telephony inbound calls only.
 
-        3. Calls only from **+19302017961**.
+        3. Calls only from **+31204854646**.
 
         4. Ended calls only.
 
@@ -311,27 +313,27 @@ We will retrieve information about your newly created address book using a GET A
     > Example of the expected response: **200 Response**
     ``` JSON
     {
-      "data": {
-        "taskDetails": {
-          "tasks": [
-            {
-              "id": "d1364618-49a4-41f5-8b5f-a8da4d12e56c",
-              "status": "ended",
-              "totalDuration": 35562,
-              "origin": "+14694097607",
-              "destination": "+14694096861",
-              "lastAgent": {
-                "id": "b9b45479-756f-4c55-8663-8ae7800a9a18",
-                "name": "Agent140 Lab"
-              },
-              "stringGlobalVariables": {
-                "name": "Global_Language",
-                "value": "en-AU"
-              }
+        "data": {
+            "taskDetails": {
+                "tasks": [
+                    {
+                        "id": "34e12bbc-4888-474e-b6c8-b0afbe8d442f",
+                        "status": "ended",
+                        "totalDuration": 209402,
+                        "origin": "+31204854646",
+                        "destination": "+441256231731",
+                        "lastAgent": {
+                            "id": "b9b45479-756f-4c55-8663-8ae7800a9a18",
+                            "name": "Agent140 Lab"
+                        },
+                        "stringGlobalVariables": {
+                            "name": "Global_Language",
+                            "value": "en-AU"
+                        }
+                    }
+                ]
             }
-          ]
         }
-      }
     }
     ```
    
@@ -355,15 +357,15 @@ We will retrieve information about your newly created address book using a GET A
     ![profiles](../graphics/Lab2/DevPortal_SearchAPI2.gif)
 
 
-4. Open JSON Path tool [https://jsonpath.com/](https://jsonpath.com/){:target="\_blank"} to test your **GraphQL** response. Clear the content from **Document** section and from **JSONPath Query** adress line.
+5. Open JSON Path tool [https://jsonpath.com/](https://jsonpath.com/){:target="\_blank"} to test your **GraphQL** response. Clear the content from **Document** section and from **JSONPath Query** adress line.
 
-5. Switch to **Developer Portal** and copy the response 
+6. Switch to **Developer Portal** and copy the response 
 
-6. Switch back to JSON Path tool and paste the response into the **Document** section.
+7. Switch back to JSON Path tool and paste the response into the **Document** section.
   ![profiles](../graphics/Lab2/DevPortal_SearchAPI3.gif)
 
 
-7. Test the following paths by pasting them into **JSONPath Query** adress line one by one:
+8. Test the following paths by pasting them into **JSONPath Query** adress line one by one:
 
     >
     > `$.data.taskDetails.tasks[0].id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].id"><span class="copy" title="Click to copy!"></span></span> - Interaction ID of the call.
@@ -378,7 +380,7 @@ We will retrieve information about your newly created address book using a GET A
     > 
     > `$.data.taskDetails.tasks[0].lastAgent.name`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].lastAgent.name"><span class="copy" title="Click to copy!"></span></span> - Agent name who accepted the call.
     > 
-    > `$.data.taskDetails.tasks[0].stringGlobalVariables.Global_Language`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].stringGlobalVariables.Global_Language"><span     class="copy" title="Click to copy!"></span></span> - Language Global Variable that was used in the flow.
+    > `$.data.taskDetails.tasks[0].stringGlobalVariables.name`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].stringGlobalVariables.name"><span     class="copy" title="Click to copy!"></span></span> - Language Global Variable that was used in the flow.
     > 
     > `$.data.taskDetails.tasks[0].stringGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].stringGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span> - Language selected by a caller.
     > 

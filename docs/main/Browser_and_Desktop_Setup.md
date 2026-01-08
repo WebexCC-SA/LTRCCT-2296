@@ -9,7 +9,7 @@ Since we will be using the same Chrome browser for different roles we will use t
 </br>
 </br>
 
-We will create the user profiles below - Admin, Agent
+We will create the user profiles below - Admin, Agent.
 
 
 ![profiles](../graphics/overview/17.png)
