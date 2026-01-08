@@ -94,11 +94,11 @@ Flow Templates are designed to empower developers, speed up the development life
 14. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
 15. In **Entry Point** settings section change the following, then click **Save** button:
 
-    > Routing flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+    > - Routing flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     >
-    > Music on hold: **defaultmusic_on_hold.wav**
+    > - Music on hold: **defaultmusic_on_hold.wav**
     >
-    > Version label: **Latest**
+    > - Version label: **Latest**
 
     ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
 
@@ -150,9 +150,13 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 3. Add a **Set Variable** with following configuration:
   
     > - Delete connection between **NewPhoneContact** and **WelcomePrompt**
+    >
     > - Connect **NewPhoneContact** to **Set Variable**
+    >
     > - Connect **Set Variable** to **WelcomePrompt**
+    >
     > - Variable: **Global_Language**<span class="copy-static" data-copy-text="Global_Language"><span class="copy" title="Click to copy!"></span></span>
+    >
     > - Set Value:  **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>
   
 4. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
