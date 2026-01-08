@@ -32,11 +32,9 @@ Your mission is to:
 
 ### Pre-configured entities      
      
-> Skill Definition: **Webex CC Lab Expert** 
->
-> Skill Profile: **Webex CC Lab Skill Profile** with **Webex CC Lab Expert** skill set as 5.
->
-> Skill Profile is associated with your agent account **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**.
+- Skill Definition: **Webex CC Lab Expert**.
+- Skill Profile: **Webex CC Lab Skill Profile** with **Webex CC Lab Expert** skill set as 5.
+- Skill Profile is associated with your agent account **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com**.
 
 ## Part 1 - Add Skill-Based Queue
 
@@ -48,14 +46,17 @@ Your mission is to:
 
 2. Click on **Queue** node and select **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue<span class="copy" title="Click to copy!"></span></span>** Then scroll down to the **Skill Requirements** section and configure the following fields in the **Skill Requirement** block:
 
-    > Select the skill name: **Static**
-    > Skill (drop-down list): **Webex CC Lab Expert**
+    > - Select the skill name: **Static**
     >
-    > Select the condition: **Static**
-    > Condition (drop-down list): **>=**
+    > - Skill (drop-down list): **Webex CC Lab Expert**
+    > <br/><br/>
+    > - Select the condition: **Static**
     >
-    > Select the value: **Static**
-    > Value (drop-down list): **3**
+    > - Condition (drop-down list): **>=**
+    > <br/><br/>
+    > - Select the value: **Static**
+    >
+    > - Value (drop-down list): **3**
 
     ![profiles](../graphics/Lab1/L1M2_Conf_SBR_Q.gif)
 
@@ -65,7 +66,9 @@ Your mission is to:
 
 !!! Note
     The skill requirement we have set for **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** is applied to every call that lands in that queue.
+
     Since we set the requirement **Webex CC Lab Expert >= 3** and the current value of **Webex CC Lab Expert** skill configured under the skill profile **Webex CC Lab Skill Profile** assigned to your agent account is **5**, the agent meets skill requirement for the call and should be selected to take it.
+
     Let's test this.
 
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
@@ -91,6 +94,7 @@ Your mission is to:
 
 !!! Note
     Since we have raised the requirement **Webex CC Lab Expert >= 7** and the current value of **Webex CC Lab Expert** skill for your agent is still **5**, the agent no longer meets the skill requirement for the call and **should not** be selected to pick it up.
+
     Let's test this.
 
 1. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state. 
@@ -102,6 +106,7 @@ Your mission is to:
 
 !!! Note
     The skill relaxation rule allows for lowering the skill requirements for the call after a certain period of time. This helps to reduce the waiting time for callers by engaging less qualified agents when all more qualified agents are busy.
+
     Since our current skill requirement is **Webex CC Lab Expert >= 7** and our agent account has skill profiviency **Webex CC Lab Expert = 5**, let's configure the skill relaxation rule to lower the skill requirement to **Webex CC Lab Expert >= 4** after 15 seconds.
 
 ### Build
@@ -109,15 +114,15 @@ Your mission is to:
 1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there along with skill requirement **Webex CC Lab Expert >= 7**. Then scroll down to the **Skill Relaxation** section, turn on **Enable Skill Relaxation** toggle and lower skill requirement **Webex CC Lab Expert** by configuring the following fields of **Skill Relaxation Step 1** block:
 
     > After waiting in queue for: 15 seconds
-    >
-    > Select the skill name: **Static**
-    > Skill (drop-down list): **Webex CC Lab Expert**
-    >
-    > Select the condition: **Static**
-    > Condition (drop-down list): **>=**
-    >
-    > Select the value: **Static**
-    > Value (drop-down list): **4**
+    > <br/><br/>
+    > - Select the skill name: **Static**
+    > - Skill (drop-down list): **Webex CC Lab Expert**
+    > <br/><br/>
+    > - Select the condition: **Static**
+    > - Condition (drop-down list): **>=**
+    > <br/><br/>
+    > - Select the value: **Static**
+    > - Value (drop-down list): **4**
   
     ![profiles](../graphics/Lab1/L1M2_Set_Skill_Relax.gif)
 
@@ -126,7 +131,8 @@ Your mission is to:
 ### Final mission test
 
 !!! Note
-    We have lowered the skill requirement for **Webex CC Lab Expert** from **>= 7** to **>= 4** after 15 seconds in the queue. Since the current skill proficiency of **Webex CC Lab Expert** for your agent is still **5**, the agent does not meet the skill requirement for the call when it lands in the queue and **should not** be selected to answer it. Therefore, the call will remain in the queue. However, after 15 seconds, the skill requirement will be lowered to **Webex CC Lab Expert >= 4**, and the agent should be selected to answer it. 
+    We have lowered the skill requirement for **Webex CC Lab Expert** from **>= 7** to **>= 4** after 15 seconds in the queue. Since the current skill proficiency of **Webex CC Lab Expert** for your agent is still **5**, the agent does not meet the skill requirement for the call when it lands in the queue and **should not** be selected to answer it. Therefore, the call will remain in the queue. However, after 15 seconds, the skill requirement will be lowered to **Webex CC Lab Expert >= 4**, and the agent should be selected to answer it.
+
     Let's test this.
 
 1. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state. 
@@ -147,4 +153,4 @@ Your mission is to:
 3. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state.
 4. Make another test call to the Support Number and confirm that the caller hears the welcome message, and then the call is instantly assigned to your agent after entering the queue.
         
-**Congratulations on completing another mission where we have learnt how Post Call Survey can be implemented.**
+**Congratulations on completing another mission where we have learnt how Skill-Based Routing can be implemented.**
