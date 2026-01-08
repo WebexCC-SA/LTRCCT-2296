@@ -8,6 +8,7 @@ icon: material/medal
 ## Story
 
 Skill-Based Routing (SBR) intelligently matches customer contacts with agents who have the specific expertise needed (e.g., language, product knowledge, service level), using configurable skill requirements and relaxation rules to ensure the best fit, which improves resolution and satisfaction by avoiding simple "first-available" routing.
+
 This mission focuses on enhancing customer satisfaction by enabling Skill-Based Routing in Webex Contact Center call flow to direct the call to the qualified agent. At the same time, we will look into the effectiveness of skill relaxation rules to reduce the waiting time for callers if all more qualified agents are busy.
 
 ## Call Flow Overview
@@ -113,15 +114,18 @@ Your mission is to:
 
 1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there along with skill requirement **Webex CC Lab Expert >= 7**. Then scroll down to the **Skill Relaxation** section, turn on **Enable Skill Relaxation** toggle and lower skill requirement **Webex CC Lab Expert** by configuring the following fields of **Skill Relaxation Step 1** block:
 
-    > After waiting in queue for: 15 seconds
+    > - After waiting in queue for: 15 seconds
     > <br/><br/>
     > - Select the skill name: **Static**
+    >
     > - Skill (drop-down list): **Webex CC Lab Expert**
     > <br/><br/>
     > - Select the condition: **Static**
+    >
     > - Condition (drop-down list): **>=**
     > <br/><br/>
     > - Select the value: **Static**
+    >
     > - Value (drop-down list): **4**
   
     ![profiles](../graphics/Lab1/L1M2_Set_Skill_Relax.gif)
@@ -131,7 +135,9 @@ Your mission is to:
 ### Final mission test
 
 !!! Note
-    We have lowered the skill requirement for **Webex CC Lab Expert** from **>= 7** to **>= 4** after 15 seconds in the queue. Since the current skill proficiency of **Webex CC Lab Expert** for your agent is still **5**, the agent does not meet the skill requirement for the call when it lands in the queue and **should not** be selected to answer it. Therefore, the call will remain in the queue. However, after 15 seconds, the skill requirement will be lowered to **Webex CC Lab Expert >= 4**, and the agent should be selected to answer it.
+    We have lowered the skill requirement for **Webex CC Lab Expert** from **>= 7** to **>= 4** after 15 seconds in the queue.
+    
+    Since the current skill proficiency of **Webex CC Lab Expert** for your agent is still **5**, the agent does not meet the skill requirement for the call when it lands in the queue and **should not** be selected to answer it. Therefore, the call will remain in the queue. However, after 15 seconds, the skill requirement will be lowered to **Webex CC Lab Expert >= 4**, and the agent should be selected to answer it.
 
     Let's test this.
 
