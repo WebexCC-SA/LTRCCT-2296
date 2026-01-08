@@ -110,7 +110,7 @@ nav:
             - "Mission 4: Work with Event Flow": ./main/CoreTrack_Mission4.md
             - "Mission 5: Post Call Survey": ./main/CoreTrack_Mission5.md
             - "Mission 6: Subflow and Variable Override": ./main/CoreTrack_Mission8.md
-##            - "Mission 7: Using Flow Designer Tools": ./main/CoreTrack_Mission6.md
+            - "Mission 7: Using Flow Designer Tools": ./main/CoreTrack_Mission6.md
       - Conclusion: ./main/CoreTrack_Conclusion.md
   - API TRACK:
       - Lab Guide:
