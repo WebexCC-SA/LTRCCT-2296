@@ -83,7 +83,7 @@ Flow Analytics feature is designed to provide flow developer, administrators and
     
     - Execution paths and their frequency
     
-    - Avarage flow duraion
+    - Average flow duraion
     
     - Average activities per contact
     
