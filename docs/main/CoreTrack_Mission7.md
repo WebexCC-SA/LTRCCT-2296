@@ -16,9 +16,9 @@ This mission focuses on enhancing customer satisfaction by enabling Skill-Based 
 1. A new call enters the flow. </br>
 2. The flow executes the logic and places the call into a skill-based queue, applying the skill requirements and relaxation rules defined for the queue.</br>
 3. Once the call is placed in the queue, the following logic applies:
-   - If there is an available agent with matching skills, the call is routed to that person.</br>
-   - If there are no available agents with matching skills, the call waits in the queue until the skill-relaxation rule is applied.</br>
-   - If the skill-relaxation rule is applied, it lowers the skill requirements for the call, and Webex Contact Center starts looking for an agent using the updated requirements.</br>
+       - If there is an available agent with matching skills, the call is routed to that person.</br>
+       - If there are no available agents with matching skills, the call waits in the queue until the skill-relaxation rule is applied.</br>
+       - If the skill-relaxation rule is applied, it lowers the skill requirements for the call, and Webex Contact Center starts looking for an agent using the updated requirements.</br>
 
 ## Mission Details
 

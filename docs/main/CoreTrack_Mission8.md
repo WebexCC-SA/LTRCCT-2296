@@ -145,10 +145,12 @@ Your mission is to:
 4. Modify these variables in the following way and save changes.
 
     > Variable **subflowDuration**:
+    > <br/>
     > - Turn on **Override value** toggle in the **Value** column.
     > - Set new value as **10**.
     > <br/><br/>
     > Variable **subflowMessage**:
+    > <br/>
     > - Turn on **Override value** toggle in the **Value** column.
     > - Set new value as ***Thanks for staying with us. Your call will be answered by the next available agent.***.
 
