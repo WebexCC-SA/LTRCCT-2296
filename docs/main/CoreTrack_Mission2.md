@@ -48,11 +48,11 @@ Your mission is to:
 
 4. Connect **Set Variable** node to **Business Hours** and **Business Hours** node exits as follow:
 
-    > - **Working Hours** connect to **WelcomePrompt** node
+    > - **Working Hours** connect to **WelcomePrompt** node.
     >
     > - **Holidays**, **Overrides** and **Default** connect to new added **Play Message** node.
     >
-    > - New added **Play Message** connect to **Disconnect** contact
+    > - New added **Play Message** connect to **Disconnect** contact.
 
     ![profiles](../graphics/Lab1/10-BH_node_connection.gif)
 
@@ -60,13 +60,13 @@ Your mission is to:
 
 6. Configure **Play Message** node as follows:
 
-    > Enable Text-To-Speech
+    > - Enable Text-To-Speech
     >
-    > Select the Connector: Cisco Cloud Text-to-Speech
+    > - Select the Connector: Cisco Cloud Text-to-Speech
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***<span class="copy-static" title="Click to copy!"data-copy-text="It's not working hours currently. Please call later. Goodbye."><span class="copy"></span></span>
+    > - Click the Add Text-to-Speech Message button and paste text: ***It's not working hours currently. Please call later. Goodbye.***<span class="copy-static" title="Click to copy!"data-copy-text="It's not working hours currently. Please call later. Goodbye."><span class="copy"></span></span>
     >
-    > Delete the Selection for Audio File
+    > - Delete the Selection for Audio File
 
 7. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
      

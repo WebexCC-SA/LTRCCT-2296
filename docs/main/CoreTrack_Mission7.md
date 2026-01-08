@@ -114,7 +114,7 @@ Your mission is to:
 
 1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there along with skill requirement **Webex CC Lab Expert >= 7**. Then scroll down to the **Skill Relaxation** section, turn on **Enable Skill Relaxation** toggle and lower skill requirement **Webex CC Lab Expert** by configuring the following fields of **Skill Relaxation Step 1** block:
 
-    > - After waiting in queue for: 15 seconds
+    > - After waiting in queue for: **15** seconds
     > <br/><br/>
     > - Select the skill name: **Static**
     >

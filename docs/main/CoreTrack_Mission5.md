@@ -48,10 +48,8 @@ Your mission is to:
 
 ### Pre-configured entities      
      
-> Survey: **Webex CC 2025**
->
-> System defined GlobalVariable: **Global_FeedbackSurveyOptIn**. 
->
+- Survey: **Webex CC 2025**
+- System defined GlobalVariable: **Global_FeedbackSurveyOptIn**
 
 <span style="color: orange;">[Optional]</span>
     In case you don't want to use pre-configured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to **Build** section below

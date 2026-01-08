@@ -49,22 +49,19 @@ Event flows enable a wide range of scenarios, with one common use case being the
 
 5. Add **HTTPRequest** and **DisconnectContact** node in between these nodes.
       
-    > 
-    > Connect **AgentDisconnect** to **HTTPRequest** node
+    > - Connect **AgentDisconnect** to **HTTPRequest** node.
     >
-    > Connect **HTTPRequest** to **DisconnectContact**
-    > 
+    > - Connect **HTTPRequest** to **DisconnectContact**.
 
 6. Modify **HTTPRequest** node settings:
     
+    > - Use Authenticated Endpoint: **Off**
     >
-    > Use Authenticated Endpoint: **Off**
+    > - Request URL: *<span style="color: red;">Paste your unique URL copied on Step 3 from https://webhook-test.com/</span>*
     >
-    > Request URL: *<span style="color: red;">Paste your unique URL copied on Step 3 from https://webhook-test.com/</span>*.
+    > - Method: **POST**
     >
-    > Method: **POST**
-    >
-    > Content Type: **Application/JSON**
+    > - Content Type: **Application/JSON**
     >
     > Request Body:  
     ```JSON
@@ -84,11 +81,11 @@ Event flows enable a wide range of scenarios, with one common use case being the
     
 7. Modify the settings of **ScreenPop** node connected to the **AgentAnswered** event in the same flow:
 
-    > Screen Pop URL: **[https://www.webex.com/us/en/products/customer-experience/contact-center.html](https://www.webex.com/us/en/products/customer-experience/contact-center.html){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.webex.com/us/en/products/customer-experience/contact-center.html"><span class="copy"></span></span>
+    > - Screen Pop URL: **[https://www.webex.com/us/en/products/customer-experience/contact-center.html](https://www.webex.com/us/en/products/customer-experience/contact-center.html){:target="_blank"}**<span class="copy-static" title="Click to copy!" data-copy-text="https://www.webex.com/us/en/products/customer-experience/contact-center.html"><span class="copy"></span></span>
     >
-    > Screen Pop Desktop Label: **Webex Contact Center**<span class="copy-static" title="Click to copy!" data-copy-text="Webex Contact Center"><span class="copy"></span></span>
+    > - Screen Pop Desktop Label: **Webex Contact Center**<span class="copy-static" title="Click to copy!" data-copy-text="Webex Contact Center"><span class="copy"></span></span>
     >
-    > Display Settings: **New browser tab**
+    > - Display Settings: **New browser tab**
   
     ![profiles](../graphics/Lab1/L1M3_ScreenPop.gif)
     
