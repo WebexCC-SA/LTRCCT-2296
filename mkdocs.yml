@@ -128,6 +128,7 @@ nav:
             - "Mission 2: Adding Call-back functionality to your flow": ./main/CallbackTrack_Mission2.md ## Same as CoreTrack Mission3
             - "Mission 3: CallBack on Global Error": ./main/CallbackTrack_Mission3.md
             - "Mission 4: Preventing Callback duplication": ./main/CallbackTrack_Mission4.md
+            - "Mission 5: Adding Scheduled IVR Callback": ./main/CallbackTrack_Mission5.md
       - Conclusion: ./main/CallbackTrack_Conclusion.md
 ##  - AI ASSISTANT TRACK:
 ##      - Lab Guide:
