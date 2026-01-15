@@ -128,6 +128,7 @@ nav:
             - "Mission 2: Adding Call-back functionality to your flow": ./main/CallbackTrack_Mission2.md ## Same as CoreTrack Mission3
             - "Mission 3: CallBack on Global Error": ./main/CallbackTrack_Mission3.md
             - "Mission 4: Preventing Callback duplication": ./main/CallbackTrack_Mission4.md
+            - "Mission 5: Adding Scheduled IVR Callback": ./main/CallbackTrack_Mission5.md
       - Conclusion: ./main/CallbackTrack_Conclusion.md
 ##  - AI ASSISTANT TRACK:
 ##      - Lab Guide:
@@ -139,12 +140,12 @@ nav:
 ##            - "Mission 6: Auto CSAT": ./main/AI_Assistant_AutoCSAT.md
 ##            - "Mission 7: Topic Analytics": ./main/AI_Assistant_Topic_Analytics.md
 ##      - Conclusion: ./main/AIAgentTrack_Conclusion.md
-##  - AI AGENT TRACK:
-##      - Lab Guide:
-##            - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
-##            - "Mission 2: AI in Action (Scripted Agent)": ./main/AIAgentTrack_Mission2.md
-##            - "Mission 3: Seamless AI to Human Agent Handoffs": ./main/AIAgentTrack_Mission3.md
-##      - Conclusion: ./main/AIAgentTrack_Conclusion.md
+  - AI AGENT TRACK:
+      - Lab Guide:
+            - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
+            - "Mission 2: AI in Action (Scripted Agent)": ./main/AIAgentTrack_Mission2.md
+            - "Mission 3: Seamless AI to Human Agent Handoffs": ./main/AIAgentTrack_Mission3.md
+      - Conclusion: ./main/AIAgentTrack_Conclusion.md
   - FINAL CHALLENGE:
       - Troubleshooting Mission:
             - "Final Challenge: Production flow is failing!": ./main/FinalBossFight_Mission.md
