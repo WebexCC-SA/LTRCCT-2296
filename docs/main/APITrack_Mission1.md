@@ -9,7 +9,7 @@ icon: material/medal
 
 ## Story
 
-Consider a scenario where a supervisor needs ability to change routing decision during an emergency without accessing admin portal. It can be done by changing the **Default Value** of GlobalVariable via API PUT call from False to True and use Condition in main IVR script to do routing decision. 
+Consider a scenario where a supervisor needs ability to change routing decision during an emergency without accessing admin portal. It can be done by changing the **Default Value** of a Global Variable via API PUT call from False to True and use Condition in main IVR script to do routing decision. 
 In this mission we are going to create a control script for Supervisors that changes default value of Global Variable from **True** to **False** 
 
 
@@ -30,7 +30,7 @@ Your mission is to:
 ## Build
 
 
-1. In Control Hub Flows page open **Global Variables** tab and create new Global Variable:
+1. In Control Hub **Flows** page open **Global Variables** tab at the top and create new Global Variable:
 
     >
     > Name: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
@@ -39,7 +39,7 @@ Your mission is to:
     >
     > Default Value: **False**
     > 
-    > Copy your new created **Global Variable** **ID** and save to a notepad. We are going to use them in API request in further steps.
+    > <span style="color: orange;">[Important]</span> Copy your new created **Global Variable** **ID** and save to a notepad. We are going to use them in API request in further steps.
     >
 
     ![Profiles](../graphics/Lab2/BM1-1-GV_Creation.gif)
@@ -54,7 +54,7 @@ Your mission is to:
     >
     > Connect the **New Phone Contact** output node edge to this **Collect Digits** node
     >
-    > Loop **No-Input Timeout** and **Unmatched Entry** to itself
+    > Loop **No-Input Timeout** and **Unmatched Entry** to the input of the **Collect Digits** node
     >
     > Enable Text-To-Speech
     >
@@ -62,9 +62,9 @@ Your mission is to:
     >
     > Click the **Add Text-to-Speech Message** button
     >
-    > Delete the Selection for Audio File
-    >
     > Text-to-Speech Message: ***Please enter 4 digits pin code to activate emergency flow.***<span class="copy-static" data-copy-text="Please enter 4 digits pin code to activate emergency flow."><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Delete the **Audio File** element above **Text-to-Speech Message** field
     >
     > Set checkbox in **Make Prompt Interruptible**
     >
@@ -94,7 +94,7 @@ Your mission is to:
         
     ![Profiles](../graphics/Lab2/BM1-4-PIN_Expresion.gif)
     
-6. Add **HTTP Request** node. We are going to use [**Update Global Variable API PUT**](https://developer.webex.com/documentation/global-variables/v1/update-global-variables){:target="_blank"} request in the node configuration. 
+6. Add **HTTP Request** node. We are going to use [**Update Global Variable API PUT**](https://developer.webex.com/webex-contact-center/docs/api/v1/global-variables/update-specific-global-variable-by-id){:target="_blank"} request in the node configuration. 
 
     > 
     > Activity Label: **HTTP_PUT**<span class="copy-static" data-copy-text="HTTP_PUT"><span class="copy" title="Click to copy!"></span></span>

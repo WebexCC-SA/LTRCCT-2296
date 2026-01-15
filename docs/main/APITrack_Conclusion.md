@@ -8,6 +8,7 @@ Key missions included:
  - **Routing Facilitation with Variables** – Enhancing precision in call routing by dynamically adjusting logic based on real-time data.</br>
  - **Last Agent Routing** – Ensuring returning customers are connected with the same agent for a seamless experience.</br>
  - **Reconnecting with the Same Agent** – Allowing customers to reach the same agent if a call ends and they call back within 10 minutes, maintaining conversation continuity.</br>
+ - **Personalized customer notification** – Demonstarting how to use API and JavaScript function to create a personal notification and play it to the customer.</br>
 
 By mastering these API-driven techniques, you are now equipped to design smarter, more responsive workflows that enhance both operational efficiency and customer satisfaction.
 

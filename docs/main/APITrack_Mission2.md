@@ -15,7 +15,7 @@ The primary objective of this new feature is to enhance nodes activities to incl
 
 1. When call arrives fetch the data from **MockAPI** based on your Dialed Number
 2. Write the data into respective preconfigured flow variables. These variables are being used in all consequent nodes.
-3. Business Hours entity configured to cover EMEA timezone. Call should go through WorkingHours exit edge in normal behavior.
+3. Business Hours entity configured to cover EMEA timezone. Call should go through **Working Hours** exit edge in normal behavior.
 4. Play Message nodes have been configured to play messages received from API call
 
 
@@ -53,8 +53,8 @@ Your mission is to:
     - **FetchFlowSettings** node is used to access external database over API and parse the result by writing response result into respective Flow Variables which have been preconfigured for you already.
     - **SetVariable_mwn** node writes complete API response into debug variable so you could see the complete API call result in Debug tool. It's been taken from **FetchFlowSettings.httpResponseBody** output variable of **FetchFlowSettings** node
     - All **Play Message** and **Play Music** nodes have been preconfigured to play TTS messages taken from respective API response
-    - **BusinessHours_os2** node set to bussinesshours variable which is your business hour entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours**
-    - **QueueContact_a62** node set to queue variable which is your queue entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue**
+    - **BusinessHours_os2** node set to **bussinessHours** variable which is your business hour entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours**
+    - **QueueContact_a62** node set to **queue** variable which is your queue entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue**
     - Some **GoTo** nodes are configured to use variables and some have statice values. We will adjust them while going through further steps. 
 
     ![Profiles](../graphics/Lab2/BM2-7-ObserveFlow.gif)
@@ -86,7 +86,7 @@ Your mission is to:
     > ![Profiles](../graphics/Lab2/BM2-9-10-JSONPath.gif)
     > </details>
 
-7. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign. This needs to be done due to output structure of API response. 
+7. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign to the path expression of each output variable. This needs to be done due to output structure of API response. 
  
     ![Profiles](../graphics/Lab2/BM2-9-10-GETAPI_Config.gif)
 

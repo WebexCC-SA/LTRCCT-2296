@@ -388,15 +388,15 @@ Your mission is to:
 
 8.  Publish your flow
 
-    > Turn on Validation at the bottom right corner of the flow builder
+    > Turn on **Validation** at the bottom right corner of the flow builder
     >
-    > If there are no Flow Errors, Click **Publish**
+    > If there are no Flow Errors, Click **Publish Flow**
     >
     > Add a publish note
     >
     > Add Version Label(s): **Latest** 
     >
-    > Click **Publish** Flow
+    > Click **Publish Flow**
 
     ![Profiles](../graphics/APIFunction/API_Function10.gif)
 </br>
