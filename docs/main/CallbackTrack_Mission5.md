@@ -5,10 +5,7 @@ icon: material/medal
 
 
 
-# Mission 5: Adding Scheduled IVR Callback <span style="color: red;">[UNDER CONSTRUCTION]</span></summary>**
-
-> !!! Note
-      This task depends on the successful completion of Mission 1 and Mission 2 (at least the first three steps) of the CallBack track. Please ensure these missions are completed to enable a fully functional callback feature within your flow.
+# Mission 5: Adding Scheduled IVR Callback <span style="color: red;">[UNDER CONSTRUCTION]</span>**
 
 
 ## Story 
@@ -29,10 +26,14 @@ In this lab, you will build a Scheduled IVR Callback flow that allows callers to
 
 Your mission is to:
 
-1. Enhance the functionality of the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
+1. At this stage, if you have completed either of the Core or Callback tracks so far, your Main Flow has likely grown significantly. To simplify navigation, we will create a new flow dedicated specifically to the scheduled IVR callback.
+ 
 2. Use preconfigured subflow **Scheduled_CallbackSubflow**<span class="copy-static" data-copy-text="Scheduled_CallbackSubflow"><span class="copy" title="Click to copy!"></span></span>
 
-**<details><summary>Scheduled Callback Subflow details<span style="color: orange;">[Optional]</span></summary>**
+!!! Note
+    The existing **Scheduled_CallbackSubflow** must be used without any modifications. This subflow is shared across all lab attendees and should remain unchanged.
+
+**<details><summary>Scheduled Callback Subflow details. <span style="color: orange;">[Optional]</span></summary>**
 
 > !!! Note
       **Scheduled_CallbackSubflow** has already been preconfigured for you. However, the steps below explain how this subflow can be created and configured manually for reference.
@@ -45,183 +46,140 @@ Your mission is to:
 
 </details>
 
----------------------------------------------------------------
-
 ## Build
 
-1. Switch to the Flow Designer. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and make sure **Edit** toggle is **ON**.
+1. Switch to Control Hub, then navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 
-2. On the right-hand side, in the **Global Flow Properties** panel, scroll down to locate the **Flow Variables** section under **Custom Variables**. Click the **Add Flow Variable** button and add the following 3 flow variables: 
+2. New Tab will be opened. Navigate to **Flow Templates**
 
-    - Callback Status variable:
-    
+3. Choose **Simple Inbound Call to Queue** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
+
+4. Name you flow as **<span class="attendee-id-container">Scheduled_IVR_CallBack_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click on Create Flow.
+
+    ![Profiles](../graphics/Lab2/SCB_1_IVRCallBackCreate.gif)
+
+5. On the right-hand side, in the **Global Flow Properties** panel, scroll down to locate the **Flow Variables** section under **Custom Variables**. Click the **Add Flow Variable** button and add the following 3 flow variables: 
+
+    - Callback Number variable:
       >
-      > Name: **callbackStatus**<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
+      > Name: **callbackNumber**<span class="copy-static" data-copy-text="callbackNumber"><span class="copy" title="Click to copy!"></span></span>
       >
       > Type: **String**
       >
       > Default Value: **empty**
-    
-    - Callback Connect Time variable:
-      
-      >
-      > Name: **callbackConnectTime**<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-      > Default Value: **empty**
-      
-    - Search Result variable:
-      
-      >
-      > Name: **searchresult**<span class="copy-static" data-copy-text="searchresult"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-      > Default Value: **empty**
+  
+![Profiles](../graphics/Lab2/SCB_2_IVRCallBackVarCreate.gif)
 
-      ![profiles](../graphics/Lab2/L2M3-1.gif)
+6. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list.
 
-3. Add an **HTTP Request** node for our query as shown in the following video.
-    
-    >
-    > Remove the existing connection between **VerifyNumber** Option 1 and **Callback** node
-    >
-    > Connect **VerifyNumber** Option 1 to this HTTP node
-    >
-    > We will connect this **HTTP Request** node in next step
-    >
-    > Activity Label: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Select Use Authenticated Endpoint
-    >
-    > Connector: **WxCC_API**
-    > 
-    > Path: **/search**
-    > 
-    > Method: **POST**
-    > 
-    > Content Type: **Application/JSON**
-    >
-    > Copy this GraphQL query into the request body:
-    >
-    ```JSON
-    {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { callbackData: { equals: { callbackNumber: \"{{NewNumber.DigitsEntered}}\" } } }\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n      ]\n    }\n  ) {\n    tasks {\n      callbackData {\n        callbackRequestTime\n        callbackConnectTime\n        callbackNumber\n        callbackStatus\n        callbackOrigin\n        callbackType\n      }\n       lastEntryPoint {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 15000000}}","to":"{{now() | epoch(inMillis=true)}}"}}
-    ```
-    > <details><summary>Expanded Query For Understanding (optional)</summary>
-    ```GraphQL
-    query($from: Long!, $to: Long!)
-    {
-      taskDetails(
-          from: $from
-          to: $to
-        filter: {
-          and: [
-           { callbackData: { equals: { callbackNumber: "{{NewNumber.DigitsEntered}}" } } }
-           { lastEntryPoint: { id: { equals: "{{NewPhoneContact.EntryPointId}}" } } }
-          ]
-        }
-      ) {
-        tasks {
-          callbackData {
-            callbackRequestTime
-            callbackConnectTime
-            callbackNumber
-            callbackStatus
-            callbackOrigin
-           callbackType
-          }
-           lastEntryPoint {
-            id
-            name
-          }
-        }
-      }
-    }
-    ```
-    </details>
+7. Remove **Music**. Move **PlayMessage** and **End** nodes to the right leaving a free space for additional nodes we will add in next steps.
 
-    > Parse Settings:
-    >
-    > - Content Type: JSON
-    > - Output Variable: `callbackStatus`<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
-    > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackStatus`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackStatus"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Click **Add New**
-    > 
-    > - Output Variable: `callbackConnectTime`<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackConnectTime`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
-    >
-    </br>
-    </br>
+8. Drag **Collect Digits** nodes
     
-      ![profiles](../graphics/Lab2/L2M3-2.gif)
----     
+    > Rename Activity Label to **NewCallBackNumber**<span class="copy-static" title="Click to copy!" data-copy-text="NewCallBackNumber"><span class="copy"></span></span>
+    >
+    > Enable Text-To-Speech
+    >
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    >
+    > Click the Add Text-to-Speech Message button and paste text: ***All agents are currently busy. Please enter your 11 digits phone number to which we should call you back.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are currently busy. Please enter your 11 digits phone number to which we should call you back."><span class="copy"></span></span>
+    >
+    > Delete the selection for Audio File
+    >   
+    > Advanced Settings:
+    >
+    >> No-Input Timeout:  **5** 
+    >>
+    >> Make Prompt Interruptible: **True**
+    >>
+    >> Minimum Digits: **11**
+    >>
+    >> Maximum Digits: **11**
+    >       
+    > Connect **No-Input Timeout** to the front of the **NewCallBackNumber** node
+    >
+    > Connect **Unmatched Entry** to the front of the **NewCallBackNumber** node
+    >
+    > Connect **Undefined Error** to the front of the **NewCallBackNumber** node
+    >
 
-4. Add **Set Veriable** node
-    
+    ![profiles](../graphics/Lab2/SCB_3_NewCallBackNode.gif)
+
+
+8. Add **Set Veriable** node
     >
-    > Connect **HTTPRequest_CallBackSearch** to this node
+    > Connect **NewCallBackNumber** to this node
     >
     > We will connct **Set Variable** node in next step
     >
-    > Variable: **searchresult**<span class="copy-static" data-copy-text="searchresult"><span class="copy" title="Click to copy!"></span></span>
+    > Variable: **callbackNumber**<span class="copy-static" data-copy-text="callbackNumber"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Set To Variable: **HTTPRequest_CallBackSearch.httpResponseBody**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
+    > Set To Variable: **+{{NewCallBackNumber.DigitsEntered}}**<span class="copy-static" data-copy-text="+{{NewCallBackNumber.DigitsEntered}}"><span class="copy" title="Click to copy!"></span></span>
     >
-    ![profiles](../graphics/Lab2/L2M3-3.gif)
+    ![profiles](../graphics/Lab2/SCB_4_AddPlusVar.gif)
 
-5. Add a **Condition** node
+
+10. Switch to **Subflows** tab in the left menu. Then drag **Scheduled_CallBack_Subflow** node to the canvas.
+    >
+    > Connect **Set Veriable** to this node
+    >
+    > Connect this node to **Play Message** node
+    >
+    > Connect **Undefined Error** to any of available **EndFlow** nodes.
+    >
+    ![profiles](../graphics/Lab2/SCB_5_AddSubflow.gif)
+
+11. Click on the **Scheduled_CallBack_Subflow** node. Go to the node settings pane on the right and set the following parameters:
     
-      > 
-      > Connect **Set Variable** created in previous step to this node
-      >
-      > Connect **False** exit path to existing CallBack node
-      > 
-      > We will connect **True** exit path in next step
-      >
-      > Expression: 
-      ``` JSON
-      {{ callbackConnectTime == "-1" ? (callbackStatus == "Not Processed" ? (HTTPRequest_CallBackSearch.httpStatusCode == 200 ? "true" : "false") : "false") : "false" }}
-      ```
-
-
-      > !!! Note
-          Above expression uses nested ternary logic to combine the checks. This evaluates the first condition and then evaluates the second condition if the first is true and so on. In our case the expression returns True only when httpStatusCode equals **200**, callbackStatus is **Not Processed** and callbackConnectTime is **-1**
-
-    ![profiles](../graphics/Lab2/L2M3-4.gif)
-
-6. Add **Play Message** and **Disconnect Contact** nodes: 
+    > Subflow Label: **Latest**
     
-      > Enable Text-To-Speech
-      >
-      > Select the Connector: **Cisco Cloud Text-to-Speech**
-      >
-      > Click the **Add Text-to-Speech Message** button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**<span class="copy-static" data-copy-text="The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience."><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Delete the Selection for Audio File
-      >
-      > Connect **True** exit path of **Condition** node created in previous step to **Play Message** node
-      > Connect this **Play Message** to **Disconnect Contact** node
+    Scroll down to the **Subflow Input Variables** section and configure the following mapping by pressing **Add New** button for every variable:
+    
+    > - Current flow variable: **callbackNumber**<span class="copy-static" data-copy-text="callbackNumber"><span class="copy" title="Click to copy!"></span></span>
+    > - Subflow Input Variable: **CallbackNumber**<span class="copy-static" data-copy-text="CallbackNumber"><span class="copy" title="Click to copy!"></span></span>
+    > <br/><br/>
+    > - Current flow variable: **Queue.QueueId**<span class="copy-static" data-copy-text="Queue.QueueId"><span class="copy" title="Click to copy!"></span></span>
+    > - Subflow Input Variable: **CallbackQueue**<span class="copy-static" data-copy-text="CallbackQueue"><span class="copy" title="Click to copy!"></span></span>
+    >
+    
+    ![profiles](../graphics/Lab2/SCB_6_ConfigureSubflow.gif)
 
-      ![profiles](../graphics/Lab2/L2M3-5.gif)
 
-7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+12. Click on **Play Message** modify Text-to-Speech Message by replacing existing text to the following: ***Your callback has been successfully scheduled.***<span class="copy-static" title="Click to copy!" data-copy-text="Your callback has been successfully scheduled."><span class="copy"></span></span>
+
+13. Add **Disconnect Contact** and node:
+    > 
+    > Connect this **Play Message** to **Disconnect Contact** node
+    >
+14. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+
+    ![profiles](../graphics/Lab2/SCB_7_Publish.gif)
+
+15. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+
+16. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+
+17. In **Entry Point** settings section change the following, then click **Save** button:
+
+    > - Routing flow: **Scheduled_IVR_CallBack_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+    >
+    > - Version label: **Latest**
 
 ## Testing
     
 1. Make sure your Agent either **Logged Out** or in **Not Available** state. In this case call will not be assigned to an agent and callback will be proposed to a caller.
-2. Make sure your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** is assigned to **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. If not, do that (refer to previous very first Mission where this step was explained in details).
-3. Make a call to your Support Number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a wellknown Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>
-4. While keeping your agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>.
-5. You should hear a message configured in **Step 6** of the current mission.
-6. Click on **Analyze** to visualy observe the call flow. Make sure you're viewing latest Published Version.
-7. Review the flow and click on **HTTPRequest_CallBackSearch** where you can cross-launch debuger to that particalar call.
-8. Navigate to **HTTPRequest_CallBackSearch** to see **Modified Variables** at the bottom of right hand side of the debuger. 
-9. Click on **Set Variable**, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the **Step 6** of the cusrrent mission configuration. 
 
-![profiles](../graphics/Lab2/L2M3-6.gif)
+3. While keeping your agent in **Not Available** state, make a test call to your support number.
+4. In order to successfully schedule a call back you must provide the following information when asked by using a phone DialPad:
+    
+    > a.  11 digit phone number. This might be your personal phone number that you have with you or a well-known Cisco Worldwide Support contact number **1 408 526 7209**. Use the DialPad to provide the Cisco TAC number.
+    > b. Preferred date in ***YYYYMMDD*** format. Example: Enter DialPad enter 20260212.
+    > c. Preferred start time for your callback in ***HHMM*** format. <span style="color: red;">Selected time should be at least 30 minutes from now.</span>.
+    > d. Preferred end time for your callback in ***HHMM*** format. <span style="color: red;">The call between window must be at least 30 minutes and no more than 8 hours</span>.
+    > e. Choose timezone for the callback schedule. For EMEA press **1**.
+
+5. After providing answers to all questions you will here a message that your callback has been successfully scheduled.
+
 
 
 **Congratulations on completing another mission.**
