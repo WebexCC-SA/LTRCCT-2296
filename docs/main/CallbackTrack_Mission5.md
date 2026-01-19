@@ -68,7 +68,7 @@ Your mission is to:
       >
       > Default Value: **empty**
   
-![Profiles](../graphics/Lab2/SCB_2_IVRCallBackVarCreate.gif)
+    ![Profiles](../graphics/Lab2/SCB_2_IVRCallBackVarCreate.gif)
 
 6. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list.
 
@@ -106,7 +106,8 @@ Your mission is to:
     ![profiles](../graphics/Lab2/SCB_3_NewCallBackNode.gif)
 
 
-8. Add **Set Veriable** node
+8. Add **Set Veriable** node.
+
     >
     > Connect **NewCallBackNumber** to this node
     >
@@ -119,7 +120,8 @@ Your mission is to:
     ![profiles](../graphics/Lab2/SCB_4_AddPlusVar.gif)
 
 
-10. Switch to **Subflows** tab in the left menu. Then drag **Scheduled_CallBack_Subflow** node to the canvas.
+10. Switch to **Subflows** tab in the left menu. Then drag **Scheduled_CallBack_Subflow** node to the canvas. 
+
     >
     > Connect **Set Veriable** to this node
     >
@@ -127,6 +129,9 @@ Your mission is to:
     >
     > Connect **Undefined Error** to any of available **EndFlow** nodes.
     >
+
+    Optionally, you can view the preconfigured subflow by clicking the **View** button in the top-right corner of the node settings, next to the node name.
+
     ![profiles](../graphics/Lab2/SCB_5_AddSubflow.gif)
 
 11. Click on the **Scheduled_CallBack_Subflow** node. Go to the node settings pane on the right and set the following parameters:
@@ -148,6 +153,7 @@ Your mission is to:
 12. Click on **Play Message** modify Text-to-Speech Message by replacing existing text to the following: ***Your callback has been successfully scheduled.***<span class="copy-static" title="Click to copy!" data-copy-text="Your callback has been successfully scheduled."><span class="copy"></span></span>
 
 13. Add **Disconnect Contact** and node:
+
     > 
     > Connect this **Play Message** to **Disconnect Contact** node
     >
@@ -173,13 +179,56 @@ Your mission is to:
 4. In order to successfully schedule a call back you must provide the following information when asked by using a phone DialPad:
     
     > a.  11 digit phone number. This might be your personal phone number that you have with you or a well-known Cisco Worldwide Support contact number **1 408 526 7209**. Use the DialPad to provide the Cisco TAC number.
+    >
     > b. Preferred date in ***YYYYMMDD*** format. Example: Enter DialPad enter 20260212.
+    >
     > c. Preferred start time for your callback in ***HHMM*** format. <span style="color: red;">Selected time should be at least 30 minutes from now.</span>.
+    >
     > d. Preferred end time for your callback in ***HHMM*** format. <span style="color: red;">The call between window must be at least 30 minutes and no more than 8 hours</span>.
+    >
     > e. Choose timezone for the callback schedule. For EMEA press **1**.
 
 5. After providing answers to all questions you will here a message that your callback has been successfully scheduled.
+6. In order to recieve a callback you need to become available on your agent desktop during the time you specified. 
+
+> !!! Note
+      You may proceed with other tasks without waiting for the callback time. When the time comes, please remember to make yourself available to accept the call.
 
 
+## Callback status verification.
 
-**Congratulations on completing another mission.**
+1. Open [**Developer Portal**](https://developer.webex.com/){:target="_blank"} and click on **Sign In**. 
+   Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+
+2. Click on the little arrow next to **Documentation**, choose **Webex Contact Center** under **Customer Experience** section. 
+
+    ![profiles](../graphics/Lab2/DevPortalLogin.gif)
+
+3. On Menu pannel on the left, scroll down to **API Reference** section, expand **Desktop** and then expand **CallBack Schedule**
+
+4. Click on **Get scheduled callbacks** to open an endpand description page.
+
+    ![profiles](../graphics/Lab2/DevPortalOpenCallback.gif)
+
+5. On the right hand side under **Query Params** set a checkbox next to ***callbackNumber***, then type 11 digit number you provided while were doing the test call. 
+6. Then click **Run**.
+
+    ![profiles](../graphics/Lab2/DevPortalRunCallback.gif)
+
+7. Verify output of the executed API call. Oserve the important keys are:
+
+    ``` JSON
+      {
+          "id": "3824bcea-03c7-41b8-957d-5d62ecda3b82",                          // Interaction ID
+          "customerName": "+48575638602",                                        // Customer Name. Uses Callback Number if not provided specifically
+          "callbackNumber": "+48575638602",                                      // Callback Number provided during original call
+          "timezone": "Europe/Amsterdam",                                        // Selected timezone
+          "scheduleDate": "2026-01-19",                                          // Selected scheduled date
+          "startTime": "18:45:00",                                               // Selected start time 
+          "endTime": "19:20:00",                                                 // Selected end time
+          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79",                     // QueueId
+          //<ommitted>               
+      }    
+    ```   
+  
+>**Congratulations on completing another mission.**
