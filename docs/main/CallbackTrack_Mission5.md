@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 5: Adding Scheduled IVR Callback <span style="color: red;">[UNDER CONSTRUCTION]</span>**
+# Mission 5: Adding Scheduled IVR Callback <span style="color: red;">[To Verify]</span>**
 
 
 ## Story 
@@ -28,15 +28,11 @@ Your mission is to:
 
 1. At this stage, if you have completed either of the Core or Callback tracks so far, your Main Flow has likely grown significantly. To simplify navigation, we will create a new flow dedicated specifically to the scheduled IVR callback.
  
-2. Use preconfigured subflow **Scheduled_CallbackSubflow**<span class="copy-static" data-copy-text="Scheduled_CallbackSubflow"><span class="copy" title="Click to copy!"></span></span>
-
-!!! Note
-    The existing **Scheduled_CallbackSubflow** must be used without any modifications. This subflow is shared across all lab attendees and should remain unchanged.
+2. Use preconfigured subflow **Scheduled_CallbackSubflow**<span class="copy-static" data-copy-text="Scheduled_CallbackSubflow"><span class="copy" title="Click to copy!"></span></span>. Existing **Scheduled_CallbackSubflow** must be used without any modifications. This subflow is shared across all lab attendees and should remain unchanged.
 
 **<details><summary>Scheduled Callback Subflow details. <span style="color: orange;">[Optional]</span></summary>**
 
-> !!! Note
-      **Scheduled_CallbackSubflow** has already been preconfigured for you. However, the steps below explain how this subflow can be created and configured manually for reference.
+**Scheduled_CallbackSubflow** has already been preconfigured for you. However, the steps below explain how this subflow can be created and configured manually for reference.
 
 1. Switch to Control Hub, then navigate to **Flows**, open the **Manage Flows** drop-down list, and select **Create Flows**.
 2. A new tab will open. Navigate to **Flow Templates**.
@@ -50,7 +46,7 @@ Your mission is to:
 
 1. Switch to Control Hub, then navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
 
-2. New Tab will be opened. Navigate to **Flow Templates**
+2. New tab will be opened. Navigate to **Flow Templates**
 
 3. Choose **Simple Inbound Call to Queue** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
 
@@ -72,7 +68,7 @@ Your mission is to:
 
 6. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list.
 
-7. Remove **Music**. Move **PlayMessage** and **End** nodes to the right leaving a free space for additional nodes we will add in next steps.
+7. Remove the **Music** node, then move the **PlayMessage** and **End** nodes to the right to create space for additional nodes that will be added in the next steps.
 
 8. Drag **Collect Digits** nodes
     
@@ -117,6 +113,7 @@ Your mission is to:
     >
     > Set To Variable: **+{{NewCallBackNumber.DigitsEntered}}**<span class="copy-static" data-copy-text="+{{NewCallBackNumber.DigitsEntered}}"><span class="copy" title="Click to copy!"></span></span>
     >
+
     ![profiles](../graphics/Lab2/SCB_4_AddPlusVar.gif)
 
 
@@ -130,7 +127,7 @@ Your mission is to:
     > Connect **Undefined Error** to any of available **EndFlow** nodes.
     >
 
-    Optionally, you can view the preconfigured subflow by clicking the **View** button in the top-right corner of the node settings, next to the node name.
+    Optionally, you can view this preconfigured subflow by clicking the **View** button in the top-right corner of the node settings, next to the node name. **<span style="color: red;">This subflow is preconfigured and must not be modified. Close the subfliow tab after viewing it.</span>**
 
     ![profiles](../graphics/Lab2/SCB_5_AddSubflow.gif)
 
@@ -155,8 +152,9 @@ Your mission is to:
 13. Add **Disconnect Contact** and node:
 
     > 
-    > Connect this **Play Message** to **Disconnect Contact** node
+    > Connect **Play Message** to **Disconnect Contact** node
     >
+
 14. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
 
     ![profiles](../graphics/Lab2/SCB_7_Publish.gif)
@@ -173,23 +171,23 @@ Your mission is to:
 
 ## Testing
     
-1. Make sure your Agent either **Logged Out** or in **Not Available** state. In this case call will not be assigned to an agent and callback will be proposed to a caller.
+1. Ensure that your agent is either **Logged Out** or set to **Not Available**. In this state, the call will not be assigned to an agent, and the system will offer the callback option to the caller.
 
-3. While keeping your agent in **Not Available** state, make a test call to your support number.
-4. In order to successfully schedule a call back you must provide the following information when asked by using a phone DialPad:
+3. With your agent remaining in **Not Available** place a test call to your support number.
+4. To successfully schedule a callback, you must provide the following information when prompted using your phone’s dial pad:
     
-    > a.  11 digit phone number. This might be your personal phone number that you have with you or a well-known Cisco Worldwide Support contact number **1 408 526 7209**. Use the DialPad to provide the Cisco TAC number.
+    > a.  **An 11 digit phone number.** This can be your personal mobile number or a known Cisco Worldwide Support number, such as **1 408 526 7209**. Use the dial pad to enter the Cisco TAC number.
     >
-    > b. Preferred date in ***YYYYMMDD*** format. Example: Enter DialPad enter 20260212.
+    > b. Preferred date in ***YYYYMMDD*** format. Example: Enter DialPad enter ***20260212***.
     >
     > c. Preferred start time for your callback in ***HHMM*** format. <span style="color: red;">Selected time should be at least 30 minutes from now.</span>.
     >
     > d. Preferred end time for your callback in ***HHMM*** format. <span style="color: red;">The call between window must be at least 30 minutes and no more than 8 hours</span>.
     >
-    > e. Choose timezone for the callback schedule. For EMEA press **1**.
+    > e. **Callback timezone.**. For EMEA press **1**.
 
-5. After providing answers to all questions you will here a message that your callback has been successfully scheduled.
-6. In order to recieve a callback you need to become available on your agent desktop during the time you specified. 
+5. After providing all inputs, you will hear a confirmation message indicating that your callback has been successfully scheduled.
+6. To receive the callback, ensure you set your agent desktop to **Available** during the scheduled time window.
 
 > !!! Note
       You may proceed with other tasks without waiting for the callback time. When the time comes, please remember to make yourself available to accept the call.
@@ -219,14 +217,14 @@ Your mission is to:
 
     ``` JSON
       {
-          "id": "3824bcea-03c7-41b8-957d-5d62ecda3b82",                          // Interaction ID
-          "customerName": "+48575638602",                                        // Customer Name. Uses Callback Number if not provided specifically
-          "callbackNumber": "+48575638602",                                      // Callback Number provided during original call
-          "timezone": "Europe/Amsterdam",                                        // Selected timezone
-          "scheduleDate": "2026-01-19",                                          // Selected scheduled date
-          "startTime": "18:45:00",                                               // Selected start time 
-          "endTime": "19:20:00",                                                 // Selected end time
-          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79",                     // QueueId
+          "id": "3824bcea-03c7-41b8-957d-5d62ecda3b82",         // Interaction ID
+          "customerName": "+48575638602",                       // Customer Name. Uses Callback Number if not provided specifically
+          "callbackNumber": "+48575638602",                     // Callback Number provided during original call
+          "timezone": "Europe/Amsterdam",                       // Selected timezone
+          "scheduleDate": "2026-01-19",                         // Selected scheduled date
+          "startTime": "18:45:00",                              // Selected start time 
+          "endTime": "19:20:00",                                // Selected end time
+          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79",    // QueueId
           //<ommitted>               
       }    
     ```   
