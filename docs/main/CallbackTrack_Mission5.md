@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 5: Adding Scheduled IVR Callback <span style="color: red;">[To Verify]</span>**
+# Mission 5: Adding Scheduled IVR Callback **<span style="color: red;">[To Verify]</span>**
 
 
 ## Story 
@@ -127,7 +127,7 @@ Your mission is to:
     > Connect **Undefined Error** to any of available **EndFlow** nodes.
     >
 
-    Optionally, you can view this preconfigured subflow by clicking the **View** button in the top-right corner of the node settings, next to the node name. **<span style="color: red;">This subflow is preconfigured and must not be modified. Close the subfliow tab after viewing it.</span>**
+    Optionally, you can view this preconfigured subflow by clicking the **View** button in the top-right corner of the node settings, next to the node name. **<span style="color: red;">This subflow is preconfigured and must not be modified. Close the subflow tab after viewing it.</span>**
 
     ![profiles](../graphics/Lab2/SCB_5_AddSubflow.gif)
 
@@ -189,14 +189,14 @@ Your mission is to:
 5. After providing all inputs, you will hear a confirmation message indicating that your callback has been successfully scheduled.
 6. To receive the callback, ensure you set your agent desktop to **Available** during the scheduled time window.
 
-> !!! Note
-      You may proceed with other tasks without waiting for the callback time. When the time comes, please remember to make yourself available to accept the call.
+!!! Note
+    You may proceed with other tasks without waiting for the callback time. When the time comes, please remember to make yourself available to accept the call.
 
 
 ## Callback status verification.
 
-1. Open [**Developer Portal**](https://developer.webex.com/){:target="_blank"} and click on **Sign In**. 
-   Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
+1. Open [**Developer Portal**](https://developer.webex.com/){:target="_blank"} and click on **Log In**. 
+   Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with Webex icon on it where you may need to enter the email address again and the password provided to you.
 
 2. Click on the little arrow next to **Documentation**, choose **Webex Contact Center** under **Customer Experience** section. 
 
@@ -213,20 +213,21 @@ Your mission is to:
 
     ![profiles](../graphics/Lab2/DevPortalRunCallback.gif)
 
-7. Verify output of the executed API call. Oserve the important keys are:
+7. Verify output of the executed API call. Observe the important keys are:
 
     ``` JSON
       {
-          "id": "3824bcea-03c7-41b8-957d-5d62ecda3b82",         // Interaction ID
+          "id": "3824bcea-03c7-41b8-957d-5d62ecda3b82",         // Unique identifier for the scheduled callback.
           "customerName": "+48575638602",                       // Customer Name. Uses Callback Number if not provided specifically
-          "callbackNumber": "+48575638602",                     // Callback Number provided during original call
-          "timezone": "Europe/Amsterdam",                       // Selected timezone
-          "scheduleDate": "2026-01-19",                         // Selected scheduled date
-          "startTime": "18:45:00",                              // Selected start time 
-          "endTime": "19:20:00",                                // Selected end time
-          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79",    // QueueId
+          "callbackNumber": "+48575638602",                     // Phone number provided for the callback.
+          "timezone": "Europe/Amsterdam",                       // Timezone in which the callback is scheduled.
+          "scheduleDate": "2026-01-19",                         // Date for the callback in ISO format (YYYY-MM-DD).
+          "startTime": "18:45:00",                              // Scheduled start time in ISO 8601 format (HH:mm:ss), local to the specified timezone. 
+          "endTime": "19:20:00",                                // Scheduled end time in ISO 8601 format (HH:mm:ss), local to the specified timezone.
+          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79"     // Identifier for the queue to route the callback request.
           //<ommitted>               
       }    
     ```   
+    Full Schema Definition can be found in the [**API Reference**](https://developer.webex.com/webex-contact-center/docs/api/v1/callback-schedule/get-scheduled-callbacks){:target="_blank"} for this API call.
   
->**Congratulations on completing another mission.**
+**Congratulations on completing another mission.**
