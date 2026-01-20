@@ -129,6 +129,7 @@ nav:
             - "Mission 3: CallBack on Global Error": ./main/CallbackTrack_Mission3.md
             - "Mission 4: Preventing Callback duplication": ./main/CallbackTrack_Mission4.md
             - "Mission 5: Adding Scheduled IVR Callback": ./main/CallbackTrack_Mission5.md
+            - "Mission 6: Adding Personalized Callback": ./main/CallbackTrack_Mission6.md  
       - Conclusion: ./main/CallbackTrack_Conclusion.md
 ##  - AI ASSISTANT TRACK:
 ##      - Lab Guide:
