@@ -51,19 +51,19 @@ Your Agent desktop session should be still active but if not, use Webex CC Deskt
     
     > a.  **Phone number (required)**. An 11 digit phone number. This can be your personal mobile number or a known Cisco Worldwide Support number, such as **1 408 526 7209**. Use the dial pad to enter the Cisco TAC number.
     >
-    > b. Customer name (required). Example ****
+    > b. **Customer name (required)**. Type **<span class="attendee-id-container">Attendee_ID<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
-    > c. Date (required). You can schedule a callback up to 31 days in advance. The call between window must be at least 40 minutes and no more than 8 hours.
+    > c. **Date (required)**. Choose todays date. *(You can schedule a callback up to 31 days in advance. The call between window must be at least 40 minutes and no more than 8 hours.)*
     >
-    > c. Call between (required). Selected time should be at least 30 minutes from now.</span>.
+    > c. **Call between (required)**. Selected time should be at least 30 minutes from now.</span>.
     >
-    > d. Customer time zone (required)
+    > d. **Customer time zone (required)**. Select **Europe/Amsterdam**<span class="copy-static" data-copy-text="Europe/Amsterdam"><span class="copy" title="Click to copy!"></span></span>
     >
-    > e. Assign to. You can choose one of 3 options: Any available agent, Myself or A specific agent.
+    > e. **Assign to**. You can choose one of 3 options: Any available agent, Myself or A specific agent. For our test choose Myself.
     >
-    > f. Queue name
+    > f. **Queue name**. Provide your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
-    > g. Callback Reason
+    > g. **Callback Reason**. Type ***"Attendee ID 140. Callback initiated from the Agent Desktop."*** <span class="copy-static" data-copy-text="Attendee ID 140. Callback initiated from the Agent Desktop."><span class="copy" title="Click to copy!"></span></span>
 
     ![profiles](../graphics/Lab2/DesktopCallbackSetup.JPG)
 
@@ -98,7 +98,7 @@ Your Agent desktop session should be still active but if not, use Webex CC Deskt
 
     ![profiles](../graphics/Lab2/DevPortalRunDesktopCallback.gif)
 
-7. Verify output of the executed API call. Observe the important keys are:
+7. Verify output of the executed API call. Observe the important keys:
 
     ``` JSON
       {

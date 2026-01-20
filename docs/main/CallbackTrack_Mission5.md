@@ -213,7 +213,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab2/DevPortalRunCallback.gif)
 
-7. Verify output of the executed API call. Observe the important keys are:
+7. Verify output of the executed API call. Observe the important keys:
 
     ``` JSON
       {
