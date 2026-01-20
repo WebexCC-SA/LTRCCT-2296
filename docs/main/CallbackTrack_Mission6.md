@@ -65,7 +65,8 @@ Your Agent desktop session should be still active but if not, use Webex CC Deskt
     >
     > g. Callback Reason
 
-: 
+    ![profiles](../graphics/Lab2/DesktopCallbackSetup.JPG)
+
 5. After providing all inputs, press **Schedule** button. You should see a pop up notification tha **Callback scheduled successfully**.
 6. To receive the callback, ensure you set your agent desktop to **Available** during the scheduled time window.
 
@@ -95,7 +96,7 @@ Your Agent desktop session should be still active but if not, use Webex CC Deskt
 5. On the right hand side under **Query Params** set a checkbox next to ***callbackNumber***, then type 11 digit number you provided while were doing the test call. 
 6. Then click **Run**.
 
-    ![profiles](../graphics/Lab2/DevPortalRunCallback.gif)
+    ![profiles](../graphics/Lab2/DevPortalRunDesktopCallback.gif)
 
 7. Verify output of the executed API call. Observe the important keys are:
 
@@ -108,8 +109,10 @@ Your Agent desktop session should be still active but if not, use Webex CC Deskt
           "scheduleDate": "2026-01-19",                         // Date for the callback in ISO format (YYYY-MM-DD).
           "startTime": "18:45:00",                              // Scheduled start time in ISO 8601 format (HH:mm:ss), local to the specified timezone. 
           "endTime": "19:20:00",                                // Scheduled end time in ISO 8601 format (HH:mm:ss), local to the specified timezone.
-          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79"     // Identifier for the queue to route the callback request.
-          //<ommitted>               
+          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79",     // Identifier for the queue to route the callback request.
+          "callbackReason": "Attendee ID 140. Callback initiated from the Agent Desktop."    // Text provided while schedule a call back.
+          //<ommitted>,
+              
       }    
     ```   
     Full Schema Definition can be found in the [**API Reference**](https://developer.webex.com/webex-contact-center/docs/api/v1/callback-schedule/get-scheduled-callbacks){:target="_blank"} for this API call.
