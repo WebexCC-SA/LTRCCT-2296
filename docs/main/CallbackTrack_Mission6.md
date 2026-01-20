@@ -49,9 +49,9 @@ Your Agent desktop session should be still active but if not, use Webex CC Deskt
 
 4. To successfully schedule a callback, you must provide the following information on pop up window:
     
-    > a.  **Phone number (required)**. An 11 digit phone number. This can be your personal mobile number or a known Cisco Worldwide Support number, such as **1 408 526 7209**. Use the dial pad to enter the Cisco TAC number.
+    > a.  **Phone number (required)**. An 11 digit phone number. This can be your personal mobile number or a known Cisco Worldwide Support number, such as **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>. Use the dial pad to enter the Cisco TAC number.
     >
-    > b. **Customer name (required)**. Type **<span class="attendee-id-container">Attendee_ID<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > b. **Customer name (required)**. Type **<span class="attendee-id-container">Attendee_ID<span class="attendee-id-placeholder" data-prefix="Attendee_ID">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
     > c. **Date (required)**. Choose todays date. *(You can schedule a callback up to 31 days in advance. The call between window must be at least 40 minutes and no more than 8 hours.)*
     >
@@ -59,7 +59,7 @@ Your Agent desktop session should be still active but if not, use Webex CC Deskt
     >
     > d. **Customer time zone (required)**. Select **Europe/Amsterdam**<span class="copy-static" data-copy-text="Europe/Amsterdam"><span class="copy" title="Click to copy!"></span></span>
     >
-    > e. **Assign to**. You can choose one of 3 options: Any available agent, Myself or A specific agent. For our test choose Myself.
+    > e. **Assign to**. Choose **Myself**.
     >
     > f. **Queue name**. Provide your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
