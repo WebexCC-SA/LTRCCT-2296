@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 6: Adding Personalized Callback **<span style="color: red;">[UNDER CONSTRUCTION]</span>**
+# Mission 6: Adding Personalized Callback **<span style="color: red;">[To Verify]</span>**
 
 !!! Note
     This mission does not involve Flow Designer configuration or inbound call handling.
