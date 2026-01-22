@@ -5,178 +5,138 @@ icon: material/medal
 
 
 
-# Mission 7: AI Autonomous Agent in Action <span style="color: blue;">(BONUS)</span></summary> 
+# Mission 1: Create AI Autonomous Agent. **<span style="color: red;">[UNDER CONSTRUCTIONS]</span>**
 
-**<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
-
-### AI Autonomous Agent Overview
-
-The Autonomous AI Agent for performing actions can handle various tasks, including:
-
-  - Natural Language Processing (NLP)—Understand and respond to human language in a natural and conversational manner.
-  - Decision making—Make informed choices based on available information and predefined rules.
-  - Automation—Automate repetitive or time-consuming tasks.
-</details>
-
-
-## Story
-
-As a visitor to Melbourne, you want to quickly find restaurants offering various international cuisines in the city and easily figure out how to get to them from your current location at the Melbourne Convention Center.
-
-### Call Flow Overview
-
-1. A new call enters the flow. </br>
-2. The caller asks about restaurants in Melbourne.</br>
-3. The AI agent responds with information generated from the knowledge base configuration.</br>
 
 ## Mission overview
 Your mission is to:
 
-1. Create a knowledge base (KB) and AI agent to provide answers about Melbourne, including places to visit, restaurants, nightclubs, and directions from the current Melbourne Convention Center.</br>
-2. Configure the AI agent with handoff functionality to transfer the conversation to a live agent when necessary.</br>
+Create an AI agent and upload the knowledge base (KB) to enable the agent to provide answers about available flowers and assist customers with creating an order or transferring the interaction to a human agent.
+    ![Profiles](../graphics/Lab1_AI_Agent/Untitled(9).jpg)
 
 ---
 
 ## Build
 
-### Creating a Knowldge Base
+### Task 1. Creating new AI Agent with Knowladge Base.
 
-1. <span style="color: red;">[IMPORTANT]</span> [Download](https://drive.google.com/drive/folders/1b8x_om4rQonuJ52wRYif1LPP5qEX4RDI?usp=sharing){:target="_blank"} source file from shared folder.
+1. <span style="color: red;">[IMPORTANT]</span> Download .xlsx the file [Flowrs_Catalog](https://docs.google.com/spreadsheets/d/1A5d1ZEPWmPE_38Bi8bVULKLhCH0wyGX4/edit?usp=sharing&ouid=100862210011127627593&rtpof=true&sd=true){:target="_blank"}.
+    ![Profiles](../graphics/Lab1_AI_Agent/2.74.png)
     
     > 
-    > **Melbourne_Tourist_Guide.txt** - file contains information for tourists like places to visit, restaurants, pubs etc. and how to reach those places from Melbourne Convention Center
+    > **Flower_Catalog.xlsx** - file contains information on the available single flowers and bouquets, including the price of the flowers or bouquets and occasions that suit the flowers.
     >
 
-2. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen where you may need to enter the email address again and the password provided to you.
+2. Open up and review the file. 
+    ![Profiles](../graphics/Lab1_AI_Agent/2.56.png)
 
-3. Go to Contact Center from the left side navigation panel, and under Quick Links, click on **Webex AI Agent**
 
-    ![Profiles](../graphics/Lab1/L1M6_OpenWebexAI.gif)  
+3. Go to [Webex Control Hub](https://admin.webex.com){:target="_blank"}
 
-4. In AI Agent Builder navigate to **Knowledge** from left hand side menu panel. 
+4. Open **Contact Center** from the left side navigation panel, and under **Overview > Quick Links**, click on **Webex AI Agent**
 
-5. Click **Create Knowledge Base**, provide Knowledge base name as **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy" title="Click to copy!"></span></span>**, then click **Create**.
+    ![Profiles](../graphics/Lab1_AI_Agent/L1M6_OpenWebexAI1.gif)
 
-    ![Profiles](../graphics/Lab1/L1M7_AIKBCreate.gif)
+5. In AI Agent Builder navigate to **Knowledge** from left hand side menu panel. 
 
-6. Click **Add File** or drag and drop file **Melbourne_Tourist_Guide.txt** you downloaded from external drive on **Step 1**. Then click **Process Files**.
+6. Click **Create Knowledge Base**, provide Knowledge base name as **<copy><w class="attendee"></w>_2000_AI_KB</copy>**, then click **Create**.
 
-    ![Profiles](../graphics/Lab1/L1M7_AIKBFileUpload.gif)
 
-7. Navigate to **Dashboard** from the right-hand side menu panel and click **Create Agent**
-8. Select **Start from Scratch** and click **Next**
-9. On **Create an AI agent** page select the following select the type of agent: **Autonomous**
+    ![Profiles](../graphics/Lab1_AI_Agent/2.1.gif)
 
-10. New section **Add the essential details** will appear. Provide the following information, then click **Create**:
+7. Click **Add File** or drag and drop file **Flower_Catalog.xlsx** you downloaded from external drive on **Step 1**. Then click **Process Files**. Wait until the file is processed. It could take 1-2 mins.
 
-    > Agent Name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AutoAI_Lab">Your_Attendee_ID</span>_AutoAI_Lab<span   class="copy" title="Click to copy!"></span></span>**
+    ![Profiles](../graphics/Lab1_AI_Agent/2.2.gif)
+
+    <span style="color: red;">[Read Only]</span> : You can also natively create a Knowledge Base document by Clicking **Documents** then **Create Document** and paste the content. **Save** it. 
+    ![Profiles](../graphics/Lab1_AI_Agent/2.75KBDocument.gif)
+    
+8. Navigate to **AI Agents** from the left-hand side menu panel and click **Create Agent**
+    ![Profiles](../graphics/Lab1_AI_Agent/2.58.gif)
+9. Select **Start from Scratch** and click **Next**
+10. On **Create an AI agent** page select the following select the type of agent: **Autonomous**
+
+11. Provide the following information in the **Add the essential details**, then click **Create**:
+
+    > Agent Name: **<copy><w class="attendee"></w>_2000_AutoAI_Lab</copy>**
     >
     > System ID is created automatically
     >
-    > AI engine: **Nova**
-    >
-    > Knowledge base: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy"></span>**
+    > AI engine: **Webex AI Pro 1.0**
     > 
-    > Agent's goal: ***You are a helpful, polite agent who will help the user with their Melbourne related queries such as restaurant, pubs, places to visit and what transport can be used to get there.***<span class="copy-static" title="Click to copy!" data-copy-text="You are a helpful, polite   agent who will help the user with their Melbourne related queries such as restaurant, pubs, places to visit and what transport can be used to get there."><span class="copy"></span></span>
+    > Agent's goal: ***<copy>This is Flower Shop. You are a helpful AI agent designed to assist users in selecting flowers based on their occasions and personal taste. You can also set up delivery and send a confirmation SMS with the order details.</copy>***
 
 
-    ![Profiles](../graphics/Lab1/AITrack_AIAgentCreate.gif)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.3.gif)
+
+12. Customize the Welcome message with: ***<copy>Hi there, my name is Blossom, the AI Agent. How can I assist you?</copy>***
+
+    ![Profiles](../graphics/Lab1_AI_Agent/2.16.png)
 
 
-11. Switch to **Actions** tab ans make sure **Agent handover** togle is turned on. This will allow you to handoff calls to human agent on request while talking to your Virtual Agent.
-
-12. Switch to **Knowledge** tab and from **Knowledge base** drop-down list select **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">Your_Attendee_ID</span>_AI_KB<span class="copy" title="Click to copy!"></span></span>**
-
-13. Click **Save Changes**, then click **Publish**. Provide any version name in popped up window (ex. "1.0").
-
-    ![Profiles](../graphics/Lab1/AITrack_AIAgentaMapKB.gif)
-
-14. Click on **Preview** to test your AI Agent and ask the following: **"I'm looking for an Italian restaurant close to Melbourne Convention Center."**<span class="copy-static" title="Click to copy!" data-copy-text="I'm looking for an Italian restaurant close to Melbourne Convention Center."><span class="copy"></span></span>
-
-![Profiles](../graphics/Lab1/AITrack_AIAgentPreview.gif)
-
----
-
-## Integrating the Bot with Flow for Voice Calls
-
-1. In Control Hub navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
-
-2. Select Start Fresh and name the new flow **<span class="attendee-id-container">AutonomousAI_Flow_<span class="attendee-id-placeholder" data-prefix="AutonomousAI_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
-
-    ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_Flow_CreateFlow.gif)  
-
-3. Make sure the **Edit** mode at the top is set to **ON**. Then, drag and drop the **Virtual Agent V2** and **DisconnectContact** activities from the left panel onto the canvas.
-
-    !!! Note
-        Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> **VirtualAgent** also present on the Activity Library for Backward Compatability.
-
-    > Connect the **New Phone Contact** output node edge to this **VirtualAgentV2** node
-    >
-    > Connect the Handled outputs to **DisconnectContact** 
-    >
-    > Connect the Errored outputs to **DisconnectContact** 
-    >
-    > Set **Static Contact Center AI Config**
-    >
-    > Contact Center AI Config: **Webex AI Agent (Autonomous)**
-    >
-    > Virtual Agent: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AutoAI_Lab">Your_Attendee_ID</span>_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>**
-
-    ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_Flow_AddVAv2.gif)  
-
-4. Drag and drop following nodes:
-
-    - **Queue Contact** activity onto the Flow from the left side panel
-
-      >
-      > Connect the **Escalated** path from the **Virtual Agent V2** activity to the **Queue Contact** activity.
-      >
-      > Connect the **Queue Contact** activity to the **Play Music** activity
-      >
-      > Connect the **Failure** path from the **Queue Contact** activity to the **Disconnect Contact** activity.
-      > 
-      > Select **Static Queue**
-      > 
-      > Queue name: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
-      > 
-
-    - **Play Music**
-
-      >
-      > Create a loop by connecting the Play Music activity back to itself - to create a music loop, following the diagram provided.
-      >
-      > Connect the **Failure** path from the **Play Music** activity to the **Disconnect Contact** activity.
-      > 
-      > Music File: **defaultmusic_on_hold.wav**
-      >
-  
-5. **Validate** and **Publish** Flow. In popped up window click on dropdown menu to select **Latest** label, then click **Publish**  
-
-    ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_Flow_AddQueue.gif)  
-
-6. Assign the Flow to your **Channel (Entry Point)** - Do this by first going to **Channel** > Search for your channel **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**.
-7. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-8. In **Entry Point** Settings section change the following:
-
-    > Routing Flow: **<span class="attendee-id-container">AutonomousAI_Flow_<span class="attendee-id-placeholder" data-prefix="AutonomousAI_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
-
-    > Version Label: **Latest**
-
-    ![Profiles](../graphics/Lab1/L1M7_AutonomousAI_FlowtoEP.gif)  
-
-9. Dial Support Number assigned to your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** to test the Autonomous Virtual Agent over a voice call.
+13. In the instructions add additional specific guidlines that you would like the AI Agent to follow. Just **copy the text below and paste it to the Instractions section**: <br>
 
 
-## Testing
+    >Always first check what is the event for the flowers so you can provide the best option. 
 
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png)  and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen where you may need to enter the email address again and the password provided to you. 
-2. Select Team **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy" title="Click to copy!"></span></span>**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on every visit.
-3. Make your agent ***Available*** and you're ready to make a call.
+    >Always print the total at the end of the conversation at any stage.
 
-    ![profiles](../graphics/Lab1/5-Agent_Login.gif)
+    >Assist in Flower Selection:
+    >Provide information on individual flowers, including descriptions, prices, and symbolic meanings.
+    >Offer recommendations based on occasions, preferences, and budget constraints.
 
-4. Dial the support number assigned to your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** channel, and during the conversation with the virtual agent, ask about restaurants in Melbourne or places to visit to explore historical sites.
+    >Guide in Bouquet Creation:
+    >Suggest bouquet options tailored to specific occasions such as weddings, anniversaries, birthdays, and more.
+    >Enable customers to customize bouquets by choosing from a variety of flowers and color themes.
 
-5. Any time during conversation request to connect you with a live agent. The call will be transferred to your agent.
+    >Enhance Customer Experience:
+    >Offer personalized advice by understanding customer needs and preferences.
+    >Ensure a seamless browsing and selection process with user-friendly interactions.
 
-<p style="text-align:center"><strong>Congratulations, you have officially completed the Autonomous Virtual Agent mission! 🎉🎉 </strong></p>
+    >Educate Customers:
+    >Provide educational insights into the meanings and symbolism of different flowers to aid in thoughtful selection.
+    >Share care tips for maintaining flower freshness and longevity.
+
+    >Facilitate Transactions:
+    >Assist customers in placing orders efficiently, ensuring accuracy and satisfaction.
+    >Provide support for payment processing and order confirmations.
+
+    >Ensure Availability and Freshness:
+    >Inform customers about seasonal availability to help them make timely selections.
+    >Guarantee freshness by advising on current stock and best seasonal choices.
+
+    >Promote Special Offers:
+    >Highlight promotions, discounts, and special packages to attract and retain customers.
+    >Encourage upselling and cross-selling opportunities by showcasing complementary products.
+
+    >Ask if the customer needs the deliver. Collect the address and add price of the delivery to the Total. 
+
+    >Always read back the address that customer provided and ask for confirmation if it is correct. If it is not correct, ask to provide the address again.
+
+    >Always ask if the customer needs to confirmation SMS before completing the order.</br></br>
+    ![Profiles](../graphics/Lab1_AI_Agent/2.4.png)
+
+
+
+
+14.  Switch to **Knowledge** tab and from **Knowledge base** drop-down list select **<copy><w class="attendee"></w>_2000_AI_KB</copy>**.
+    ![Profiles](../graphics/Lab1_AI_Agent/2.5.gif)
+
+15.  Click on **Save changes** and **Publish** the flow. Provide any version name in popped up window (ex. "1.0").<br>
+    ![Profiles](../graphics/Lab1_AI_Agent/2.6.gif)
+
+
+### Task 2. Test your AI Agent
+
+1. Click on **Preview** and testing the AI Agent to understnad how it behaives using **Chat channel**. You can start the conversation with: **<copy>I need flower for my friend</copy>**. And try to ask what is the flower availabiliyt and prices and what would be the total for some floewr that you select. 
+![Profiles](../graphics/Lab1_AI_Agent/2.59.gif)
+
+2. Click on **Preview** and testing the AI Agent to understnad how it behaives using **Voice channel**. You can start the conversation with: **"I need flower for my friend"**<span class="copy-static" title="Click to copy!" data-copy-text="I need flower for my friend"><span class="copy"></span></span> and try to customize you order. 
+> **Note:** This Lab is being conducted in a classroom with approximately 30 attendees.  
+> Environmental factors, such as background noise and other attendees speaking next to you, may affect the response accuracy.  
+> For best results, it is **strongly recommended to use computer headphones**, if available.
+
+
+![Profiles](../graphics/Lab1_AI_Agent/2.60.gif)
+
+<p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
