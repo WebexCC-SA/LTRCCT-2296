@@ -3,7 +3,7 @@
 icon: material/bullseye-arrow
 ---
 
-<div style="text-align: center"><img src="../graphics/Lab2/Final_Mission_Warning.png" alt="Warning"></div>
+<div style="text-align: center"><img src="../docs/graphics/Lab2/Final_Mission_Warning.png" alt="Warning"></div>
 
 # **<span style="color: red;">Ooops! Something went wrong... Please ask for a help via chat at the bottom right.</span>**
 
