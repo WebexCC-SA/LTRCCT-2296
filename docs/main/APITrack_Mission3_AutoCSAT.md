@@ -131,7 +131,6 @@ Your mission is to:
     ```
     > Copy the following variables into the GraphQL Variables:
     >
-    > Variables: 
       ```JSON
       {
         "from": "{{now() | epoch(inMillis=true) - 15000000}}",
