@@ -84,21 +84,19 @@ Your mission is to:</br>
     > 
     > Method: **POST**
     > 
-    > Content Type: **Application/JSON**
+    > Content Type: **GraphQL**
     >
     > Copy this GraphQL query into the request body:
+    >
     ```JSON
-    {"query":"query lastTen($from:Long! $to:Long! $timeComparator:QueryTimeType $filter:TaskFilters){task(from:$from,to:$to,timeComparator:$timeComparator,filter:$filter){tasks{id status channelType createdTime endedTime origin destination direction terminationType isActive isCallback lastWrapupCodeName}}}","variables":{"from":"{{now() | epoch(inMillis=true) - 600000}}","to":"{{now() | epoch(inMillis=true)}}","timeComparator":"endedTime","filter":{"and":[{"status":{"equals":"ended"}},{"origin":{"equals":"{{NewPhoneContact.ANI}}"}},{"connectedCount":{"gte":1}}]}}}
     ```
-    <details><summary>Expanded Query For Understanding (optional)</summary>
     ```GraphQL
-    query lastTen(
+    query returnAgent(
       $from: Long!
       $to: Long!
-      $timeComparator: QueryTimeType
-      $filter: TaskFilters
+      $filter: TaskDetailsFilters
     ) {
-      task(from: $from, to: $to, timeComparator: $timeComparator, filter: $filter) {
+      taskDetails(from: $from, to: $to, filter: $filter) {
         tasks {
           id
           status
@@ -119,39 +117,42 @@ Your mission is to:</br>
     ``` JSON
     Variables:
     {
-      "from": "{{now() | epoch(inMillis=true) - 600000}}", # time now - 10 minutes represented in EPOCH time(ms)
-      "to": "{{now() | epoch(inMillis=true)}}", # time now represented in EPOCH time(ms)
-      "timeComparator": "endedTime",
+      "from": "{{now() | epoch(inMillis=true) - 900000}}",
+      "to": "{{now() | epoch(inMillis=true)}}",
       "filter": {
         "and": [
-          {
-            "status": {
-              "equals": "ended"
+        {
+            "ivrScriptId": { 
+                "equals": "{{NewPhoneContact.FlowId}}" 
+                } 
+        },
+        {
+           "status": {
+            "equals": "ended"
             }
-          },
-          {
+        },
+        {
             "origin": {
-              "equals": "{{NewPhoneContact.ANI}}" # ANI or caller phone number
-            }
-          },
-          {
+              "equals": "{{NewPhoneContact.ANI}}"
+              }
+        },
+        {
             "connectedCount": {
-              "gte": 1
-            }
-          }
+                "gte": 1
+                }
+        }
         ]
       }  
     }
     ```
-    </details>
-     
+
     > Parse Settings:
     > 
     > Content Type: **`JSON`**
     >
     > Output Variable: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Path Expression: `$.data.task.tasks[0].id`<span class="copy-static" data-copy-text="$.data.task.tasks[0].id"><span class="copy" title="Click to copy!"></span></span>
+    > Path Expression: `$.data.taskDetails.tasks[0].id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].id"><span class="copy" title="Click to copy!"></span></span>
    
 
 4.  Add a Condition node
@@ -257,34 +258,26 @@ Your mission is to:</br>
 ## Testing
 
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen where you may need to enter the email address again and the password provided to you. 
-2. On your Agent Desktop, make sure your status is not set to **Available**
-      1. Using Webex, place a call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-      2. After you hear the queue treatment start, you can abandon the call 
-3. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-4. On your Agent Desktop, set your status to available
-      1. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
-      2. After a few moments end the call and select a wrapup code.
+2. On your Agent Desktop, make sure your status is set to **Available**
+3. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. 
+4. On your Agent Desktop, you should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop). After a few moments end the call and select a wrapup code.
 5. In your Flow:
       1. Open the Debugger
       2. Select the last interaction (at the top of the list)
       3. Trace the steps taken in the flow
-6. Answer these questions:
-      1. Was the call queued with priority?
-         1. Why or why not?
 7. Close the Debugger
 8. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
 9. On your Agent Desktop, set your status to available
-      1. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
-      2. After a few moments end the call and select a wrapup code.
+      1.You should hear a message indicating that you recently placed a call and that your new call will be prioritized. (You may want to mute the mic on both Webex and the Agent Desktop)
+      2. On your Agent Desktop, you should be offered a call, click on the accept button
+      3. After a few moments end the call and select a wrapup code.
 10. In your Flow:
       1. Open the debugger
       2. Select the last interaction (at the top of the list)
       3. Trace the steps taken in the flow
 11. Answer these questions:
-      1. Was the call queued with priority?
+      1. Was the call chose another path?
          1. Why or why not?
-      2. If you called another Inbound Channel number with the same flow logic, would your call be prioritized?
-         1. How could you change this behavior? 
 
 ---
 <p style="text-align:center"><strong>Congratulations, you have officially completed Routing Returning Callers mission! 🎉🎉 </strong></p>
