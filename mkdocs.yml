@@ -149,7 +149,7 @@ nav:
       - Conclusion: ./main/AIAgentTrack_Conclusion.md
   - FINAL CHALLENGE:
       - Troubleshooting Mission:
-            - "Final Challenge: Warning...": ./main/FinalBossFight_Mission.md
+            - "Final Challenge: Oops!": ./main/FinalBossFight_Mission.md
 ##            - "Hint for Final Challenge Mission!": ./main/FinalBossFight_Hint1.md
 ##            - "Solution Guidance for Final Challenge Fight Mission!": ./main/FinalBossFight_Solution.md
   - Quick Links: quicklinks.md

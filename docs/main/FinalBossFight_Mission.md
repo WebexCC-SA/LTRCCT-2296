@@ -3,7 +3,7 @@
 icon: material/bullseye-arrow
 ---
 
-# **<span style="color: red;">Ooops! Something went wrong... Please ask for a help via chat at the bottom right.</span>**
+# **<span style="color: red;">Oops! Something went wrong... Please use the chat in the bottom-right corner for help.</span>**
 
 ![profiles](../graphics/Lab2/Final_Mission_Warning.png)
 
