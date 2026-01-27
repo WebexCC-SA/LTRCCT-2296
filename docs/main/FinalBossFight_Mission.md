@@ -4,11 +4,11 @@ icon: material/bullseye-arrow
 ---
 
 # **<span style="color: red;">Ooops! Something went wrong...</span>**
-
-## > Searching for a challenge guide...
-## > System error - The challenge guide has been deleted.
-## > Please ask for help via the chat in the bottom-right corner.
-
+```
+> Searching for a challenge guide...
+> System error - The challenge guide has been deleted.
+> Please ask for help via the chat in the bottom-right corner.
+```
 ![profiles](../graphics/Lab2/CartoonUltron.png)
 
 
