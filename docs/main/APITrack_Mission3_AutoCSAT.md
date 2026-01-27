@@ -103,45 +103,53 @@ Your mission is to:
     > 
     > Method: **POST**
     > 
-    > Content Type: **Application/JSON**
+    > Content Type: **GraphQL**
     >
     > Copy this GraphQL query into the request body:
-    ```JSON
-     {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n       { status: { equals: \"ended\" } }\n       { doubleGlobalVariables: {name:{equals:\"AutoCSAT_GV\"}, value: {gte:4} } }\n\n        ]\n    }\n  ) {\n    tasks {\n      csatScore  \n      autoCsat\n      owner {\n        id\n        name\n      }\n      doubleGlobalVariables(name: \"AutoCSAT_GV\"){\n        name\n        value\n      }\n\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 1800000}}","to":"{{now() | epoch(inMillis=true)}}"}}
-    ```
-    > <details><summary>Expanded Query For Understanding (optional)</summary>
+    >
+    > Query:
+
     ```GraphQL
+    query lastagentSearch($from: Long!, $to: Long!, $filter: TaskDetailsFilters) {
+    taskDetails(from: $from, to: $to, filter: $filter) {
+        tasks {
+          csatScore  
+          autoCsat
+          origin
+          owner {
+            id
+            name
+          }
+          doubleGlobalVariables(name: "AutoCSAT_GV"){
+            name
+            value
+          }
     
-    query($from: Long!, $to: Long!)
-      {
-        taskDetails(
-            from: $from
-            to: $to
-          filter: {
-            and: [
-             { lastEntryPoint: { id: { equals: "{{NewPhoneContact.EntryPointId}}" } } }
-             { status: { equals: "ended" } }
-             { doubleGlobalVariables: {name:{equals:"AutoCSAT_GV"}, value: {gte:4} } }
-      
-              ]
-          }
-        ) {
-          tasks {  
-            autoCsat
-            owner {
-              id
-              name
-            }
-            doubleGlobalVariables(name: "AutoCSAT_GV"){
-              name
-              value
-            }
-      
-          }
         }
       }
-  
+    }
     ```
+    > Copy the following variables into the GraphQL Variables:
+    >
+      ```JSON
+      {
+        "from": "{{now() | epoch(inMillis=true) - 15000000}}",
+        "to": "{{now() | epoch(inMillis=true)}}",
+        "filter": {
+          "and": [
+            {"lastEntryPoint": {"id": {"equals": "{{NewPhoneContact.EntryPointId}}" }}},
+            { "status": { "equals": "ended" } },
+            { "origin": { "equals": "{{NewPhoneContact.ANI}}" }},
+            {
+              "doubleGlobalVariables": {
+                "name":   { "equals": "AutoCSAT_GV" },
+                "value":  { "gte": 4 }
+              }
+            }
+          ]
+        }
+      }
+      ```
     ```JSON
     Expected Response:
     
@@ -179,7 +187,7 @@ Your mission is to:
     > - Path Expression: `$.data.taskDetails.tasks[0].doubleGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].doubleGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span>
     >
 
-      ![profiles](../graphics/Lab2/LAR_HTTPRequest.gif)
+      ![profiles](../graphics/Lab2/LAR_HTTPRequest.gif1)
 
 4. Add **Set Variable** node
     
