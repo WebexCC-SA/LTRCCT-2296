@@ -28,7 +28,7 @@ Your mission is to:
 
 ### Configured Elements for Current Mission
 
-1. Switch to Control Hub and navigate to **AI Assistant** under Desktop Expirience section. Make sure **Real-time Transcriptions** feature is turned on. 
+1. Switch to Control Hub and navigate to **AI Assistant** under Desktop Experience section. Make sure **Real-time Transcriptions** feature is turned on. 
 
     ![Profiles](../graphics/Lab1_AI_Agent/3.10.png)
     
@@ -37,7 +37,7 @@ Your mission is to:
    ![Profiles](../graphics/Lab1_AI_Agent/3.41.png)    
     <br/>Contact Center -> Desktop Layout (under Desktop Expirience section) -> search for **Global Layout**
    ![Profiles](../graphics/Lab1_AI_Agent/3.43.png) 
-    <br/>Click **Download default dektop layout**.  Make sure **RT_TRANSCRIPT** widget is configured. 
+    <br/>Click **Download default desktop layout**.  Make sure **RT_TRANSCRIPT** widget is configured. 
    ![Profiles](../graphics/Lab1_AI_Agent/3.11.png) 
    <br/>Or you can download preconfigured desktop layout here.
    [Desktop Layout](https://drive.google.com/file/d/1EnM-2r9XOVm2EcE6ND4fL3L62qZesm5_/view?usp=sharing){:target="_blank"} 
@@ -61,7 +61,7 @@ Your mission is to:
 1. Make your agent **Available**.
    ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
 
-2. Place the test call to the number that is assosiated with your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**, and ask to talk to an agent. 
+2. Place the test call to the number that is associated with your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**, and ask to talk to an agent. 
 
 3. Answer the call and start speaking. You will see the Live Transcripts window with the latest live transcripts between the caller and the human agent.
    ![Profiles](../graphics/Lab1_AI_Agent/3.16.png)

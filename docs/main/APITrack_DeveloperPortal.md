@@ -79,7 +79,7 @@ APIs streamline operations by automating tasks, integrating systems, and enhanci
 
     ![profiles](../graphics/Lab2/DevPortalLogin.gif)
 
-3. On Menu pannel on the left, scroll down to **API Reference** section and click on **Configuration** then **Adress Book**. Look at the list of available API calls.
+3. On Menu panel on the left, scroll down to **API Reference** section and click on **Configuration** then **Adress Book**. Look at the list of available API calls.
 
     !!!Note
         **Address Book Overview**</br>
