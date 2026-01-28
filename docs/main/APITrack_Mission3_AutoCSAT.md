@@ -150,9 +150,8 @@ Your mission is to:
         }
       }
       ```
-    ```JSON
     Expected Response:
-    
+    ```JSON
     {
         "data": {
             "taskDetails": {
@@ -365,12 +364,7 @@ Your mission is to:
 6. In your flow, open the debuger and select the latest call from the list (on top of the list).
       1. Trace the steps taken in the flow
       2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. You should see that now **agentID** and **AutoCSATVar** have assigned values.
-      3. Select **GraphQLResponse**. In details panel on the right-hand side you should see **Modified Variables** has a JSON response.
-
-        !!! Note
-            In JSON Response the **autoCsat** is set to **null**.  This is expected because the lab environment lacks sufficient data to train the AI model for accurate scoring.
-            ![profiles](../graphics/Lab2/AutoCSAT_null.png)
-      
+      3. Select **GraphQLResponse**. In details panel on the right-hand side you should see **Modified Variables** has a JSON response.    
       4. **Case_If_AgentIDEmpty** should exit via **false** node edge as the **GraphQL_Query** is not empty.
       5. **CheckCSATValue** is now either equals **4** or **5** (depends on what you selected on previous call) which matches the condition hence the call arrived to your agent via **QueueToAgent** node.
 

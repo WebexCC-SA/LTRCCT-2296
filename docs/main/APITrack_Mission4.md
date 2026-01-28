@@ -88,8 +88,6 @@ Your mission is to:</br>
     >
     > Copy this GraphQL query into the request body:
     >
-    ```JSON
-    ```
     ```GraphQL
     query returnAgent(
       $from: Long!
