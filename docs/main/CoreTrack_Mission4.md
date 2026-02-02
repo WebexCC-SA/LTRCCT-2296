@@ -89,7 +89,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
   
     ![profiles](../graphics/Lab1/L1M3_ScreenPop.gif)
     
-6. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+6. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 
 ## Testing
@@ -111,7 +111,7 @@ We recommend removing the ScreenPop node after testing. Otherwise, every time yo
 
 2. Navigate to **Even Flows** and delete **Screenpop** node
 
-3. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+3. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 ![profiles](../graphics/Lab1/AM2_Screenpop_delete.gif)
 

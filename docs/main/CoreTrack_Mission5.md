@@ -118,7 +118,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M4_PCS_PlayMessage.gif)            
 
-9. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+9. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 
 ## Testing

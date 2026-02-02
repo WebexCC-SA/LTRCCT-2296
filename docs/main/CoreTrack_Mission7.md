@@ -61,7 +61,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M2_Conf_SBR_Q.gif)
 
-3. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+3. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 ### Checkpoint Test
 
@@ -89,7 +89,7 @@ Your mission is to:
   
     ![profiles](../graphics/Lab1/L1M2_Raise_Skill_Req.gif)
 
-2. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+2. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 ### Checkpoint Test #2
 
@@ -130,7 +130,7 @@ Your mission is to:
   
     ![profiles](../graphics/Lab1/L1M2_Set_Skill_Relax.gif)
 
-2. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+2. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 ### Final mission test
 
@@ -155,7 +155,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M2_Revert_Non_SBR.gif) 
 
-2. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+2. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 3. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state.
 4. Make another test call to the Support Number and confirm that the caller hears the welcome message, and then the call is instantly assigned to your agent after entering the queue.
         

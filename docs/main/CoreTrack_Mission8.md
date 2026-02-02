@@ -110,7 +110,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M8_Update_Last_Prompt.gif)
 
-15. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+15. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 ### Checkpoint Test
 
