@@ -67,25 +67,25 @@ Your mission is to:
     > - Set checkbox in **Make Prompt Interruptible**
     >
     > - Advanced Settings:
-    >
-    >   * No-Input Timeout: 3 
-    >
-    >   * Inter-Digit Timeout: 3
-    >
-    >   * Minimum Digits: 1
-    >
-    >   * Maximum Digits: 10
+    >    
+    >    * No-Input Timeout: 3 
+    >    
+    >    * Inter-Digit Timeout: 3
+    >    
+    >    * Minimum Digits: 1
+    >    
+    >    * Maximum Digits: 10
 
     ![Profiles](../graphics/Lab2/BM1-3-Collect_PIN.gif)
 
     
 5. Add **Condition** node
   
-    > Activity Label: **PIN_Check**<span class="copy-static" data-copy-text="PIN_Check"><span class="copy" title="Click to copy!"></span></span>
+    > - Activity Label: **PIN_Check**<span class="copy-static" data-copy-text="PIN_Check"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Connect the output node edge from the **Collect Digits** node to this node
+    > - Connect the output node edge from the **Collect Digits** node to this node
     >
-    > In the Expression section write an expresion ***{{CollectPIN.DigitsEntered == '1111'}}***<span class="copy-static" data-copy-text="{{CollectPIN.DigitsEntered == '1111'}}"><span class="copy" title="Click to copy!"></span></span>
+    > - In the Expression section write an expresion ***{{CollectPIN.DigitsEntered == '1111'}}***<span class="copy-static" data-copy-text="{{CollectPIN.DigitsEntered == '1111'}}"><span class="copy" title="Click to copy!"></span></span>
     
     <span style="color: orange;">[Optional]</span> You can verify the expresion result by clicking on **Test Expression** icon in the Expresion section
         

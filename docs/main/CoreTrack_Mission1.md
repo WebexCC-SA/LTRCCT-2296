@@ -81,18 +81,18 @@ Flow Templates are designed to empower developers, speed up the development life
 
 10. <span style="color: orange;">[Optional]</span> Select **Play Message** node (the one which goes after Queue and Play Music nodes) and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
 
-11. On bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
-
+11. Validate and publish the flow.
+    - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
     !!! Note
         You can ignore recommendations but cannot skip errors.
+    - After validation is complete, click on **Publish Flow** next to it.
+    - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. On bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
 
-12. Click **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
-  
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-13. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-14. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-15. In **Entry Point** settings section change the following, then click **Save** button:
+12. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+13. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+14. In **Entry Point** settings section change the following, then click **Save** button:
 
     > - Routing flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     >

@@ -22,18 +22,17 @@ The primary objective of this new feature is to enhance nodes activities to incl
 ## Mission Details
 
 Your mission is to:
-1. Create a new flow by using pre-defined flow template
+
+1. Create a new flow by using pre-defined flow template.
 2. Request the data from external database and parse it into flow variables which are coming with a flow template.
 3. You do not need to create Business Hours, Channels and additional Flows as they have been pre-configured for you.
 
-> **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
->
-> We are going to imitate a real API server by providing realistic responses to requests. For that we chose Server [**MockAPI**](https://mockapi.io/){:target="_blank"}.
-> 
-> For more information of how you can use MockAPI please watch these Vidcasts: 
-[**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"} and [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
-> 
-> </details>
+**<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+We are going to imitate a real API server by providing realistic responses to requests. For that we chose Server [**MockAPI**](https://mockapi.io/){:target="_blank"}.
+For more information of how you can use MockAPI please watch these Vidcasts: 
+- [**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"}
+- [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
+</details>
 
 
 ## Steps
@@ -63,15 +62,15 @@ Your mission is to:
     ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
 
  
-    > **<details><summary>**Test your API Source**<span style="color: orange;">[Optional]</span></summary>**
+    > **<details><summary>Test your API Source <span style="color: orange;">[Optional]</span></summary>**
     > 
     > 1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
     > 
     > 2. Replace DNIS with the provided DNIS number stripping +1
     >
-    > <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
+    >    - <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
     >
-    > 3. Open Chrome browser and past your URL. You should get the follwoing result
+    > 3. Open Chrome browser and past your URL. You should get the follwoing result:
     > 
     > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
     > 
@@ -94,21 +93,21 @@ Your mission is to:
 
 9. Open **GoTo_x19** node and set:
 
-    > Destination Type: **Flow**
+    > - Destination Type: **Flow**
     >
-    > Static Flow
+    > - **Static Flow**
     >
-    > Flow: **CLTS_ErrorHandling_Flow**
+    > - Flow: **CLTS_ErrorHandling_Flow**
     >
     > Choose Version Label: **Latest**
     
 10. Open **GoTo_8ca** and set:
 
-    > Destination Type: **Entry Point**
+    > - Destination Type: **Entry Point**
     >
-    > Static Entry Point
+    > - **Static Entry Point**
     >
-    > Entry Point: **CLTS_ErrorHandling_Channel**
+    > - Entry Point: **CLTS_ErrorHandling_Channel**
 
  
 11. Repeat node settings in **Step 9** for **GoTo_uyn**
@@ -117,33 +116,30 @@ Your mission is to:
 
     ![Profiles](../graphics/Lab2/BM2-11-15-FallbackQ.gif)
 
-13. **Validate** and **Publish** flow
+13. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
-14. In Popped up window click on dropdown menu to select **Latest** label, then click **Publish**
-
-15. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
+14. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
     
+    > - Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     > 
-    > Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > - Select the Routing Flow: **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     > 
-    > Select the Routing Flow: **<span class="attendee-id-container">DynamicVariables_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > - Select the Version Label: **Latest**
     > 
-    > Select the Version Label: **Latest**
-    > 
-    > Click **Save** in the lower right corner of the screen
+    > - Click **Save** in the lower right corner of the screen
 
     ![Profiles](../graphics/Lab2/BM2-18-ChannelChange.gif)
 
 
 ## Testing
 
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. 
+1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with Webex icon on it where you may need to enter the email address again and the password provided to you.
 
 2. Select Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
 
 3. Make your agent ***Available*** and you're ready to make a call.
 
-    ![profiles](../graphics/Lab1/5-Agent_Login.gif)
+    ![profiles](../graphics/Lab1/L1M1_Agent_Login.gif)
 
 4. Change the status of your agent to **Available** and make a call to test you flow. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally the call should land on the ***$[0].queue***
 
