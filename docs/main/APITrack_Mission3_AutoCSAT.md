@@ -145,6 +145,7 @@ Your mission is to:
         }
       }
       ```
+    >
     > - Expected Response:
     >
       ```JSON
@@ -182,7 +183,7 @@ Your mission is to:
     > - Path Expression: `$.data.taskDetails.tasks[0].doubleGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].doubleGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span>
     >
 
-      ![profiles](../graphics/Lab2/LAR_HTTPRequest.gif1)
+    ![profiles](../graphics/Lab2/LAR_HTTPRequest.gif1)
 
 4. Add **Set Variable** node
     
