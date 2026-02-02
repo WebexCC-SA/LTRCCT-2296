@@ -54,28 +54,17 @@ Your mission is to:
 <span style="color: orange;">[Optional]</span>
     In case you don't want to use pre-configured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to **Build** section below
 
-> **<details><summary>Create your own Survey <span style="color: orange;">[Optional]</span></summary>**
-> 
-> - Download audio prompts from the [shared folder](https://drive.google.com/drive/folders/1vS2aXgaCzorGAmGdQ7bP2NJMHNQx2ais?usp=sharing){:target="_blank"}. 
->
-> - In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
-> 
-> - Enter survey name as **PCS_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in **Survey name** field. Make sure **IVR survey** is selected. Then click next 
->
->    ![profiles](../graphics/Lab1/PCS1.gif) 
->
-> - Edit **Welcome note** and **Thank you note** by uploading respective audio prompts to the survey. 
->
->    ![profiles](../graphics/Lab1/PCS_Welcome.gif) 
->
-> - Click on **Add a question** which is in the middle between **Welcome note** and **Thank you note**. Choose either NPS, CSAT or CES type of question and upload respective audio prompt to the survey.
->
-> - Add more questions if you want.
-> 
-> - Click **Next**. You can ignore **Error Handling** configuration page. Click **Save**.
-> 
->    ![profiles](../graphics/Lab1/PCS_questions.gif) 
-> 
+**<details><summary>Create your own Survey <span style="color: orange;">[Optional]</span></summary>**
+- Download audio prompts from the [shared folder](https://drive.google.com/drive/folders/1vS2aXgaCzorGAmGdQ7bP2NJMHNQx2ais?usp=sharing){:target="_blank"}. 
+- In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
+- Enter survey name as **PCS_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in **Survey name** field. Make sure **IVR survey** is selected. Then click next 
+  ![profiles](../graphics/Lab1/PCS1.gif) 
+- Edit **Welcome note** and **Thank you note** by uploading respective audio prompts to the survey. 
+  ![profiles](../graphics/Lab1/PCS_Welcome.gif) 
+- Click on **Add a question** which is in the middle between **Welcome note** and **Thank you note**. Choose either NPS, CSAT or CES type of question and upload respective audio prompt to the survey.
+- Add more questions if you want.
+- Click **Next**. You can ignore **Error Handling** configuration page. Click **Save**.
+  ![profiles](../graphics/Lab1/PCS_questions.gif) 
 </details>
 
 ## Build

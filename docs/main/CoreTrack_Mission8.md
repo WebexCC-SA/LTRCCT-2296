@@ -17,9 +17,9 @@ The main goal is to improve the customer experience while waiting in a queue by 
 2. The flow executes the logic and places the call into a queue.</br>
 3. Once the call is placed in the queue, the main flow calls subflow sending few parameters to it.
 4. The subflow executes the following logic **two times** based on the received parameters:
-   > - Plays a music in queue. The duration is defined by the parameter.</br>
-   > - Plays a Text-To-Speech message. The text is fetched from the parameter.</br>
-   > - Plays a music in queue of the same duration again.</br>
+    - Plays a music in queue. The duration is defined by the parameter.</br>
+    - Plays a Text-To-Speech message. The text is fetched from the parameter.</br>
+    - Plays a music in queue of the same duration again.</br>
 
 ## Mission Details
 
@@ -92,7 +92,7 @@ Your mission is to:
 
 13. Click on the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node. Go to the node settings pane on the right and set the following parameters:
     
-    > Subflow Label: **Latest**
+    > - Subflow Label: **Latest**
     
     Scroll down to the **Subflow Input Variables** section and configure the following mapping by pressing **Add New** button for every variable:
     
@@ -106,7 +106,7 @@ Your mission is to:
 
 14. Click on the **PlayMessage** node. Go to the node settings pane on the right and paste the following message into the **Text-to-Speech Message** field:
     
-    > ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***<span class="copy-static" title="Click to copy!"data-copy-text="We apologize, but all our agents are currently busy. Your waiting time may be longer than expected."><span class="copy"></span></span>
+    > - ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***<span class="copy-static" title="Click to copy!"data-copy-text="We apologize, but all our agents are currently busy. Your waiting time may be longer than expected."><span class="copy"></span></span>
 
     ![profiles](../graphics/Lab1/L1M8_Update_Last_Prompt.gif)
 
@@ -144,11 +144,11 @@ Your mission is to:
 
 4. Modify these variables in the following way and save changes.
 
-    > Variable **subflowDuration**:<br/>
+    Variable **subflowDuration**:<br/>
     > - Turn on **Override value** toggle in the **Value** column.
     > - Set new value as **10**.
     > <br/><br/>
-    > Variable **subflowMessage**:<br/>
+    Variable **subflowMessage**:<br/>
     > - Turn on **Override value** toggle in the **Value** column.
     > - Set new value as ***Thanks for staying with us. Your call will be answered by the next available agent.***.
 
