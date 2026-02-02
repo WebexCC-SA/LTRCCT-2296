@@ -8,7 +8,7 @@ icon: material/medal
 ## Story
 A common request for returning customers calling into a contact center is to work with the last person with which they had a good experience.  This may be because they are already familiar with what the customer needs or it may just be that the customer is familiar with the agent and enjoyed their last interaction. With the new Auto CSAT feature in the Webex Contact Center we can automatically account for this request and route to the last agent which had a high Auto CSAT with the customer.  
 
-<span style="color: red;">**[IMPORTANT]** Since this is a lab environment where you will act as both the customer and the agent, accurately scoring a call will be challenging. Additionally, AutoCSAT has not been taught due to the insufficient number of calls required for AI to learn and generate proper scoring. In this lab, we will use a Global Variable to store the score, which is also used for AutoCSAT teaching. With a sufficient number of provided scores, AutoCSAT will eventually be able to score calls automatically.</span>
+<span style="color: red;">**[IMPORTANT]**</span> Since this is a lab environment where you will act as both the customer and the agent, accurately scoring a call will be challenging. Additionally, AutoCSAT has not been taught due to the insufficient number of calls required for AI to learn and generate proper scoring. In this lab, we will use a Global Variable to store the score, which is also used for AutoCSAT teaching. With a sufficient number of provided scores, AutoCSAT will eventually be able to score calls automatically.
 
 !!! Note
     **Configuration page of AutoCSAT**
@@ -40,96 +40,91 @@ Your mission is to:
   
     - Agent ID variable:
     
-      >
-      > Name: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-      > Default Value: **empty**
+       > - Name: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
+       >
+       > - Type: **String**
+       >
+       > - Default Value: **empty**
 
     - Variable to write HTTP Response into it:
     
-      >
-      > Name: **JSONResponse**<span class="copy-static" data-copy-text="JSONResponse"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-      > Default Value: **empty**
+       > - Name: **JSONResponse**<span class="copy-static" data-copy-text="JSONResponse"><span class="copy" title="Click to copy!"></span></span>
+       >
+       > - Type: **String**
+       >
+       > - Default Value: **empty**
 
     - String type AutoCSAT variable:
     
-      >
-      > Name: **AutoCSATVar**<span class="copy-static" data-copy-text="AutoCSATVar"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **Decimal**
-      >
-      > Default Value: **0.0**<span class="copy-static" data-copy-text="0.0"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Switch on **Make Agent Viewable**
-      >
-      > Desktop Label: **Auto CSAT**
+       > - Name: **AutoCSATVar**<span class="copy-static" data-copy-text="AutoCSATVar"><span class="copy" title="Click to copy!"></span></span>
+       >
+       > - Type: **Decimal**
+       >
+       > - Default Value: **0.0**<span class="copy-static" data-copy-text="0.0"><span class="copy" title="Click to copy!"></span></span>
+       >
+       > - Switch on **Make Agent Viewable**
+       >
+       > - Desktop Label: **Auto CSAT**
 
-      ![profiles](../graphics/Lab2/LAR_FlowVars.gif)
+    ![profiles](../graphics/Lab2/LAR_FlowVars.gif)
 
 2. Add a **Play Message** node 
     
+    > - Connect the **New Phone Contact** node edge to this **Play Message** node
     >
-    > Connect the **New Phone Contact** node edge to this **Play Message** node
+    > - Enable Text-To-Speech
     >
-    > Enable Text-To-Speech
+    > - Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    > - Click the Add Text-to-Speech Message button
     >
-    > Click the Add Text-to-Speech Message button
+    > - Delete the Selection for Audio File
     >
-    > Delete the Selection for Audio File
-    >
-    > Text-to-Speech Message: ***Welcome to the last agent routing mission.***<span class="copy-static" data-copy-text="Welcome to the last agent routing mission."><span class="copy" title="Click to copy!"></span></span>
+    > - Text-to-Speech Message: ***Welcome to the last agent routing mission.***<span class="copy-static" data-copy-text="Welcome to the last agent routing mission."><span class="copy" title="Click to copy!"></span></span>
 
-      ![profiles](../graphics/Lab2/LAR_PlayMessage.gif)
+    ![profiles](../graphics/Lab2/LAR_PlayMessage.gif)
 
 3.  Add an **HTTPRequest** node for our query
     
+    > - Activity Label: **GraphQL_Query**<span class="copy-static" data-copy-text="GraphQL_Query"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Activity Label: **GraphQL_Query**<span class="copy-static" data-copy-text="GraphQL_Query"><span class="copy" title="Click to copy!"></span></span>
+    > - Connect the output node edge from the **Play Message** node to this node
     >
-    > Connect the output node edge from the **Play Message** node to this node
+    > - Select Use Authenticated Endpoint
     >
-    > Select Use Authenticated Endpoint
-    >
-    > Connector: **WxCC_API**
+    > - Connector: **WxCC_API**
     > 
-    > Path: **/search**<span class="copy-static" data-copy-text="/search"><span class="copy" title="Click to copy!"></span></span>
+    > - Path: **/search**<span class="copy-static" data-copy-text="/search"><span class="copy" title="Click to copy!"></span></span>
     > 
-    > Method: **POST**
+    > - Method: **POST**
     > 
-    > Content Type: **GraphQL**
+    > - Content Type: **GraphQL**
     >
-    > Copy this GraphQL query into the request body:
+    > - Copy this GraphQL query into the request body:
     >
-    > Query:
-
-    ```GraphQL
-    query lastagentSearch($from: Long!, $to: Long!, $filter: TaskDetailsFilters) {
-    taskDetails(from: $from, to: $to, filter: $filter) {
-        tasks {
-          csatScore  
-          autoCsat
-          origin
-          owner {
-            id
-            name
+    > - Query:
+    >
+      ```GraphQL
+      query lastagentSearch($from: Long!, $to: Long!, $filter: TaskDetailsFilters) {
+      taskDetails(from: $from, to: $to, filter: $filter) {
+          tasks {
+            csatScore  
+            autoCsat
+            origin
+            owner {
+              id
+              name
+            }
+            doubleGlobalVariables(name: "AutoCSAT_GV"){
+              name
+              value
+            }
           }
-          doubleGlobalVariables(name: "AutoCSAT_GV"){
-            name
-            value
-          }
-    
         }
       }
-    }
-    ```
-    > Copy the following variables into the GraphQL Variables:
+      ```
+    >
+    > - Copy the following variables into the GraphQL Variables:
     >
       ```JSON
       {
@@ -150,9 +145,10 @@ Your mission is to:
         }
       }
       ```
-    Expected Response:
-    ```JSON
-    {
+    > - Expected Response:
+    >
+      ```JSON
+      {
         "data": {
             "taskDetails": {
                 "tasks": [
@@ -171,8 +167,8 @@ Your mission is to:
                 ]
             }
         }
-    }
-    ```
+      }
+      ```
     </details>
 
     > Parse Settings:
@@ -190,156 +186,141 @@ Your mission is to:
 
 4. Add **Set Variable** node
     
+    > - Activity Label: **GraphQL_Response**<span class="copy-static" data-copy-text="GraphQL_Response"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Activity Label: **GraphQL_Response**<span class="copy-static" data-copy-text="GraphQL_Response"><span class="copy" title="Click to copy!"></span></span>
+    > - Connect **GraphQL_Query** to this node
     >
-    > Connect **GraphQL_Query** to this node
+    > - We will connct **Set Variable** node in next step
     >
-    > We will connct **Set Variable** node in next step
+    > - Variable: **JSONResponse**<span class="copy-static" data-copy-text="JSONResponse"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Variable: **JSONResponse**<span class="copy-static" data-copy-text="JSONResponse"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Set To Variable: **GraphQL_Query.httpResponseBody**<span class="copy-static" data-copy-text="GraphQL_Query.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
-    >
-
-      ![profiles](../graphics/Lab2/LAR_GraphQL_Response.gif)
+    > - Set To Variable: **GraphQL_Query.httpResponseBody**<span class="copy-static" data-copy-text="GraphQL_Query.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
+    
+    ![profiles](../graphics/Lab2/LAR_GraphQL_Response.gif)
 
 5. Add a **Case** node
 
-    >
-    > Activity Label: **Case_If_AgentIDEmpty**<span class="copy-static" data-copy-text="Case_If_AgentIDEmpty"><span class="copy" title="Click to copy!"></span></span>
+    > - Activity Label: **Case_If_AgentIDEmpty**<span class="copy-static" data-copy-text="Case_If_AgentIDEmpty"><span class="copy" title="Click to copy!"></span></span>
     > 
-    > Connect the output node edge from teh **GraphQL_Response** node to this node
+    > - Connect the output node edge from teh **GraphQL_Response** node to this node
     >
-    > Select **Build Expression**
+    > - Select **Build Expression**
     >
-    Expression: `{{agentID is empty}}`<span class="copy-static" data-copy-text="{{ agentID is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    > - Expression: `{{agentID is empty}}`<span class="copy-static" data-copy-text="{{ agentID is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Change **Case 0** to **true**
+    > - Change **Case 0** to **true**
     >
-    > Change **Case 1** to **false**
+    > - Change **Case 1** to **false**
     >
-    > We will connect the **true** and **false** in future steps.  
+    > - We will connect the **true** and **false** in future steps.  
     
     ![profiles](../graphics/Lab2/LAR_Case.gif)
 
 6. Add a **Condition** node
 
+    > - Activity Label: **CheckCSATValue**<span class="copy-static" data-copy-text="CheckCSATValue"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Activity Label: **CheckCSATValue**<span class="copy-static" data-copy-text="CheckCSATValue"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Connect **false** exit of **Case** node to this node
+    > - Connect **false** exit of **Case** node to this node
     > 
-    > We will connect the **True** and **False** output edges in future steps.
+    > - We will connect the **True** and **False** output edges in future steps.
     >
-    > Expression: `{{AutoCSATVar>=4.0}}`<span class="copy-static" data-copy-text="{{AutoCSATVar>=4.0}}"><span class="copy" title="Click to copy!"></span></span>
-    >
-    >
-
+    > - Expression: `{{AutoCSATVar>=4.0}}`<span class="copy-static" data-copy-text="{{AutoCSATVar>=4.0}}"><span class="copy" title="Click to copy!"></span></span>
+    
     ![profiles](../graphics/Lab2/LAR_Condition.gif)
 
 7.  Add a **Queue To Agent** node
 
-    >
-    > Connect the **True** node edge of the **CheckCSATValue** node created in previous step to this **Queue To Agent**.
+    > - Connect the **True** node edge of the **CheckCSATValue** node created in previous step to this **Queue To Agent**.
     > 
-    > Agent Variable: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
+    > - Agent Variable: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Agent Lookup Type: **ID**<span class="copy-static" data-copy-text="ID"><span class="copy" title="Click to copy!"></span></span>
+    > - Agent Lookup Type: **ID**<span class="copy-static" data-copy-text="ID"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Set Contact Priority: **True**
+    > - Set Contact Priority: **True**
     >
-    > Select Static Priority
+    > - Select Static Priority
     >
-    > Static Priority Value: **P1**
+    > - Static Priority Value: **P1**
     >
-    > Reporting Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    > - Reporting Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
-    > Park Contact if Agent Unavailable: **False**
+    > - Park Contact if Agent Unavailable: **False**
     >
-    > Recovery Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
-    >
-
+    > - Recovery Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    
     ![profiles](../graphics/Lab2/LAR_QtoAgent.gif)
 
 8. Add a **Queue Contact** node
 
+    > - Connect the **False** node edge from the **CheckCSATValue** node created in **Step 6** to this node
     >
-    > Connect the **False** node edge from the **CheckCSATValue** node created in **Step 6** to this node
+    > - Connect **true** node edge of **Case_If_AgentIDEmpty** node created in **Step 5** to this node
     >
-    > Connect **true** node edge of **Case_If_AgentIDEmpty** node created in **Step 5** to this node
-    >
-    > Connect **Default** node edge of **Case_If_AgentIDEmpty** node created in **Step 5** to this node
+    > - Connect **Default** node edge of **Case_If_AgentIDEmpty** node created in **Step 5** to this node
     > 
-    > Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
+    > - Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
     >
-    > Select **Static Queue**
+    > - Select **Static Queue**
     >
-    > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
-    >
+    > - Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    
     ![profiles](../graphics/Lab2/LAR_QueueContact.gif)
 
 9. Add a **Subflow** node and **DisconnectContact** node
 
+    > - In the Activity Library pane on the left side of the screen, click **Subflows**
     >
-    > In the Activity Library pane on the left side of the screen, click **Subflows**
+    > - Find the **Subflow** names **WaitTreatment** and drag it onto the flow canvas like you would any other node.
     >
-    > Find the **Subflow** names **WaitTreatment** and drag it onto the flow canvas like you would any other node.
+    > - Connect the output node edge from this node to the **DisconnectContact** node.
     >
-    > Connect the output node edge from this node to the **DisconnectContact** node.
+    > - Connect the **Queue Contact** node edge that we created in previous step to this **Subflow** node
     >
-    > Connect the **Queue Contact** node edge that we created in previous step to this **Subflow** node
+    > - Subflow Label: **Latest**
     >
-    > Subflow Label: **Latest**
+    > - Enable automatic updates: **True**
     >
-    > Enable automatic updates: **True**
+    > - Subflow Input Variables: **None**
     >
-    > Subflow Input Variables: **None**
-    >
-    > Subflow Output Variables: **None**
-    >
+    > - Subflow Output Variables: **None**
+    
     ![profiles](../graphics/Lab2/LAR_Wait.gif)
 
 10. Navigate to **Event Flows** and add **GoTo** node to the canvas.
 
+    > - Connect **AgentDisconnect** event node edge this node
     >
-    > Connect **AgentDisconnect** event node edge this node
+    > - Destination Type: **Flow**
     >
-    > Destination Type: **Flow**
+    > - Flow: **CCBU_PostCallSurvey_AutoCSAT**<span class="copy-static" data-copy-text="CCBU_PostCallSurvey_AutoCSAT"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Flow: **CCBU_PostCallSurvey_AutoCSAT**<span class="copy-static" data-copy-text="CCBU_PostCallSurvey_AutoCSAT"><span class="copy" title="Click to copy!"></span></span>
+    > - Choose Version Label: **Latest**
     >
-    > Choose Version Label: **Latest**
+    > <details><summary>Check your Main Flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
 
-    <details><summary>Check your Main Flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
+    ![profiles](../graphics/Lab2/LAR_EventGoTo.gif)
 
-11.  Publish your flow
+11. Validate & Publish your flow:
 
-    > Turn on Validation at the bottom right corner of the flow builder
-    >
-    > If there are no Flow Errors, Click **Publish**
-    >
-    > Add a publish note
-    >
-    > Add Version Label(s): **Latest** 
-    >
-    > Click **Publish** Flow
-
-     ![profiles](../graphics/Lab2/LAR_EventGoTo.gif)
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.<br/>
+    > !!! Note
+          You can ignore recommendations but cannot skip errors.
+    > - If there are no flow errors after validation is complete, click on **Publish Flow** next to it.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
 
 12. Map your flow to your inbound channel
     
-    > Navigate to Control Hub > Contact Center > Channels
+    > - Navigate to Control Hub > Contact Center > Channels
     >
-    > Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > - Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     >
-    > Select the Routing Flow: **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > - Select the Routing Flow: **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
-    > Select the Version Label: **Latest**
+    > - Select the Version Label: **Latest**
     >
-    > Click Save in the lower right corner of the screen
+    > - Click Save in the lower right corner of the screen
 
-   ![profiles](../graphics/Lab2/LAR_Channel.gif) 
+    ![profiles](../graphics/Lab2/LAR_Channel.gif) 
 ---
 
 ## Testing
