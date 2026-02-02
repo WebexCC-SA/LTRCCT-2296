@@ -181,9 +181,8 @@ Your mission is to:
     >
     > - Output Variable: `AutoCSATVar`<span class="copy-static" data-copy-text="AutoCSATVar"><span class="copy" title="Click to copy!"></span></span>
     > - Path Expression: `$.data.taskDetails.tasks[0].doubleGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].doubleGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span>
-    >
 
-    ![profiles](../graphics/Lab2/LAR_HTTPRequest.gif1)
+    ![profiles](../graphics/Lab2/LAR_HTTPRequest.gif)
 
 4. Add **Set Variable** node
     
