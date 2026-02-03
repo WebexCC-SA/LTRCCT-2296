@@ -83,11 +83,9 @@ Flow Templates are designed to empower developers, speed up the development life
 
 11. Validate and publish the flow:
 
-    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.<br/>
-    >       !!! Note
-                You can ignore recommendations but cannot skip errors.
-    > - If there are no flow errors after validation is complete, click on **Publish Flow** next to it.
-    >- In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
+    - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.<br/>
+    - If there are no flow errors after validation is complete, click on **Publish Flow** next to it.
+    - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
 
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 

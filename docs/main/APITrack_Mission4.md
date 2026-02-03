@@ -17,14 +17,15 @@ When a customer calls back into the contact center within ten minutes of their l
 
 ## Call Flow Overview
 
-1. New call comes into the flow</br>
+1. New call comes into the flow.</br>
 2. Call the Search API to check if the ANI (caller's number) had a call which ended in the last 10 minutes.</br>
 3. If the caller had a connected call which ended within the last 10 minutes, we will play a message and will queue the call with a higher priority so they will get assigned to the next available agent.</br>
 4. If the caller did not end a call with the contact center in the previous 10 minutes, we will queue the call normally.</br>
 
 ## Mission Details
 
-Your mission is to:</br>
+Your mission is to:
+
 1. Create a new flow from scratch. </br>
 2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
 3. Build a condition that matches use case scenario and route the call to agent.</br>
@@ -49,44 +50,44 @@ Your mission is to:</br>
 
 1. Create a flow named **<span class="attendee-id-container">ReturningCaller_<span class="attendee-id-placeholder" data-prefix="ReturningCaller_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** then create a flow variable 
     
-    > Name: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
+    > - Name: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Type: **String**
+    > - Type: **String**
     >
-    > Default Value: Leave empty
+    > - Default Value: Leave empty
 
 
 2. Add a **Play Message** node for our welcome message
 
-    > Connect the **New Phone Contact** output node edge to this **Play Message** node
+    > - Connect the **New Phone Contact** output node edge to this **Play Message** node
     >
-    > Enable Text-To-Speech
+    > - Enable Text-To-Speech
     >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    > - Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button
+    > - Click the Add Text-to-Speech Message button
     >
-    > Delete the Selection for Audio File
+    > - Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: **Welcome to the advanced routing and API integrations lab.**<span class="copy-static" data-copy-text="Welcome to the advanced routing and API integrations lab."><span class="copy" title="Click to copy!"></span></span>
+    > - Text-to-Speech Message: **Welcome to the advanced routing and API integrations lab.**<span class="copy-static" data-copy-text="Welcome to the advanced routing and API integrations lab."><span class="copy" title="Click to copy!"></span></span>
     >
 
 
 3. Add an **HTTP Request** node for our query
 
-    > Connect the output node edge from the **Play message** node to this node
+    > - Connect the output node edge from the **Play message** node to this node
     > 
-    > Select Use Authenticated Endpoint
+    > - Select Use Authenticated Endpoint
     >
-    > Connector: **WxCC_API**
+    > - Connector: **WxCC_API**
     > 
-    > Path: **/search**
+    > - Path: **/search**
     > 
-    > Method: **POST**
+    > - Method: **POST**
     > 
-    > Content Type: **GraphQL**
+    > - Content Type: **GraphQL**
     >
-    > Copy this GraphQL query into the request body:
+    > - Copy this GraphQL query into the request body:
     >
     ```GraphQL
     query returnAgent(
@@ -112,7 +113,9 @@ Your mission is to:</br>
       }
     }
     ```
-    > Copy the following variables into the GraphQL Variables:
+    >
+    > - Copy the following variables into the GraphQL Variables:
+    >
     ``` JSON
     {
       "from": "{{now() | epoch(inMillis=true) - 900000}}",
@@ -143,73 +146,72 @@ Your mission is to:</br>
       }  
     }
     ```
-
+    >
     > Parse Settings:
     > 
-    > Content Type: **`JSON`**
+    > - Content Type: **`JSON`**
     >
-    > Output Variable: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
+    > - Output Variable: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Path Expression: `$.data.taskDetails.tasks[0].id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].id"><span class="copy" title="Click to copy!"></span></span>
-   
+    > - Path Expression: `$.data.taskDetails.tasks[0].id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].id"><span class="copy" title="Click to copy!"></span></span>
+
 
 4.  Add a Condition node
 
-    > Connect the output from the **HTTP Request** node to this node
+    > - Connect the output from the **HTTP Request** node to this node
     >
-    > Expression: **`{{previousID is empty}}`**<span class="copy-static" data-copy-text="{{previousID is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    > - Expression: **`{{previousID is empty}}`**<span class="copy-static" data-copy-text="{{previousID is empty}}"><span class="copy" title="Click to copy!"></span></span>
     >
-    > We will connect the **True** node in a future step.
+    > - We will connect the **True** node in a future step.
     >
-    > Connect the **False** node edge to the **Play Message** node created in the next step.
-    >
+    > - Connect the **False** node edge to the **Play Message** node created in the next step.
+
 
 5. Add a **Play Message** node
 
-    > Connect the **False** node edge from the previous step to this node
+    > - Connect the **False** node edge from the previous step to this node
     >
-    > Enable Text-To-Speech
+    > - Enable Text-To-Speech
     >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    > - Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button
+    > - Click the Add Text-to-Speech Message button
     >
-    > Delete the Selection for Audio File
+    > - Delete the Selection for Audio File
     >
-    > Text-to-Speech Message: **It looks like you were just working with an agent and had to call back in. We are prioritizing this call for the next available agent.**<span class="copy-static" data-copy-text="It looks like you were just working with an agent and had to call back in. We are prioritizing this call for the next available agent."><span class="copy" title="Click to copy!"></span></span>
-    >
+    > - Text-to-Speech Message: **It looks like you were just working with an agent and had to call back in. We are prioritizing this call for the next available agent.**<span class="copy-static" data-copy-text="It looks like you were just working with an agent and had to call back in. We are prioritizing this call for the next available agent."><span class="copy" title="Click to copy!"></span></span>
+
 
 6.  Add a **Queue Contact** node
 
-    >  Connect the output node edge from the **Play Message** node added in the last step to this node
+    > - Connect the output node edge from the **Play Message** node added in the last step to this node
     > 
-    > Select Static Queue
+    > - Select Static Queue
     >
-    > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    > - Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
-    > Select Static Priority
+    > - Select Static Priority
     >
-    > Static Priority Value: **P1**
-    >
+    > - Static Priority Value: **P1**
+
 
 7.  Add a **Subflow** node
 
-    > In the Activity Library pane on the left side of the screen, click Subflows
+    > - In the Activity Library pane on the left side of the screen, click Subflows
     >
-    > Find the Subflow names **WaitTreatment** and drag it onto the flow canvas like you would any other node.
+    > - Find the Subflow names **WaitTreatment** and drag it onto the flow canvas like you would any other node.
     >
-    > Connect the output node edge from the **Queue Contact** node added in the previous step to this node.
+    > - Connect the output node edge from the **Queue Contact** node added in the previous step to this node.
     >
-    > Subflow Label: **Latest**
+    > - Subflow Label: **Latest**
     >
-    > Enable automatic updates: **True**
+    > - Enable automatic updates: **True**
     >
-    > Subflow Input Variables: **None**
+    > - Subflow Input Variables: **None**
     >
-    > Subflow Output Variables: **None**
+    > - Subflow Output Variables: **None**
     >
-    > Connect the output node edge from this node to the **Disconnect Contact** node added in the next step.
-
+    > - Connect the output node edge from this node to the **Disconnect Contact** node added in the next step.
 
 
 8. Add a **Disconnect Contact** node
@@ -230,27 +232,20 @@ Your mission is to:</br>
 
 10.  Publish your flow
 
-    > Turn on Validation at the bottom right corner of the flow builder
-    >
-    > If there are no Flow Errors, Click **Publish**
-    >
-    > Add a publish note
-    >
-    > Add Version Label(s): **Latest** 
-    >
-    > Click **Publish** Flow
+    - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    - If there are no flow errors after validation is complete, click on **Publish Flow** next to it.
+    - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
 
 
 11. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
   
+    > - Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     >
-    > Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > - Select the Routing Flow: **<span class="attendee-id-container">ReturningCaller_<span class="attendee-id-placeholder" data-prefix="ReturningCaller_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
-    > Select the Routing Flow: **<span class="attendee-id-container">ReturningCaller_<span class="attendee-id-placeholder" data-prefix="ReturningCaller_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > - Select the Version Label: **Latest**
     >
-    > Select the Version Label: **Latest**
-    >
-    > Click Save in the lower right corner of the screen
+    > - Click Save in the lower right corner of the screen
 
 
 ## Testing

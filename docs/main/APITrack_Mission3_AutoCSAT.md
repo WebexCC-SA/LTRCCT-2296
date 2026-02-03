@@ -38,7 +38,7 @@ Your mission is to:
 
 1. Create a flow named **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and add these flow variables:
   
-    - Agent ID variable:
+    Agent ID variable:
     
        > - Name: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
        >
@@ -46,7 +46,7 @@ Your mission is to:
        >
        > - Default Value: **empty**
 
-    - Variable to write HTTP Response into it:
+    Variable to write HTTP Response into it:
     
        > - Name: **JSONResponse**<span class="copy-static" data-copy-text="JSONResponse"><span class="copy" title="Click to copy!"></span></span>
        >
@@ -54,7 +54,7 @@ Your mission is to:
        >
        > - Default Value: **empty**
 
-    - String type AutoCSAT variable:
+    String type AutoCSAT variable:
     
        > - Name: **AutoCSATVar**<span class="copy-static" data-copy-text="AutoCSATVar"><span class="copy" title="Click to copy!"></span></span>
        >
@@ -100,9 +100,7 @@ Your mission is to:
     > 
     > - Content Type: **GraphQL**
     >
-    > - Copy this GraphQL query into the request body:
-    >
-    > - Query:
+    > - Copy this GraphQL query into the Request Body:
     >
       ```GraphQL
       query lastagentSearch($from: Long!, $to: Long!, $filter: TaskDetailsFilters) {
@@ -302,11 +300,9 @@ Your mission is to:
 
 11. Validate & Publish your flow:
 
-    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.<br/>
-    > !!! Note
-          You can ignore recommendations but cannot skip errors.
-    > - If there are no flow errors after validation is complete, click on **Publish Flow** next to it.
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
+    - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    - If there are no flow errors after validation is complete, click on **Publish Flow** next to it.
+    - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
 
 12. Map your flow to your inbound channel
     
@@ -334,7 +330,7 @@ Your mission is to:
       1. Trace the steps taken in the flow
       2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. They should be empty since there are no CSAT scores at the moment you made the first call.
       3. **Case_If_AgentIDEmpty** should exit via **true** node edge as the **GraphQL_Query** had no response, hence the call arrived to your agent via **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** and not via **QueueToAgent** node.
-      ![profiles](../graphics/Lab2/LAR_Test1.gif) 
+  ![profiles](../graphics/Lab2/LAR_Test1.gif) 
 
 4. Make sure your agent status is set to **Available**
 
@@ -349,7 +345,7 @@ Your mission is to:
       4. **Case_If_AgentIDEmpty** should exit via **false** node edge as the **GraphQL_Query** is not empty.
       5. **CheckCSATValue** is now either equals **4** or **5** (depends on what you selected on previous call) which matches the condition hence the call arrived to your agent via **QueueToAgent** node.
 
-   ![profiles](../graphics/Lab2/LAR_Test2.gif) 
+  ![profiles](../graphics/Lab2/LAR_Test2.gif) 
 ---
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed Last Agent Routing mission! 🎉🎉 </strong></p>
