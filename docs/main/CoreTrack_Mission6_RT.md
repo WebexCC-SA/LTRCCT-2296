@@ -52,7 +52,14 @@ Your mission is to:
 2. Click on the **Event Flow**.
 3. Drag and drop **Start Media Stream** node and connect **AgentAnswer** node to the **Start Media Stream** node. 
 4. Drag and drop **End Flow** node and connect **Start Media Stream** to **End Flow**.
-5. Validate the flow by clicking **Validate**, then press **Publish Flow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+5. Validate and publish the flow:
+
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+   
    ![Profiles](../graphics/Lab1_AI_Agent/3.13.gif)
 
 ## Test Real-Time Transcript feature

@@ -23,11 +23,11 @@ Your mission is to:
 
   - Add Business Hours functionality **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** to your flow. Business Hours entity has been configured for you and contains the following settings:
     
-     -  **Working Hours** - Define the time during which the contact center will be operational. Each working hour configuration can include one or more shifts. Different schedules can be set for various time zones.
+     - **Working Hours** - Define the time during which the contact center will be operational. Each working hour configuration can include one or more shifts. Different schedules can be set for various time zones.
     
      - **Holidays** - Specify a day or range of days declared as holidays. The entire 24 hours of the selected day(s) are marked as non-operational.
     
-     -  **Overrides** - Configure working hours for special cases, such as emergencies or occasions like Christmas, when the contact center operates for additional hours.
+     - **Overrides** - Configure working hours for special cases, such as emergencies or occasions like Christmas, when the contact center operates for additional hours.
 
 ## Build
 

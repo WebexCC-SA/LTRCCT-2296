@@ -93,13 +93,15 @@ Your mission is to:
 13. Click on the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node. Go to the node settings pane on the right and set the following parameters:
     
     > - Subflow Label: **Latest**
-    
+    >
     Scroll down to the **Subflow Input Variables** section and configure the following mapping by pressing **Add New** button for every variable:
-    
+    >
     > - Current flow variable: **subflowDuration**
+    >
     > - Subflow Input Variable: **musicDuration**
     > <br/><br/>
     > - Current flow variable: **subflowMessage**
+    >
     > - Subflow Input Variable: **queueMessage**
 
     ![profiles](../graphics/Lab1/L1M8_Map_Subflow_Vars.gif)
@@ -110,7 +112,13 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M8_Update_Last_Prompt.gif)
 
-15. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+15. Validate and publish the flow:
+
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 ### Checkpoint Test
 
@@ -140,16 +148,21 @@ Your mission is to:
 3. Scroll down to the **Entry point settings** section and look at **Override flow settings** part of it. You should see two variables there:
 
     > - **subDuration**
+    >
     > - **subMessage**
 
 4. Modify these variables in the following way and save changes.
 
     Variable **subflowDuration**:<br/>
+    >
     > - Turn on **Override value** toggle in the **Value** column.
+    >
     > - Set new value as **10**.
     > <br/><br/>
     Variable **subflowMessage**:<br/>
+    >
     > - Turn on **Override value** toggle in the **Value** column.
+    >
     > - Set new value as ***Thanks for staying with us. Your call will be answered by the next available agent.***.
 
     !!! Note
