@@ -154,7 +154,7 @@ Your mission is to:
     > - Output Variable: `AutoCSATVar`<span class="copy-static" data-copy-text="AutoCSATVar"><span class="copy" title="Click to copy!"></span></span>
     > - Path Expression: `$.data.taskDetails.tasks[0].doubleGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].doubleGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span>
 
-    **<details><summary>Example of epected response <span style="color: orange;">[Optional]</span></summary>**
+    **<details><summary>Example of expected response <span style="color: orange;">[Optional]</span></summary>**
     >
       ```JSON
       {
