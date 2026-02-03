@@ -132,6 +132,7 @@ Your mission is to:
     
     > Scroll down to the **Skill Relaxation** section, turn on **Enable Skill Relaxation** toggle and lower skill requirement **Webex CC Lab Expert** by configuring the following fields of **Skill Relaxation Step 1** block:
     > <br/><br/>
+    >
     > - After waiting in queue for: **15** seconds
     > <br/><br/>
     > - Select the skill name: **Static**
@@ -177,11 +178,11 @@ Your mission is to:
 
 1. <span style="color: red;">**[IMPORTANT]**</span> Now we need to revert the configuration of **Queue** node in your flow to the non-SBR queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue** as we are going to use same flow in upcoming tasks:
 
-    > Click on the **Queue** node on the flow canvas.
+    > - Click on the **Queue** node on the flow canvas.
     >
-    > Navigate to the node settings panel on the right.
+    > - Navigate to the node settings panel on the right.
     >
-    > Scroll down and select **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from **Queue** dropdown list.
+    > - Scroll down and select **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from **Queue** dropdown list.
 
     ![profiles](../graphics/Lab1/L1M2_Revert_Non_SBR.gif) 
 
