@@ -133,32 +133,51 @@ Flow Templates are designed to empower developers, speed up the development life
 Your mission is to:
 
   - Use the same flow created in the previous section.
-  - Modify the TTS section to use **en-AU** (English - Australia) and connect the Set Variable node as illustrated below.
+  - Add Language and Voice Name global variables to the flow.
+  - Modify Text-To-Speech (TTS) settings to use Australian English language and Male Voice.
   - Place a call to verify and validate the speech functionality.
 
- **<details><summary>Text-to-Speech (TTS) in Webex Contact Center<span style="color: orange;">[Optional]</span></summary>**
-All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contact-Center](https://help.webex.com/en-us/article/ntkjqhw/Text-to-Speech-(TTS)-in-Webex-Contact-Center){:target="_blank"} 
+ **<details><summary>Text-to-Speech (TTS) in Webex Contact Center <span style="color: orange;">[Optional]</span></summary>**
+All supported TTS Languages and Voice Names can be found in the table here: [Text-to-Speech-(TTS)-in-Webex-Contact-Center](https://help.webex.com/en-us/article/ntkjqhw/Text-to-Speech-(TTS)-in-Webex-Contact-Center){:target="_blank"} 
 </details>
 
 ### Build
 
 1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
 
-2. On the right hand side you will see the **Global Flow Properties** Panel. Scroll down and Locate the **Predefined Variables** section. Click on the **Add Global Variables** button. Search for **Global_Language** variable and click on **Add** button.
+2. Navigate to the **Global Flow Properties** panel on the right hand side.
+    
+    > - Scroll down and Locate the **Predefined Variables** section.
+    >
+    > - Click on the **Add Global Variables** button.
+    >
+    > - Search for **Global_Language** variable and click on **Add** button.
+    >
+    > - Click on the **Add Global Variables** button one more time.
+    >
+    > - Search for **Global_VoiceName** variable and click on **Add** button.
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
-3. Add a **Set Variable** with following configuration:
+3. Add a **Set Variable** node from the activity library on the left with following configuration:
   
-    > - Delete connection between **NewPhoneContact** and **WelcomePrompt**
+    > - Navigate to the **Variable Settings** section.
     >
-    > - Connect **NewPhoneContact** to **Set Variable**
+    > - Click on the **Variable** drop-down list and select **Global_Language**.
     >
-    > - Connect **Set Variable** to **WelcomePrompt**
+    > - Set Value: **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>.
     >
-    > - Variable: **Global_Language**<span class="copy-static" data-copy-text="Global_Language"><span class="copy" title="Click to copy!"></span></span>
+    > - Click on the **+ Add New** button under the variable you have just added to add another one.
     >
-    > - Set Value:  **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>
+    > - Click on the **Variable** drop-down list and select **Global_VoiceName**.
+    >
+    > - Set Value: **en-AU-Chris**<span class="copy-static" data-copy-text="en-AU-Chris"><span class="copy" title="Click to copy!"></span></span>.
+    >
+    > - Return to the flow canvas and delete connection between **NewPhoneContact** and **WelcomePrompt** nodes.
+    >
+    > - Connect **NewPhoneContact** to **Set Variable**.
+    >
+    > - Connect **Set Variable** to **WelcomePrompt**.
 
     ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 
@@ -174,10 +193,10 @@ All supported languages can be found here: [Text-to-Speech-(TTS)-in-Webex-Contac
 
 1. Open your Webex Desktop and make your agent **Available** and you're ready to make a call.
 
-4. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
+2. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
 
     ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
-5. Listen to the welcome prompt to confirm the TTS language has changed.
+3. Listen to the welcome prompt to confirm the TTS language and voice have changed.
 
 **Congratulations on completing another mission.**
