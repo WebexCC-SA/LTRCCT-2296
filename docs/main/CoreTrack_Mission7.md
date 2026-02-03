@@ -92,6 +92,7 @@ Your mission is to:
 ### Build
 
 1. Switch to your flow and make the following changes to raise skill requirement:
+
     > - Click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there.
     >
     > - Scroll down to the **Skill Requirements** section and update the required value for **Webex CC Lab Expert** skill from 3 to 7. The full requirement should be **Webex CC Lab Expert >= 7**:
@@ -130,7 +131,7 @@ Your mission is to:
 1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there along with skill requirement **Webex CC Lab Expert >= 7**.
     
     > Scroll down to the **Skill Relaxation** section, turn on **Enable Skill Relaxation** toggle and lower skill requirement **Webex CC Lab Expert** by configuring the following fields of **Skill Relaxation Step 1** block:
-    >
+    > <br/><br/>
     > - After waiting in queue for: **15** seconds
     > <br/><br/>
     > - Select the skill name: **Static**
@@ -174,7 +175,13 @@ Your mission is to:
 
 ## Post Testing steps
 
-1. <span style="color: red;">**[IMPORTANT]**</span> Now we need to revert the configuration of **Queue** node in your flow to the **non-SBR** queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue** as we are going to use same flow in upcoming tasks. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to Additional Settings and select **None** from **Override** dropdown list. Then click **Save**.
+1. <span style="color: red;">**[IMPORTANT]**</span> Now we need to revert the configuration of **Queue** node in your flow to the non-SBR queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue** as we are going to use same flow in upcoming tasks:
+
+    > Click on the **Queue** node on the flow canvas.
+    >
+    > Navigate to the node settings panel on the right.
+    >
+    > Scroll down and select **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from **Queue** dropdown list.
 
     ![profiles](../graphics/Lab1/L1M2_Revert_Non_SBR.gif) 
 
