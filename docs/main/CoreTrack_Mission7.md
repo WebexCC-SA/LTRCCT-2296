@@ -91,7 +91,10 @@ Your mission is to:
 
 ### Build
 
-1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there. Then scroll down to the **Skill Requirements** section and raise skill requirement **Webex CC Lab Expert >= 7**:
+1. Switch to your flow and make the following changes to raise skill requirement:
+    > - Click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there.
+    >
+    > - Scroll down to the **Skill Requirements** section and update the required value for **Webex CC Lab Expert** skill from 3 to 7. The full requirement should be **Webex CC Lab Expert >= 7**:
   
     ![profiles](../graphics/Lab1/L1M2_Raise_Skill_Req.gif)
 
@@ -124,8 +127,10 @@ Your mission is to:
 
 ### Build
 
-1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there along with skill requirement **Webex CC Lab Expert >= 7**. Then scroll down to the **Skill Relaxation** section, turn on **Enable Skill Relaxation** toggle and lower skill requirement **Webex CC Lab Expert** by configuring the following fields of **Skill Relaxation Step 1** block:
-
+1. Switch to your flow and click on **Queue** node - you should see **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_SBR_Queue">Your_Attendee_ID</span>_SBR_Queue** skill-based queue configured there along with skill requirement **Webex CC Lab Expert >= 7**.
+    
+    > Scroll down to the **Skill Relaxation** section, turn on **Enable Skill Relaxation** toggle and lower skill requirement **Webex CC Lab Expert** by configuring the following fields of **Skill Relaxation Step 1** block:
+    >
     > - After waiting in queue for: **15** seconds
     > <br/><br/>
     > - Select the skill name: **Static**

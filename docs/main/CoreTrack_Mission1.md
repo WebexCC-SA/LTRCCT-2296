@@ -67,6 +67,7 @@ Flow Templates are designed to empower developers, speed up the development life
     ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
 
 7. If **Discover New Features** popup window appears in front of flow canvas, set the checkbox **Don't show this again** at the bottom and press **Get Started** button to close it and and go to the flow designer.
+
     !!! Note
         **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On** at the top of the page.
 
@@ -151,11 +152,11 @@ All supported TTS Languages and Voice Names can be found in the table here: [Tex
     >
     > - Click on the **Add Global Variables** button.
     >
-    > - Search for **Global_Language** variable and click on **Add** button.
+    > - Search for **Global_Language**<span class="copy-static" data-copy-text="Global_Language"><span class="copy" title="Click to copy!"></span></span> variable and click on **Add** button.
     >
     > - Click on the **Add Global Variables** button one more time.
     >
-    > - Search for **Global_VoiceName** variable and click on **Add** button.
+    > - Search for **Global_VoiceName**<span class="copy-static" data-copy-text="Global_VoiceName"><span class="copy" title="Click to copy!"></span></span> variable and click on **Add** button.
 
     ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
