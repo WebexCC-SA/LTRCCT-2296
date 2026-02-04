@@ -12,11 +12,15 @@ icon: material/medal
 Consider a scenario where a supervisor needs ability to change routing decision during an emergency without accessing admin portal. It can be done by changing the **Default Value** of a Global Variable via API PUT call from False to True and use Condition in main IVR script to do routing decision. 
 In this mission we are going to create a control script for Supervisors that changes default value of Global Variable from **True** to **False** 
 
-
   ![Profiles](../graphics/Lab2/ChangeGV.png) 
 
+## Pre-requisites:
+- In this mission, we will modify the behavior of the main flow by adjusting the value of a Global Variable through a separate mangement flow.
+- The management flow will be created within the scope of this mission below.
+- <span style="color: red;">[Important!]</span> The creation of the main flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span></span>** is outlined in the first part of the **Mission 1** of **CORE TRACK** (Steps #1-12). Please complete that part to continue with this mission.
+
 ## Call Flow Overview
-1. Supervisor calls to management flow and provide it's PIN code
+1. Supervisor calls to management flow and provide it's PIN code.
 2. If the PIN correct, a PUT API request will be triggered to change a Global Variable default setting from **False** to **True**.
 3. A caller makes a call to contact center where **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** checks the global variable and transfer the call further based on settings.
 
@@ -37,24 +41,26 @@ Your mission is to:
     > - Type: **Boolean**
     >
     > - Default Value: **False**
-    > 
-    > - <span style="color: orange;">[Important]</span> Copy your new created **Global Variable** **ID** and save to a notepad. We are going to use them in API request in further steps.
+    
+    <span style="color: orange;">[Important]</span> Copy your new created **Global Variable** **ID** and save to a notepad. We are going to use them in API request in further steps.
     
     ![Profiles](../graphics/Lab2/BM1-1-GV_Creation.gif)
 
 
-2. Create a new flow by navigating to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
+2. Create a new flow by navigating to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**.
 3. Select **Start Fresh** and give it a name **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click **Create Flow**.
+    
+    The flow canvas with the initial **NewPhoneContact** node will load when a flow is created.
     
 4. Add a **Collect Digits** node:
     
-    > - Rename node to **CollectPIN**
+    > - Click on it, navigate to the node settings on the right and rename the **Activity Label** of the node to **CollectPIN**
     >
     > - Connect the **New Phone Contact** output node edge to this **Collect Digits** node
     >
     > - Loop **No-Input Timeout** and **Unmatched Entry** to the input of the **Collect Digits** node
     >
-    > - Enable Text-To-Speech
+    > - Turn on **Enable Text-To-Speech** toggle
     >
     > - Select the Connector: **Cisco Cloud Text-to-Speech**
     >
@@ -65,21 +71,10 @@ Your mission is to:
     > - Delete the **Audio File** element above **Text-to-Speech Message** field
     >
     > - Set checkbox in **Make Prompt Interruptible**
-    >
-    > - Advanced Settings:
-    >    
-    >    * No-Input Timeout: 3 
-    >    
-    >    * Inter-Digit Timeout: 3
-    >    
-    >    * Minimum Digits: 1
-    >    
-    >    * Maximum Digits: 10
-
-    ![Profiles](../graphics/Lab2/BM1-3-Collect_PIN.gif)
-
     
-5. Add **Condition** node
+    ![Profiles](../graphics/Lab2/BM1-3-Collect_PIN.gif)
+    
+5. Add **Condition** node:
   
     > - Activity Label: **PIN_Check**<span class="copy-static" data-copy-text="PIN_Check"><span class="copy" title="Click to copy!"></span></span>
     >
@@ -106,7 +101,7 @@ Your mission is to:
     >
     > - Content Type: **Application/JSON**
     >
-    > - Request Body:
+    > - Request Body (<span style="color: red;">[Important!]</span> Replace the value of **id** and **name** parameters below by the proper ones created in step 1 above):
     ``` JSON
     {
         "active": true,
@@ -115,8 +110,8 @@ Your mission is to:
         "variableType": "Boolean",
         "defaultValue": "true",
         "desktopLabel": "",
-        "id": "yourGlobalVariableID created in step 1",
-        "name": "yourGlobalVariable name created in step 1",
+        "id": "Your Global Variable ID created in step 1",
+        "name": "Your Global Variable Name created in step 1",
         "organizationId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
         "reportable": false,
         "version": 1
@@ -145,13 +140,13 @@ Your mission is to:
     
     > - Connect the **HTTPStatusCode** TRUE output node edge to this **Play Message** node
     >
-    > - Enable Text-To-Speech
+    > - Turn on **Enable Text-To-Speech** toggle
     >
     > - Select the Connector: **Cisco Cloud Text-to-Speech**
     >
     > - Click the **Add Text-to-Speech Message** button
     >
-    > - Delete the Selection for Audio File
+    > - Delete the selection for Audio File
     >
     > - Text-to-Speech Message: ***You have successfully modified your emergency configuration.***<span class="copy-static" data-copy-text="You have successfully modified your emergency configuration."><span class="copy" title="Click to copy!"></span></span>
     
@@ -169,18 +164,21 @@ Your mission is to:
     >
     > - Click the **Add Text-to-Speech Message** button
     >
-    > - Delete the Selection for Audio File
+    > - Delete the selection for Audio File
     >
     > - Text-to-Speech Message: ***Something went wrong. Please check your configuration and try again.***<span class="copy-static" data-copy-text="Something went wrong. Please check your configuration and try again."><span class="copy" title="Click to copy!"></span></span>
     
+10. Add **Disconnect Contact** node at the end of the flow and connect both **Play Message** nodes created in **Steps 8** and **9** to that node.
+
     ![Profiles](../graphics/Lab2/BM1-8-PlayNotOK.gif)
     
-10. Add **Disconnect Contact** node
+11. Validate and publish the flow:
 
-    > - Connect both **Play Message** nodes created in **Steps 8** and **9** to this node
-    
-
-11. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
     
 12. Map your flow to your inbound channel
     
@@ -207,47 +205,59 @@ Your mission is to:
 
 3. Open your Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** again, refresh the page if it was opened and make sure **Default Value** is now set to True.
 
-4. Now, let’s get to the fun part. Open the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** we created in Mission 1 of Core track, make sure **Edit** toggle is **ON** 
+4. Now, let’s get to the fun part. Open the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** we created in **Mission 1** of **Core track**, make sure **Edit** toggle is **ON**.
 
-5. Add Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **False** in General Settings of the flow as shown on the following picture.
+5. Add Global Variable **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**and make sure Default Value is set to **True** in General Settings of the flow as shown on the following picture.
 
     ![Profiles](../graphics/Lab2/GV_True.png) </br>
     ![Profiles](../graphics/Lab2/BM1-Test4-GV.gif)
     
 6. Add **Condition** node: 
     
-    > - Connect the output node edge of the **NewPhoneContact** node to this node
+    > - Delete the connection between **NewPhoneContact** node and **Set Variable** node at the beginning of the flow
+    >
+    > - Connect the output node edge of the **NewPhoneContact** node to **Condition** node
     > 
-    > - Connect the output False node edge from the **Condition** Node to **Set Variable**
+    > - Connect the output False node edge from the **Condition** node to **Set Variable** node
     > 
-    > - In the Expression section write an expresion ***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***  
-            
+    > - In the Expression section write an expresion <span class="attendee-id-container">***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***<span class="copy" title="Click to copy!"></span></span>
+
     <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>
-        
-    ![Profiles](../graphics/Lab2/BM1-Test5-GV.gif)
 
     !!! Note
-        Depending on which Track you have followed after the Core Track, you may have **NewPhoneContact** connected either to **FeedbackSet** node or to **SetVariable** node. Remove this connection and add a **Condition** node in between. 
+        Depending on which Track you have followed after the Core Track, you may have **NewPhoneContact** connected either to **FeedbackSet** node or to **SetVariable** node. Remove this connection and add a **Condition** node in between.
 
-7. Add a **Play Message** node and **DisconnectContact node**.
+    ![Profiles](../graphics/Lab2/BM1-Test5-GV.gif)
+
+7. Add a **Play Message** node and **Disconnect Contact** node.
     
-    > - Connect the **TRUE** output node edge of the **Condition Node** node to this node
+    > - Connect the **TRUE** output node edge of the **Condition Node** node to **Play Message** node
     > 
     > - Connect the output node edge of **Play Message** node to **Disconnect Contact** node.
     > 
-    > - Enable Text-To-Speech
+    
+    Click on **Play Message** node and configure it in the following way:
+    
+    >
+    > - Turn on **Enable Text-To-Speech** toggle
     > 
     > - Select the Connector: **Cisco Cloud Text-to-Speech**
     > 
-    > - Click the Add Text-to-Speech Message button
+    > - Click the **Add Text-to-Speech Message** button
     > 
-    > - Delete the Selection for Audio File
+    > - Delete the selection for Audio File
     > 
     > - Text-to-Speech Message: ***Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later.***<span class="copy-static" data-copy-text="Sorry, Emergency flow has been enabled. All operators have been evacuated. Please call later."><span class="copy" title="Click to copy!"></span></span>
     
     ![Profiles](../graphics/Lab2/BM1-Test6-GV.gif)
 
-8. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+8. Validate and publish the flow:
+
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
 
 9. Because we are using only one number to make calls we need to map your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** back to the **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     
