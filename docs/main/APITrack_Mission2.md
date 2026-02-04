@@ -73,13 +73,11 @@ For more information of how you can use MockAPI please watch these Vidcasts:
     > 
     > 1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
     > 
-    > 2. Replace DNIS with the provided DNIS number stripping +1
-    >
-    >    - <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
+    > 2. Replace DNIS with the provided DNIS number stripping **+1**. <span style="color: orange;">[For example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
     >
     > 3. Open Chrome browser, paste your Get query URL into the Browser address line and press Enter. You should get the JSON response like this:
     > 
-    > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    >    ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
     > 
     > 4. Open the new browser tab and navigate to [JSONPath Online Evaluator](https://jsonpath.com/){:target="_blank"}
     > 
@@ -87,7 +85,7 @@ For more information of how you can use MockAPI please watch these Vidcasts:
     >
     > 7. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results. For example, **$[0].businessHours**
     >
-    > ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+    >    ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
     </details>
 
 8. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
