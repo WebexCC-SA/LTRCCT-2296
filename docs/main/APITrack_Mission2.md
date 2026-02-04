@@ -40,9 +40,9 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 
 ## Steps
 
-1. Switch to Control Hub, then navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
+1. Switch to Control Hub, then navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**.
 
-2. New Tab will be opened. Navigate to **Flow Templates**
+2. New Tab will be opened. Navigate to **Flow Templates**.
 
 3. Choose **Dynamic Variable Support** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
 
@@ -61,11 +61,15 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 
     ![Profiles](../graphics/Lab2/BM2-7-ObserveFlow.gif)
 
-6. Select **FetchFlowSettings** HTTP Node and paste your GET request in Request URL field by replacing a templated one.
+6. Select **FetchFlowSettings** HTTP Node and paste the following GET request in Request URL field by replacing a templated one:
+
     ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
 
+7. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign to the path expression of each output variable. This needs to be done due to output structure of API response. 
  
-    > **<details><summary>Test your API Source <span style="color: orange;">[Optional]</span></summary>**
+    ![Profiles](../graphics/Lab2/BM2-9-10-GETAPI_Config.gif)
+ 
+    <details><summary>**Test your API Source <span style="color: orange;">[Optional]</span>**</summary>
     > 
     > 1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
     > 
@@ -73,24 +77,18 @@ For more information of how you can use MockAPI please watch these Vidcasts:
     >
     >    - <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
     >
-    > 3. Open Chrome browser and past your URL. You should get the follwoing result:
+    > 3. Open Chrome browser, paste your Get query URL into the Browser address line and press Enter. You should get the JSON response like this:
     > 
     > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
     > 
-    > 4. Test JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
+    > 4. Open the new browser tab and navigate to [JSONPath Online Evaluator](https://jsonpath.com/){:target="_blank"}
     > 
-    > 5. Paste your GET URL into the Browser address line and copy the output in square brackets (including brackets)
+    > 5. Copy the JSON response (including square brackets) you obtained above and paste it into **Document** window of **JSONPath Online Evaluator**.
     >
-    > 6. Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
+    > 7. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results. For example, **$[0].businessHours**
     >
-    > 7. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
-    >
-    > ![Profiles](../graphics/Lab2/BM2-9-10-JSONPath.gif)
-    > </details>
-
-7. In the same node, under Parsing Settings add **[0]**<span class="copy-static" data-copy-text="[0]"><span class="copy" title="Click to copy!"></span></span> after **$** sign to the path expression of each output variable. This needs to be done due to output structure of API response. 
- 
-    ![Profiles](../graphics/Lab2/BM2-9-10-GETAPI_Config.gif)
+    > ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+    </details>
 
 8. Open a **Queue** Node and set **Fallback Queue** to **CCBU_Fallback_Queue**. That is needed to make sure the call will find an end queue in case API GET call fails.
 
@@ -119,7 +117,13 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 
     ![Profiles](../graphics/Lab2/BM2-11-15-FallbackQ.gif)
 
-13. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+13. Validate and publish the flow:
+
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
 14. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
     
@@ -140,11 +144,11 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 
 2. Select Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
 
-3. Make your agent ***Available*** and you're ready to make a call.
+3. Make your agent **Available** and you're ready to make a call.
 
     ![profiles](../graphics/Lab1/L1M1_Agent_Login.gif)
 
-4. Change the status of your agent to **Available** and make a call to test you flow. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally the call should land on the ***$[0].queue***
+4. Make a call to test you flow. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally the call should land on the ***$[0].queue***
 
 ### <span style="color: orange;">[Optional]</span> Test other variables
 
@@ -155,9 +159,9 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 
     ![Profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
-6. Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for call. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
+6. Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for calling. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
 
-7. Now we need to revert the configuration we made in Step 1. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub** in **Control Hub**, scroll down to **Additional Settings** and select **None** from Override dropdown list. Then click **Save**.
+7. Now we need to revert the configuration we made in Step 1. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **None** from **Override** dropdown list. Then click **Save**.
 
     ![Profiles](../graphics/Lab1/13-Revert_Overrides_Config.gif)
 
