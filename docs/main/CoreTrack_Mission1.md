@@ -127,9 +127,9 @@ Flow Templates are designed to empower developers, speed up the development life
 
 ---
 
-## Enhance Your Flow by adding Language
+## Enhance you flow with Language and Voice Name
 
-### Mission Details
+### Enhancement Details
 
 Your mission is to:
 
@@ -173,7 +173,7 @@ All supported TTS Languages and Voice Names can be found in the table here: [Tex
     > - Click on the **Variable** drop-down list and select **Global_VoiceName**.
     >
     > - Set Value: **en-AU-Chris**<span class="copy-static" data-copy-text="en-AU-Chris"><span class="copy" title="Click to copy!"></span></span>.
-    >
+    > <br/><br/>
     > - Return to the flow canvas and delete connection between **NewPhoneContact** and **WelcomePrompt** nodes.
     >
     > - Connect **NewPhoneContact** to **Set Variable**.
