@@ -93,8 +93,8 @@ Your mission is to:
 13. Click on the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node. Go to the node settings pane on the right and set the following parameters:
     
     > - Subflow Label: **Latest**
-    >
-    Scroll down to the **Subflow Input Variables** section and configure the following mapping by pressing **Add New** button for every variable:
+    > <br/><br/>
+    > Scroll down to the **Subflow Input Variables** section and configure the following mapping by pressing **Add New** button for every variable:
     >
     > - Current flow variable: **subflowDuration**
     >
@@ -110,8 +110,6 @@ Your mission is to:
     
     > - ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***<span class="copy-static" title="Click to copy!"data-copy-text="We apologize, but all our agents are currently busy. Your waiting time may be longer than expected."><span class="copy"></span></span>
 
-    ![profiles](../graphics/Lab1/L1M8_Update_Last_Prompt.gif)
-
 15. Validate and publish the flow:
 
     > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
@@ -119,6 +117,8 @@ Your mission is to:
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
     > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+
+    ![profiles](../graphics/Lab1/L1M8_Update_Last_Prompt.gif)
 
 ### Checkpoint Test
 
@@ -154,12 +154,15 @@ Your mission is to:
 4. Modify these variables in the following way and save changes.
 
     Variable **subflowDuration**:<br/>
+
     >
     > - Turn on **Override value** toggle in the **Value** column.
     >
     > - Set new value as **10**.
     > <br/><br/>
+
     Variable **subflowMessage**:<br/>
+    
     >
     > - Turn on **Override value** toggle in the **Value** column.
     >

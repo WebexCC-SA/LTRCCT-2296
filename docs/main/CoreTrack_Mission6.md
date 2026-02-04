@@ -78,15 +78,18 @@ Your mission is to:
 </details>
 
 ## Build
-1. Switch to the Control Hub then go to **Contact Center**. Navigate to the **Surveys** under the **Customer Experience** section. Locate **Webex CC PCS** survey and click on it to familiarise yourself with its configuration.  
+1. Switch to the Control Hub then go to **Contact Center**. Navigate to the **Surveys** under the **Customer Experience** section. Locate **Webex CC PCS** survey and click on it to familiarise yourself with its configuration.
+
   ![profiles](../graphics/Lab1/L1M4_PCS_Explore.gif)
 
 2. Switch to the Flow Designer. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, make sure **Edit** toggle is **ON**.
 
 3. Add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
+
   ![profiles](../graphics/Lab1/L1M4_PCS_Add_GV.gif)
 
 4. Delete the connection between the **NewPhoneContact** node and the first **Set Variable** node we used to set language preference. Then drag new **Set Variable** node from the activity library on the left to flow canvas, put it between **NewPhoneContact** and existing **Set Variable** nodes and connect all three nodes into a chain.
+
   ![profiles](../graphics/Lab1/L1M4_PCS_Add_SetVariable.gif)
 
 5. Click on the new **Set Variable** node you have just added and configure the following fields:
@@ -97,15 +100,27 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M4_PCS_Set_GV.gif)
 
-6. Open **Event FLows**  tab and locate **AgentDisconected** node. If you completed previous mission you should have **HTTP Request** node connected to it. Delete the connection between **HTTP Request** and **DisconnectContact** nodes.
+6. Add a Post Call Survey functionality to the flow:
 
-7. Drag **Feedback V2** from the activity library on the left, place it between **HTTP Request** and **DisconnectContact** nodes and connect all three nodes into a chain. Then click on **Feedback V2** node and configure the following field:
-    
-    > - Survey Method -> Voice Based:  **Webex CC PCS**<span class="copy-static" title="Click to copy!" data-copy-text="Webex CC PCS"><span class="copy"></span></span>
+    > - Open **Event FLows**  tab and locate pre-defined **AgentDisconected** event node marked with light green crossed-out headset icon. If you completed previous mission you should have **HTTP Request** node connected to it.
+    >
+    > - Delete the connection between **HTTP Request** and **DisconnectContact** nodes.
+    >
+    > - Drag **Feedback V2** from the activity library on the left, place it between **HTTP Request** and **DisconnectContact** nodes and connect all three nodes into a chain.
+    >
+    > - Click on **Feedback V2** node and configure Survey Method as **Voice Based** and select **Webex CC PCS**<span class="copy-static" title="Click to copy!" data-copy-text="Webex CC PCS"><span class="copy"></span></span> from the dropdown list.
 
     ![profiles](../graphics/Lab1/L1M4_PCS_FeedbackV2.gif)
             
-8. Let's configure the voice message that will be played to the caller if something goes wrong with **Webex CC PCS** survey. Drag **Play Message** node from the activity library and place it below **Feedback V2** node you have just added. Connect **Undefined Error** output of the **Feedback V2** node to the input of the **Play Message** node, also connect the output of the **Play Message** node to the **DisconnectContact** node. Then click on **Play Message** node and configure the following fields:
+7. Let's configure the voice message that will be played to the caller if something goes wrong with **Webex CC PCS** survey:
+
+    > - Drag **Play Message** node from the activity library and place it below **Feedback V2** node you have just added.
+    >
+    > - Connect **Undefined Error** output of the **Feedback V2** node to the input of the **Play Message** node
+    >
+    > - Connect the output of the **Play Message** node to the **DisconnectContact** node.
+    
+    Then click on the **Play Message** node and configure the following fields:
     
     > - Enable Text-To-Speech
     >
@@ -115,9 +130,7 @@ Your mission is to:
     >
     > - Delete the selection for Audio File
 
-    ![profiles](../graphics/Lab1/L1M4_PCS_PlayMessage.gif)            
-
-9. Validate and publish the flow:
+8. Validate and publish the flow:
 
     > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
     >
@@ -125,6 +138,7 @@ Your mission is to:
     >
     > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
 
+    ![profiles](../graphics/Lab1/L1M4_PCS_PlayMessage.gif) 
 
 ## Testing
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 

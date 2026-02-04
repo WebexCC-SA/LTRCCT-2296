@@ -87,8 +87,6 @@ Event flows enable a wide range of scenarios, with one common use case being the
     >
     > - Display Settings: **New browser tab**
   
-    ![profiles](../graphics/Lab1/L1M3_ScreenPop.gif)
-    
 6. Validate and publish the flow:
 
     > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
@@ -96,6 +94,8 @@ Event flows enable a wide range of scenarios, with one common use case being the
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
     > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+
+    ![profiles](../graphics/Lab1/L1M3_ScreenPop.gif)
 
 ## Testing
     

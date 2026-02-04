@@ -39,7 +39,7 @@ Your mission is to:
    ![Profiles](../graphics/Lab1_AI_Agent/3.43.png) 
    <br/><br/>c. Click **Download default desktop layout**.  Make sure **RT_TRANSCRIPT** widget is configured. 
    ![Profiles](../graphics/Lab1_AI_Agent/3.11.png) 
-   <br/><br/>Or you can download preconfigured desktop layout here.
+   <br/><br/>Or you can download preconfigured desktop layout here:
    [Desktop Layout](https://drive.google.com/file/d/1EnM-2r9XOVm2EcE6ND4fL3L62qZesm5_/view?usp=sharing){:target="_blank"} 
    </details>
 

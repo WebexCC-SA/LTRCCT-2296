@@ -68,10 +68,16 @@ Your mission is to:
     >
     > - Delete the Selection for Audio File
 
-7. Validate the flow by enabling the **Validation** toggle in the bottom right corner of the flow designer window. After validation is complete, click on **Publish Flow** next to it. In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
-     
+7. Validate and publish the flow:
+
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    
     !!! Note
-        We haven't changed the flow behavior yet as Working hours covers the current time. You can make a call and accept it on agent desktop to verify.
+        We haven't changed the flow behavior yet as Working Hours covers the current time. You can make a call and accept it on agent desktop to verify.
 
     ![profiles](../graphics/Lab1/11-BH_Play_Config.gif)
 
