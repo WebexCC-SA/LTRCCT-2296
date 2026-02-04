@@ -94,12 +94,18 @@ Your mission is to:
     
     > - Subflow Label: **Latest**
     > <br/><br/>
-    > Scroll down to the **Subflow Input Variables** section and configure the following mapping by pressing **Add New** button for every variable:
+
+    Scroll down to the **Subflow Input Variables** section and configure the following mapping:
+    
     >
     > - Current flow variable: **subflowDuration**
     >
     > - Subflow Input Variable: **musicDuration**
     > <br/><br/>
+    
+    Press **Add New** button to configure the mapping for the second variable:
+
+    >
     > - Current flow variable: **subflowMessage**
     >
     > - Subflow Input Variable: **queueMessage**
