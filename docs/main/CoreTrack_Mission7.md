@@ -93,7 +93,7 @@ Your mission is to:
 13. Click on the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node. Go to the node settings pane on the right and set the following parameters:
     
     > - Subflow Label: **Latest**
-    > <br/><br/>
+    >
 
     Scroll down to the **Subflow Input Variables** section and configure the following mapping:
     
@@ -101,7 +101,7 @@ Your mission is to:
     > - Current flow variable: **subflowDuration**
     >
     > - Subflow Input Variable: **musicDuration**
-    > <br/><br/>
+    >
     
     Press **Add New** button to configure the mapping for the second variable:
 
