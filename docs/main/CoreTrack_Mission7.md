@@ -161,11 +161,10 @@ Your mission is to:
 
     Variable **subflowDuration**:<br/>
 
-    >
     > - Turn on **Override value** toggle in the **Value** column.
     >
     > - Set new value as **10**.
-    > <br/><br/>
+    >
 
     Variable **subflowMessage**:<br/>
     
