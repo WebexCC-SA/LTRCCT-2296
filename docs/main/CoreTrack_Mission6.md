@@ -150,4 +150,5 @@ Your mission is to:
     !!! Note
         If you create your own survey, as described in the Optional section of this mission, you might not see the survey responses immediately, as there is a delay in edited surveys.
 
-**Congratulations on completing another mission where we have learnt how Post Call Survey can be implemented.**
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Post Call Survey mission! 🎉🎉 </strong></p>

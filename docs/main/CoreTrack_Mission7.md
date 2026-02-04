@@ -195,4 +195,5 @@ Your mission is to:
 2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
 3. Finish the call.
 
-**Congratulations on completing another mission where we have learnt how Post Call Survey can be implemented.**
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Subflow and Variable Override mission! 🎉🎉 </strong></p>

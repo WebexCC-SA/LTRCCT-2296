@@ -126,4 +126,5 @@ We recommend removing the ScreenPop node after testing. Otherwise, every time yo
 
 ![profiles](../graphics/Lab1/AM2_Screenpop_delete.gif)
 
-**Congratulations on completing another mission where you have learnt how to use events in your flows.**
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Work with Event Flow mission! 🎉🎉 </strong></p>

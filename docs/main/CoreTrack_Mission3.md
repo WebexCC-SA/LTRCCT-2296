@@ -102,4 +102,5 @@ Your mission is to:
 
 2. Make one more call from Webex App to make sure you hear the original Welcome message you set on first steps of previous Mission.
 
-**Congratulations on completing another mission.**
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Using Business Hours mission! 🎉🎉 </strong></p>

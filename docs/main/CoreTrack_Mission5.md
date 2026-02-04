@@ -72,4 +72,5 @@ Your mission is to:
 3. Answer the call and begin speaking. The Live Transcripts panel will display the most recent real-time transcript of the conversation between the caller and the agent.
    ![Profiles](../graphics/Lab1_AI_Agent/3.16.png)
 
-<p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Adding Real-Time Transcript mission! 🎉🎉 </strong></p>

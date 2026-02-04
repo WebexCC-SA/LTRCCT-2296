@@ -102,3 +102,6 @@ Flow Analytics feature is designed to provide flow developer, administrators and
     ![profiles](../graphics/Lab1/FlowAnalytics3.gif)
 
 By leveraging the Flow Analytics Tool, you gain a comprehensive understanding of how your flows perform and interact with customers, enabling you to make data-backed decisions to improve both efficiency and user satisfaction.
+
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Using Flow Designer Tools mission! 🎉🎉 </strong></p>

@@ -196,5 +196,6 @@ Your mission is to:
 
 3. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state.
 4. Make another test call to the Support Number and confirm that the caller hears the welcome message, and then the call is instantly assigned to your agent after entering the queue.
-        
-**Congratulations on completing another mission where we have learnt how Skill-Based Routing can be implemented.**
+
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Skill-Based Routing mission! 🎉🎉 </strong></p>

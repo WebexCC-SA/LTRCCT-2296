@@ -200,4 +200,5 @@ All supported TTS Languages and Voice Names can be found in the table here: [Tex
 
 3. Listen to the welcome prompt to confirm the TTS language and voice have changed.
 
-**Congratulations on completing another mission.**
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Basci Call Routing mission! 🎉🎉 </strong></p>

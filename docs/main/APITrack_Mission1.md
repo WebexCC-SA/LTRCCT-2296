@@ -287,4 +287,4 @@ Your mission is to:
 12. Make a test call again and you should hear the Welcome Prompt.
 
 ---
-<p style="text-align:center"><strong>Congratulations, you have completed Emergency Config mission! 🎉🎉 </strong></p>
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Emergency Config mission! 🎉🎉 </strong></p>
