@@ -100,7 +100,8 @@ nav:
       - Lab Overview: ./main/overview.md
       - Getting to know your environment: ./main/PreRequisites.md
       - Choose Your Adventure: ./main/Choose_Your_Adventure.md
-      - Chrome and Webex App Setup [Home Work]: ./main/Browser_and_Desktop_Setup.md 
+      - Chrome and Webex App Setup [Home Work]: ./main/Browser_and_Desktop_Setup.md
+      - LAB ROOM SETUP: ./main/LabRoom_Setup.md
       ## - Flow Designer Overview [To be moved to presentation]: ./main/FlowDesignerOverview.md
   - CORE TRACK:
       - Lab Guide:

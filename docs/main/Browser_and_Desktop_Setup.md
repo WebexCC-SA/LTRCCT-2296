@@ -36,7 +36,7 @@ $Shortcut.Save()
 
 ![profiles](../graphics/overview/term_1.png)
 
-Check the desktop of your lab PC. You should find 2 Chrome shortcuts created - WxCC Admin, **WxCC Agent1 and WxCC Supervisor**
+Check the desktop of your lab PC. You should find 2 Chrome shortcuts created - **WxCC Admin** and **WxCC Agent1**
 
 When you click on the links 
 
