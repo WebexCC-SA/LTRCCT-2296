@@ -1,27 +1,17 @@
 # Conclusion 
 
-In this lab
+We hope you found the API Track both insightful and rewarding as you expanded your expertise in leveraging APIs for dynamic and intelligent call routing in Webex Contact Center. This session provided hands-on experience with key techniques to enhance flexibility, efficiency, and personalization in customer interactions.
 
-You successfully explored the capabilities of the **Webex Autonomous AI Agent** by creating and configuring an AI-powered assistant for a **flower shopping** experience.
+Key missions included:
+ - **Introduction to Developer Portal** – Learning how to navigate and use the Webex Developer Portal to discover APIs, test endpoints, and integrate services efficiently.</br>
+ - **Emergency Configuration Change** – Using API requests to instantly modify system settings for real-time adaptability.</br>
+ - **Routing Facilitation with Variables** – Enhancing precision in call routing by dynamically adjusting logic based on real-time data.</br>
+ - **Last Agent Routing** – Ensuring returning customers are connected with the same agent for a seamless experience.</br>
+ - **Reconnecting with the Same Agent** – Allowing customers to reach the same agent if a call ends and they call back within 10 minutes, maintaining conversation continuity.</br>
+  - **Personalized Customer Notification with Functions** – Using Functions inside Flow Designer to generate tailored customer messages based on dynamic inputs, enabling fully personalized experiences.</br>
 
-### Key Capabilities Implemented:
+By mastering these API-driven techniques, you are now equipped to design smarter, more responsive workflows that enhance both operational efficiency and customer satisfaction.
 
-- Designed the virtual agent to:
-  - Recommend **suitable flowers** based on the customer's **occasion**
-  - Calculate the **total price** of the selected flowers
+If you have any questions or need further guidance, feel free to reach out or join the Webex discussion forums. We look forward to seeing how you apply these advanced skills in your future projects!
 
-- Configured **actions** to:
-  - Integrate with a **Customer CRM/Database**
-  - Generate **orders** and provide customers with a **real-time order number**
-
-- Enabled post-order communication by:
-  - Sending **order confirmation details via SMS**
-  - Ensuring a **seamless and efficient user experience**
-
----
-
-This setup showcases a complete AI agent workflow—from recommendation to transaction and customer notification—using **Webex Contact Center’s Autonomous AI Agent** capabilities.
-
-
-
-This hands-on exercise demonstrated how Webex Autonomous Agent can streamline business processes, enhance customer interactions, and integrate with external systems to deliver a comprehensive solution.
+Thank you for completing the API Track, and we look forward to your continued innovation with Webex Contact Center.
