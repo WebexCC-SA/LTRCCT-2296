@@ -41,8 +41,8 @@ Your mission is to:
 
 ### Preconfigured Elements
 
-1. Wait treatment Subflow which will provide Music in Queue and Queue Messages. 
-2. Connector for calling Webex Contact Center APIs
+1. **WaitTreatment** subflow which will provide Music in Queue and Queue Messages. 
+2. **WxCC_API** connector for calling Webex Contact Center API.
 
 ---
 
@@ -273,4 +273,4 @@ Your mission is to:
          1. Why or why not?
 
 ---
-<p style="text-align:center"><strong>Congratulations, you have officially completed Routing Returning Callers mission! 🎉🎉 </strong></p>
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Routing Returning Callers mission! 🎉🎉 </strong></p>
