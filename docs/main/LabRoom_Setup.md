@@ -9,8 +9,11 @@ icon: material/bullseye-arrow
 </br>
 
 
-1. On each laptop access lab -assistant with pin code 447094
-2. Click on Documentation. Go to Getting Started -> **LAB ROOM SETUP**
+1. On each laptop access lab-assistant from the browser. Enter pin code 191518
+2. Click on **Documentation** button to open Lab Guide.
+4. In the Lab Guide go to Getting Started -> **LAB ROOM SETUP**
+
+![profiles](../graphics/overview/LabAssistant1.gif)
 
 ---
 
