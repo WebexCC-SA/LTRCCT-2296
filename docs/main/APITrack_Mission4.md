@@ -48,36 +48,39 @@ Your mission is to:
 
 ## Build
 
-1. Create a flow named **<span class="attendee-id-container">ReturningCaller_<span class="attendee-id-placeholder" data-prefix="ReturningCaller_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** then create a flow variable 
+1. Create a fresh flow named **<span class="attendee-id-container">ReturningCaller_<span class="attendee-id-placeholder" data-prefix="ReturningCaller_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**.
+
+
+2. Create a flow variable:
     
     > - Name: **previousID**<span class="copy-static" data-copy-text="previousID"><span class="copy" title="Click to copy!"></span></span>
     >
     > - Type: **String**
     >
-    > - Default Value: Leave empty
+    > - Default Value: leave it empty
 
 
-2. Add a **Play Message** node for our welcome message
+3. Add a **Play Message** node for our welcome message:
 
     > - Connect the **New Phone Contact** output node edge to this **Play Message** node
     >
-    > - Enable Text-To-Speech
+    > - Turn on **Enable Text-To-Speech** toggle
     >
     > - Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > - Click the Add Text-to-Speech Message button
+    > - Click the **Add Text-to-Speech Message** button
     >
-    > - Delete the Selection for Audio File
+    > - Delete the selection for Audio File
     >
     > - Text-to-Speech Message: **Welcome to the advanced routing and API integrations lab.**<span class="copy-static" data-copy-text="Welcome to the advanced routing and API integrations lab."><span class="copy" title="Click to copy!"></span></span>
     >
 
 
-3. Add an **HTTP Request** node for our query
+4. Add an **HTTP Request** node for our query:
 
     > - Connect the output node edge from the **Play message** node to this node
     > 
-    > - Select Use Authenticated Endpoint
+    > - Select **Use Authenticated Endpoint**
     >
     > - Connector: **WxCC_API**
     > 
@@ -87,7 +90,7 @@ Your mission is to:
     > 
     > - Content Type: **GraphQL**
     >
-    > - Copy this GraphQL query into the request body:
+    > - Copy this GraphQL query and paste it into the **Query** filed of the **Request Body**:
     >
     ```GraphQL
     query returnAgent(
@@ -114,7 +117,7 @@ Your mission is to:
     }
     ```
     >
-    > - Copy the following variables into the GraphQL Variables:
+    > - Copy the following variables into the **GraphQL variables**:
     >
     ``` JSON
     {
@@ -156,7 +159,7 @@ Your mission is to:
     > - Path Expression: `$.data.taskDetails.tasks[0].id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].id"><span class="copy" title="Click to copy!"></span></span>
 
 
-4.  Add a Condition node
+5.  Add a **Condition** node:
 
     > - Connect the output from the **HTTP Request** node to this node
     >
@@ -167,77 +170,77 @@ Your mission is to:
     > - Connect the **False** node edge to the **Play Message** node created in the next step.
 
 
-5. Add a **Play Message** node
+6. Add a **Play Message** node:
 
-    > - Connect the **False** node edge from the previous step to this node
+    > - Connect the **False** node edge from the **Condition** node created at previous step to this node
     >
-    > - Enable Text-To-Speech
+    > - Turn on **Enable Text-To-Speech** toggle
     >
     > - Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > - Click the Add Text-to-Speech Message button
+    > - Click the **Add Text-to-Speech Message** button
     >
-    > - Delete the Selection for Audio File
+    > - Delete the selection for Audio File
     >
     > - Text-to-Speech Message: **It looks like you were just working with an agent and had to call back in. We are prioritizing this call for the next available agent.**<span class="copy-static" data-copy-text="It looks like you were just working with an agent and had to call back in. We are prioritizing this call for the next available agent."><span class="copy" title="Click to copy!"></span></span>
 
 
-6.  Add a **Queue Contact** node
+7.  Add a **Queue Contact** node:
 
     > - Connect the output node edge from the **Play Message** node added in the last step to this node
     > 
-    > - Select Static Queue
+    > - Select **Static Queue**
     >
     > - Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
-    > - Select Static Priority
+    > - Turn on **Set Contact Priority** toggle
+    >
+    > - Select **Static Priority**
     >
     > - Static Priority Value: **P1**
 
 
-7.  Add a **Subflow** node
+8.  Add a **Subflow** node:
 
-    > - In the Activity Library pane on the left side of the screen, click Subflows
+    > - In the Activity Library pane on the left side of the screen, click **Subflows**
     >
-    > - Find the Subflow names **WaitTreatment** and drag it onto the flow canvas like you would any other node.
+    > - Find the subflow **WaitTreatment** and drag it onto the flow canvas like you would any other node.
     >
     > - Connect the output node edge from the **Queue Contact** node added in the previous step to this node.
+    > <br/>
+    > Click on the **WaitTreatment** subflow node and configure the following settings: 
     >
     > - Subflow Label: **Latest**
     >
-    > - Enable automatic updates: **True**
-    >
-    > - Subflow Input Variables: **None**
-    >
-    > - Subflow Output Variables: **None**
-    >
-    > - Connect the output node edge from this node to the **Disconnect Contact** node added in the next step.
+    > - Make sure **Enable automatic updates** is turned on
 
 
-8. Add a **Disconnect Contact** node
+9. Add a **Disconnect Contact** node and connect the output node edge from **WaitTreatment** subflow node added at the previous step to this **Disconnect Contact** node.
 
 
-9. Add a **Queue Contact** node
+10. Add one more **Queue Contact** node:
 
-    > Connect the **True** node edge from the **Condition** node to this node
+    > - Connect the **True** node edge from the **Condition** node to this node
     > 
-    > Select Static Queue
+    > - Select **Static Queue**
     >
-    > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    > - Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     >
-    > Connect the **Output** node edge from this node to the **Subflow** node
-
+    > - Connect the **Output** node edge from this node to the **WaitTreatment** subflow node
 
     <details><summary>Check your flow</summary>![Profiles](../graphics/Lab2/lab2_ReturnAgentflow.png)</details>
 
-10.  Publish your flow
 
-    - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
-    - If there are no flow errors after validation is complete, click on **Publish Flow** next to it.
-    - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
+11.  Validate and publish the flow:
+
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.  
 
 
-11. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
+12. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
   
     > - Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     >
@@ -250,27 +253,27 @@ Your mission is to:
 
 ## Testing
 
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen where you may need to enter the email address again and the password provided to you. 
-2. On your Agent Desktop, make sure your status is set to **Available**
-3. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. 
-4. On your Agent Desktop, you should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop). After a few moments end the call and select a wrapup code.
+1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>** You will see another login screen where you may need to enter the email address again and the password provided to you. 
+2. On your Agent Desktop, make sure your status is set to **Available**.
+3. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+4. On your Agent Desktop, you should be offered a call, click on the **Answer** button. (You may want to mute the mic on both Webex and the Agent Desktop). After a few moments end the call and select any wrap up reason.
 5. In your Flow:
-      1. Open the Debugger
-      2. Select the last interaction (at the top of the list)
-      3. Trace the steps taken in the flow
-7. Close the Debugger
+      1. Open Flow Debugger.
+      2. Select the last interaction (at the top of the list).
+      3. Trace the steps taken in the flow.
+7. Close Flow Debugger.
 8. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-9. On your Agent Desktop, set your status to available
-      1.You should hear a message indicating that you recently placed a call and that your new call will be prioritized. (You may want to mute the mic on both Webex and the Agent Desktop)
-      2. On your Agent Desktop, you should be offered a call, click on the accept button
-      3. After a few moments end the call and select a wrapup code.
+9. On your Agent Desktop, make sure your status is **Available**.
+      1. You should hear a message indicating that you recently placed a call and that your new call will be prioritized. (You may want to mute the mic on both Webex and the Agent Desktop).
+      2. On your Agent Desktop, you should be offered a call, click on the **Answer** button.
+      3. After a few moments end the call and select any wrap up reason.
 10. In your Flow:
-      1. Open the debugger
+      1. Open Flow debugger
       2. Select the last interaction (at the top of the list)
       3. Trace the steps taken in the flow
 11. Answer these questions:
-      1. Was the call chose another path?
-         1. Why or why not?
+      1. Did the call choose another path?
+      2. Why or why not?
 
 ---
 <p style="text-align:center"><strong>Congratulations, you have succesfully completed Routing Returning Callers mission! 🎉🎉 </strong></p>
