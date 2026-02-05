@@ -138,19 +138,23 @@ New-ChromeProfile `
 
 ```
 
+- Click on **Past anyway** if asks.
+
 ![profiles](../graphics/overview/term_1.png)
 
-Check the desktop of your lab PC. You should find 2 Chrome shortcuts created - **WxCC Admin** and **WxCC Agent1**
+- Check the desktop of your lab PC. You should find 2 Chrome shortcuts created - **WxCC Admin** and **WxCC Agent1**
 
 
-4. Open **WxCC Admin**, check URLs. Login to Control Hub by using Admin account from TXT file you downloaded on **Step 1**.
-5. Save the password in the browser.
-6. Open **WxCC Agent**, check URL. Login to Agent Desktop by using Agent account from TXT file you downloaded on **Step 1**.
-7. Save the password in the browser.
-8. While logged in, click on **Install App** to install **Webex Desktop** Application.
-9. After installation, add Webex Desktop App link to desktop.
-10. Open Webex App, and login by using Supervisor account.
-11. Make a test call to a DN from TXT file you downloaded on **Step 1**. Make sure you hear **Welcome to Cisco Live** message.
+### Configure apps for Admin, Agent and Supervisor
+
+1. Open **WxCC Admin**, check URLs. Login to Control Hub by using Admin account from TXT file you downloaded on **Step 1**.
+2. Save the password in the browser.
+3. Open **WxCC Agent**, check URL. Login to Agent Desktop by using Agent account from TXT file you downloaded on **Step 1**.
+4. Save the password in the browser.
+5. While logged in, click on **Install App** to install **Webex Desktop** Application.
+6. After installation, add Webex Desktop App link to desktop.
+7. Open Webex App, and login by using Supervisor account.
+8. Make a test call to a DN from TXT file you downloaded on **Step 1**. Make sure you hear **Welcome to Cisco Live** message.
 
 
 <script src='../template_assets/load.js'><script>
