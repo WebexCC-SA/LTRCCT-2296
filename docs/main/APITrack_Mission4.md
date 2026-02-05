@@ -73,7 +73,6 @@ Your mission is to:
     > - Delete the selection for Audio File
     >
     > - Text-to-Speech Message: **Welcome to the advanced routing and API integrations lab.**<span class="copy-static" data-copy-text="Welcome to the advanced routing and API integrations lab."><span class="copy" title="Click to copy!"></span></span>
-    >
 
 
 4. Add an **HTTP Request** node for our query:
@@ -207,7 +206,7 @@ Your mission is to:
     > - Find the subflow **WaitTreatment** and drag it onto the flow canvas like you would any other node.
     >
     > - Connect the output node edge from the **Queue Contact** node added in the previous step to this node.
-    > <br/>
+    > <br/><br/>
     > Click on the **WaitTreatment** subflow node and configure the following settings: 
     >
     > - Subflow Label: **Latest**
@@ -268,9 +267,9 @@ Your mission is to:
       2. On your Agent Desktop, you should be offered a call, click on the **Answer** button.
       3. After a few moments end the call and select any wrap up reason.
 10. In your Flow:
-      1. Open Flow debugger
-      2. Select the last interaction (at the top of the list)
-      3. Trace the steps taken in the flow
+      1. Open Flow debugger.
+      2. Select the last interaction (at the top of the list).
+      3. Trace the steps taken in the flow.
 11. Answer these questions:
       1. Did the call choose another path?
       2. Why or why not?

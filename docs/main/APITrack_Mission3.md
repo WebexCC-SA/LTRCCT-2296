@@ -290,7 +290,7 @@ Your mission is to:
 10. Navigate to **Event Flows** and add **GoTo** node to the canvas.
 
     > - Connect **AgentDisconnect** event node edge to this **GoTo** node
-    > <br/>
+    > <br/><br/>
     > Click on the **GoTo** node and configure the following settings: 
     > 
     > - Destination Type: **Flow**
