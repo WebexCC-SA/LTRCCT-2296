@@ -353,7 +353,7 @@ Your mission is to:
       4. **Case_If_AgentIDEmpty** should exit via **false** node edge as the **GraphQL_Query** is not empty.
       5. **CheckCSATValue** is now either equals **5** which matches the condition hence the call arrived to your agent via **QueueToAgent** node.
 
-  ![profiles](../graphics/Lab2/LAR_Test2.gif) 
----
+  ![profiles](../graphics/Lab2/LAR_Test2.gif)
 
-<p style="text-align:center"><strong>Congratulations, you have officially completed Last Agent Routing mission! 🎉🎉 </strong></p>
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Last Agent Routing mission! 🎉🎉 </strong></p>
