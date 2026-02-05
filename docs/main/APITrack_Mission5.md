@@ -306,19 +306,19 @@ For more information of how you can use MockAPI please watch these Vidcasts:
     >>
     >> Path Expression: **`$[0].pendingServiceRequest`**<span class="copy-static" data-copy-text="$[0].pendingServiceRequest"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Click **Add New**
+    > Click **+ Add New**
     >>
     >> Output Variable: **`lastPurchase`**<span class="copy-static" data-copy-text="lastPurchase"><span class="copy" title="Click to copy!"></span></span>
     >>
     >> Path Expression: **`$[0].lastPurchase`**<span class="copy-static" data-copy-text="$[0].lastPurchase"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Click **Add New**
+    > Click **+ Add New**
     >>
     >> Output Variable: **`outstandingBalance`**<span class="copy-static" data-copy-text="outstandingBalance"><span class="copy" title="Click to copy!"></span></span>
     >>
     >> Path Expression: **`$[0].outstandingBalance`**<span class="copy-static" data-copy-text="$[0].outstandingBalance"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Click **Add New**
+    > Click **+ Add New**
     >>
     >> Output Variable: **`resolutionDate`**<span class="copy-static" data-copy-text="resolutionDate"><span class="copy" title="Click to copy!"></span></span>
     >>
@@ -331,21 +331,21 @@ For more information of how you can use MockAPI please watch these Vidcasts:
     >
     > Activity Label: **HTTP_Response**<span class="copy-static" data-copy-text="HTTP_Response"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Connect **GET_HTTPRequest** to this node
+    > Connect **GET_HTTPRequest** you added at the previous step to this node
     >
-    > We will connect **Set Variable** node in next step
+    > We will connect this **Set Variable** node in next step
     >
     > Variable: **`HTTPResponse`**<span class="copy-static" data-copy-text="HTTPResponse"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Set To Variable: **`GET_HTTPRequest.httpResponseBody`**<span class="copy-static" data-copy-text="GET_HTTPRequest.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
+    > Set Variable: **`GET_HTTPRequest.httpResponseBody`**<span class="copy-static" data-copy-text="GET_HTTPRequest.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
     >
 
     ![Profiles](../graphics/APIFunction/API_Function8.gif)
 
-6. Switch to **Functions** tab in the left menu. Then drag **<span class="attendee-id-container">Function_<span class="attendee-id-placeholder" data-prefix="Function_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** node to the canvas.
+6. Switch to **Functions** tab at the panel on the left-hand side. Then drag **<span class="attendee-id-container">Function_<span class="attendee-id-placeholder" data-prefix="Function_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** node to the canvas.
 
     >
-    > Connect **HTTP_Response** to this node
+    > Connect **HTTP_Response** node you added at the previous step to this node
     >
     > We will connect this node in next step
     >
@@ -364,32 +364,28 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 7. Switch to **Activity** tab in the left menu. Add **Play Message** and **Disconnect Contact** nodes 
     
     >
-    > Connect the **Function** node edge to this **Play Message** node
+    > Connect the **Function** node edge to the **Play Message** node
     >
     > Enable Text-To-Speech
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button
+    > Click **Add Text-to-Speech Message** button
     >
-    > Delete the Selection for Audio File
+    > Delete the selection for Audio File
     >
     > Text-to-Speech Message: **{{personalizedMessage}}**<span class="copy-static" data-copy-text="{{personalizedMessage}}"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect the **Play Message** node edge to this **Disconnect Contact** node
 </br>
 
-8.  Publish your flow
+8.  Validate and publish the flow:
 
-    > Turn on **Validation** at the bottom right corner of the flow builder
+    > Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
     >
-    > If there are no Flow Errors, Click **Publish Flow**
+    > If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > Add a publish note
-    >
-    > Add Version Label(s): **Latest** 
-    >
-    > Click **Publish Flow**
+    > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
     ![Profiles](../graphics/APIFunction/API_Function10.gif)
 </br>
@@ -416,14 +412,15 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 
 2. Verify if you hear a message built inside your function.
 
-3. Switch to Flow Designer and click Debug tab at the bottom and select last interaction (first in the list)
+3. Switch to Flow Designer and click **Debug** tab at the bottom and select last interaction (the first in the list).
 
 4. Click on **GET_HTTPRequest** and on the right hand side window scroll to the bottom. Check if **Modified Variables** have values assigned.
 
 5. Click on **HTTP_Response** to see full HTTP response body in **Modified Variables**.
 
-6. Click on **Function** step and check if Modified Variables contains `**personalizedMessage**` built by your function.
+6. Click on **Function** step and check if Modified Variables contains `personalizedMessage` built by your function.
 
     ![Profiles](../graphics/APIFunction/API_Function12.gif)
 
-<p style="text-align:center"><strong>Congratulations, you have successfully completed Function mission! 🎉🎉 </strong></p>
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Personalized Customer Notification with Functions mission! 🎉🎉 </strong></p>
