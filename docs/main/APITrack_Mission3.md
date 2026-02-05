@@ -290,7 +290,7 @@ Your mission is to:
 10. Navigate to **Event Flows** and add **GoTo** node to the canvas.
 
     > - Connect **AgentDisconnect** event node edge to this **GoTo** node
-    >
+    > <br/>
     > Click on the **GoTo** node and configure the following settings: 
     > 
     > - Destination Type: **Flow**
@@ -330,7 +330,7 @@ Your mission is to:
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen where you may need to enter the email address again and the password provided to you.
 2. On your Agent Desktop, set your status to **Available**.
       1. Using Webex App, place a call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-      2. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex App and the Agent Desktop).
+      2. You should be offered a call, click on the **Answer** button. (You may want to mute the mic on both Webex App and the Agent Desktop).
       3. End the call from Agent Desktop and you should hear an invitation to rate your experience with us on a scale of 1 to 5.
       4. Select **5** on Webex App keypad.
 3. In your flow, open the flow debugger and select the latest call from the list (on top of the list).
@@ -343,9 +343,9 @@ Your mission is to:
 4. Make sure your agent status is set to **Available**
 
 5. Using Webex App, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-      1. You should be offered the call, click on the accept button.
+      1. You should be offered the call, click on the **Answer** button.
       2. If everything set correctly you should see Auto CSAT set to **5.0**
-      3. End the call and select a wrapup code if asked.
+      3. End the call and select any wrap up reason if asked.
 6. In your flow, open the flow debugger and select the latest call from the list (on top of the list).
       1. Trace the steps taken in the flow
       2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. You should see that now **agentID** and **AutoCSATVar** have assigned values.
