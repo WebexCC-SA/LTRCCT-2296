@@ -5,13 +5,13 @@ icon: material/bullseye-arrow
 
 ## Steps to setup each laptop in the room.
 
-0. Download and save on desktop a txt file for current pod from [**User Credentials**](https://cisco.box.com/s/3fz3m4a1tkzh8entx2lnon8y9z2s9zpw){:target="_blank"}. Example **ID <id> - LTRCCT-2966 Credentials**, where **<id>** is the POD ID of current desktop.
+0. Download and save on desktop a txt file for current pod from [**User Credentials**](https://cisco.box.com/s/3fz3m4a1tkzh8entx2lnon8y9z2s9zpw){:target="_blank"}. Example **ID \<id\> - LTRCCT-2966 Credentials**, where **\<id\>** is the POD ID of current desktop.
 </br>
 
 
 1. On each laptop access lab -assistant with pin code 447094
 2. Click on Documentation. Go to Getting Started -> **LAB ROOM SETUP**
-3. Create Chrome user profiles. 
+
 ---
 
 ### Creating Chrome user profiles
@@ -20,15 +20,14 @@ Open the Windows Terminal (Windows key and type **Powershell**). Paste and run t
 
 ```
 # ================================
-# Helper function to create Chrome profile, shortcut, profile name, and bookmark
+# Helper function to create Chrome profile, shortcut, profile name, and bookmarks
 # ================================
 function New-ChromeProfile {
     param(
         [string]$ProfileFolderName,   # Folder under chromeProfiles (e.g. 'admin', 'agent')
-        [string]$ProfileDisplayName,  # Name shown by Chrome (e.g. 'Admin', 'Agent')
-        [string]$ShortcutName,        # Desktop shortcut name (e.g. 'WxCC Admin.lnk')
-        [string]$BookmarkName,        # Bookmark title (e.g. 'LTRCCT-2966')
-        [string]$BookmarkUrl          # Bookmark URL
+        [string]$ProfileDisplayName,  # Name Chrome will show (e.g. 'Admin', 'Agent')
+        [string]$ShortcutName,        # Shortcut file name
+        [array]$Bookmarks             # Array of bookmark objects @{ name=""; url="" }
     )
 
     $DesktopPath = [Environment]::GetFolderPath("Desktop")
@@ -42,16 +41,15 @@ function New-ChromeProfile {
         New-Item -ItemType Directory -Path $DefaultProfilePath -Force | Out-Null
     }
 
-    # --- Create desktop shortcut for this profile ---
+    # --- Create desktop shortcut ---
     $shell = New-Object -ComObject WScript.Shell
     $shortcut = $shell.CreateShortcut("$DesktopPath\$ShortcutName")
     $shortcut.TargetPath = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
     $shortcut.Arguments = "--user-data-dir=$ProfilePath"
     $shortcut.Save()
 
-    # --- Set/Update profile name in Preferences ---
+    # --- Update Preferences file (set profile name) ---
     if (!(Test-Path $PreferencesFile)) {
-        # Minimal Preferences if Chrome hasn't created one yet
         @"
 {
   "profile": {
@@ -61,44 +59,48 @@ function New-ChromeProfile {
 "@ | Set-Content -Path $PreferencesFile -Encoding UTF8
     } else {
         $json = Get-Content $PreferencesFile -Raw | ConvertFrom-Json
-
         if (-not $json.profile) {
             $json | Add-Member -MemberType NoteProperty -Name 'profile' -Value @{ name = $ProfileDisplayName }
         } else {
             $json.profile.name = $ProfileDisplayName
         }
-
         $json | ConvertTo-Json -Depth 10 | Set-Content $PreferencesFile -Encoding UTF8
     }
 
-    # --- Create/overwrite Bookmarks file with a single bookmark on the bookmark bar ---
+    # --- Build bookmark children array dynamically ---
+    $children = @()
+    $id = 1
+    foreach ($bm in $Bookmarks) {
+        $children += @{
+            date_added = "13200000000000000"
+            id = "$id"
+            name = $bm.name
+            type = "url"
+            url  = $bm.url
+        }
+        $id++
+    }
+
+    # --- Complete bookmark JSON ---
     $BookmarkJson = @{
         roots = @{
             bookmark_bar = @{
-                children = @(
-                    @{
-                        date_added = "13200000000000000"
-                        id = "1"
-                        name = $BookmarkName
-                        type = "url"
-                        url  = $BookmarkUrl
-                    }
-                )
+                children = $children
                 date_added = "13200000000000000"
                 date_modified = "13200000000000000"
-                id = "2"
+                id = "100"
                 name = "Bookmarks bar"
                 type = "folder"
             }
             other = @{
                 children = @()
-                id = "3"
+                id = "101"
                 name = "Other bookmarks"
                 type = "folder"
             }
             synced = @{
                 children = @()
-                id = "4"
+                id = "102"
                 name = "Synced bookmarks"
                 type = "folder"
             }
@@ -108,28 +110,32 @@ function New-ChromeProfile {
 
     $BookmarkJson | ConvertTo-Json -Depth 10 | Set-Content -Path $BookmarksFile -Encoding UTF8
 
-    Write-Host "Profile '$ProfileDisplayName' created at '$ProfilePath' with shortcut '$ShortcutName' and bookmark '$BookmarkName'."
+    Write-Host "Profile '$ProfileDisplayName' created with $($Bookmarks.Count) bookmark(s)."
 }
 
 # ================================
-# Create Admin profile
+# Create Admin profile (2 bookmarks)
 # ================================
 New-ChromeProfile `
     -ProfileFolderName "admin" `
     -ProfileDisplayName "Admin" `
     -ShortcutName "WxCC Admin.lnk" `
-    -BookmarkName "LTRCCT-2966" `
-    -BookmarkUrl "https://webexcc-sa.github.io/LTRCCT-2296/"
+    -Bookmarks @(
+        @{ name = "LTRCCT-2966"; url = "https://webexcc-sa.github.io/LTRCCT-2296/" },
+        @{ name = "Webex Control Hub"; url = "https://admin.webex.com/" }
+    )
 
 # ================================
-# Create Agent profile
+# Create Agent profile (1 bookmark)
 # ================================
 New-ChromeProfile `
     -ProfileFolderName "agent" `
     -ProfileDisplayName "Agent" `
     -ShortcutName "WxCC Agent.lnk" `
-    -BookmarkName "Agent Desktop" `
-    -BookmarkUrl "https://desktop.wxcc-us1.cisco.com/"
+    -Bookmarks @(
+        @{ name = "Agent Desktop"; url = "https://desktop.wxcc-us1.cisco.com/" }
+    )
+
 ```
 
 ![profiles](../graphics/overview/term_1.png)
@@ -137,8 +143,14 @@ New-ChromeProfile `
 Check the desktop of your lab PC. You should find 2 Chrome shortcuts created - **WxCC Admin** and **WxCC Agent1**
 
 
-4. Open **WxCC Admin**
-
+4. Open **WxCC Admin**, check URLs. Login to Control Hub by using Admin account from TXT file you downloaded on **Step 1**.
+5. Save the password in the browser.
+6. Open **WxCC Agent**, check URL. Login to Agent Desktop by using Agent account from TXT file you downloaded on **Step 1**.
+7. Save the password in the browser.
+8. While logged in, click on **Install App** to install **Webex Desktop** Application.
+9. After installation, add Webex Desktop App link to desktop.
+10. Open Webex App, and login by using Supervisor account.
+11. Make a test call to a DN from TXT file you downloaded on **Step 1**. Make sure you hear **Welcome to Cisco Live** message.
 
 
 <script src='../template_assets/load.js'><script>
