@@ -5,7 +5,7 @@ icon: material/bullseye-arrow
 
 ## Steps to setup each laptop in the room.
 
-0. Download and save on desktop a txt file for current pod from [**User Credentials**](https://cisco.box.com/s/3fz3m4a1tkzh8entx2lnon8y9z2s9zpw){:target="_blank"}. Example **ID** ***[id]*** - LTRCCT-2966 Credentials**, where ***[id]*** is the POD ID of current desktop.
+0. Download and save on desktop a txt file for current pod from [**User Credentials**](https://cisco.box.com/s/3fz3m4a1tkzh8entx2lnon8y9z2s9zpw){:target="_blank"}. Example **ID** ***[id]*** **- LTRCCT-2966 Credentials**, where ***[id]*** is the POD ID of current desktop.
 </br>
 
 
