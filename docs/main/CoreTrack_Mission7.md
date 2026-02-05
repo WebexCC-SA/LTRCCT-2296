@@ -8,15 +8,15 @@ icon: material/medal
 ## Story
 
 In Webex Contact Center, subflows modularize complex workflows by packaging reusable, independent functions (like business hour checks, queue treatment callback collection, error handling, etc.) into separate mini-flows, which are then called from main flows. Their purpose is to simplify development, reduce main flow size, improve organization, and ensure consistency by promoting code reuse for common tasks, making flows cleaner and easier to manage.
-In the scope of this misson you will use a subflow template to automate queue treatment in the Webex Contact Center environment. You will configure and test two ways of how to define parameters necessary to call the sublow - define tham at the main flow level and override at the channel level.
+In the scope of this mission you will use a subflow template to automate queue treatment in the Webex Contact Center environment. You will configure and test two ways of how to define parameters necessary to call the sublow - define them at the main flow level and override at the channel level.
 The main goal is to improve the customer experience while waiting in a queue by playing music, delivering messages, and looping until a predefined condition is met.
 
 ## Call Flow Overview
 
 1. A new call enters the flow. </br>
 2. The flow executes the logic and places the call into a queue.</br>
-3. Once the call is placed in the queue, the main flow calls subflow sending few parameters to it.
-4. The subflow executes the following logic **two times** based on the received parameters:
+3. Once the call is placed in the queue, the main flow calls the Subflow sending few parameters to it.
+4. The Subflow executes the following logic **two times** based on the received parameters:
     - Plays a music in queue. The duration is defined by the parameter.</br>
     - Plays a Text-To-Speech message. The text is fetched from the parameter.</br>
     - Plays a music in queue of the same duration again.</br>
@@ -42,7 +42,7 @@ Your mission is to:
 4. Choose **Queue Treatment Subflow** template and click **Next**.
 
     !!! Note
-        You can press **View Details** link under the temaplte name to observe flow structure and read flow description before proceeding with the template.
+        You can press **View Details** link under the template name to observe flow structure and read flow description before proceeding with the template.
 
 5. Name your subflow as <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** Then click on **Create Subflow**.
 
@@ -51,12 +51,12 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/L1M8_Create_Subflow_Template.gif)
 
-6. At the bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
+6. In the bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
 
     !!! Note
         You can ignore recommendations but cannot skip errors.
 
-7. Click **Publish Subflow**. In popped-up window, make sure the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Subflow**.
+7. Click **Publish Subflow**. In popped-up window, make sure the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Subflow**.
   
     ![profiles](../graphics/Lab1/L1M8_Publish_Subflow.gif)
 
@@ -122,7 +122,7 @@ Your mission is to:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
     ![profiles](../graphics/Lab1/L1M8_Update_Last_Prompt.gif)
 
@@ -139,7 +139,7 @@ Your mission is to:
 
     Let's test this.
 
-1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.
+1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus, if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.
 2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
 3. Finish the call.
 
@@ -181,7 +181,7 @@ Your mission is to:
 ### Checkpoint Test
 
 !!! Note
-    Since we have overridden **subDuration** and **subMessage** variables at the channel level the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** is now being called with these new values. Thus the caller should hear updated music duration and new message:
+    Since we have overridden **subDuration** and **subMessage** variables at the channel level the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** is now being called with these new values. Thus, the caller should hear updated music duration and new message:
     
     - Repeated two times: 10 seconds of music in queue + our overrided custom message for the subflow ***Thanks for staying with us. Your call will be answered by the next available agent.*** + 10 more seconds of music in queue.
     

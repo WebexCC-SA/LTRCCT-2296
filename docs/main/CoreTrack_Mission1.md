@@ -12,7 +12,7 @@ Imagine calling a contact center, seeking quick, personalized help. Behind the s
 
 ### Call Flow Overview
 1. A new call enters the flow. *(This initiates the interaction and triggers the defined call-handling process.)*
-2. The flow determines the caller's language preference and plays a pre-configured Text-to-Speech (TTS) prompt. *(This ensures the caller receives information in their preferred language.)*
+2. The flow determines the caller's language preference and plays a preconfigured Text-to-Speech (TTS) prompt. *(This ensures the caller receives information in their preferred language.)*
 3. The call is routed to the appropriate queue. *(This directs the caller to the right team on the flow logic.)*
 
 ### Mission Details
@@ -29,7 +29,7 @@ Your mission is to:
 
   - **Consistency and Standards**: Templates ensure that flows adhere to best practices, creating consistent experiences across multiple projects.
 
-  - **Time Savings**: Pre-built structures reduce the need to start from scratch, enabling faster setup and allowing more focus on customization.
+  - **Time Savings**: Prebuilt structures reduce the need to start from scratch, enabling faster setup and allowing more focus on customization.
 
   - **Reduced Errors**: Using tested templates lowers the risk of mistakes and minimizes troubleshooting.
 
@@ -54,13 +54,13 @@ Flow Templates are designed to empower developers, speed up the development life
     !!! Note
         Remember to take up the offer from Chrome to save your password
 
-2. This is the **Administration interface** for webex contact center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click on it.
+2. This is the **Administration interface** for Webex Contact Center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click on it.
 3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**.
 4. **Create a new flow** tab will be opened. Navigate to **Flow Templates**.
 5. Choose **Simple Inbound Call to Queue** template and click **Next**.
 
     !!! Note
-        You can press **View Details** link under the temaplte name to observe flow structure and read flow description before proceeding with the template.
+        You can press **View Details** link under the template name to observe flow structure and read flow description before proceeding with the template.
 
 6. Name your flow as <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** Then click on **Create Flow**.
 
@@ -75,10 +75,10 @@ Flow Templates are designed to empower developers, speed up the development life
 
 8. Select **Play Message** node with label **WelcomePrompt** and on the node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
 
-9. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list
+9. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the dropdown list
     
     !!! Note
-        As mentioned in **Getting Started**, all queues have been pre-configured so you don't need to change them at current step.
+        As mentioned in **Getting Started**, all queues have been preconfigured so you don't need to change them at current step.
 
 10. <span style="color: orange;">[Optional]</span> Select **Play Message** node (the one which goes after Queue and Play Music nodes) and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
 
@@ -88,11 +88,11 @@ Flow Templates are designed to empower developers, speed up the development life
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**. 
 
     ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
 
-12. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+12. Return to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
 13. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
 14. In **Entry Point** settings section change the following, then click **Save** button:
 
@@ -146,7 +146,7 @@ All supported TTS Languages and Voice Names can be found in the table here: [Tex
 
 1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
 
-2. Navigate to the **Global Flow Properties** panel on the right hand side.
+2. Navigate to the **Global Flow Properties** panel on the right-hand side.
     
     > - Scroll down and Locate the **Predefined Variables** section.
     >
@@ -188,11 +188,11 @@ All supported TTS Languages and Voice Names can be found in the table here: [Tex
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**. 
 
 ### Testing
 
-1. Open your Webex Desktop and make your agent **Available** and you're ready to make a call.
+1. Open your Webex Desktop and make your agent is **Available**, and you're ready to make a call.
 
 2. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
 

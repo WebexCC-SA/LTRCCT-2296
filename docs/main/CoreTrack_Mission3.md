@@ -11,7 +11,7 @@ Business Hours allows you to configure the operational hours of the contact cent
 ## Call Flow Overview
  
 1. A new call enters the flow. </br>
-2. The flow determines the caller's language preference and plays a pre-configured Text-to-Speech (TTS) prompt. </br>
+2. The flow determines the caller's language preference and plays a preconfigured Text-to-Speech (TTS) prompt. </br>
 3. The flow determines whether it is currently within working hours and routes the call appropriately.</br>
 4. The call is routed to the appropriate queue. </br>
 
@@ -46,7 +46,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/9-Drag_BH_Play_Disc.gif)
 
-4. Connect **Set Variable** node to **Business Hours** and **Business Hours** node exits as follow:
+4. Connect **Set Variable** node to **Business Hours** and **Business Hours** node exits as follows:
 
     > - **Working Hours** connect to **WelcomePrompt** node.
     >
@@ -74,7 +74,7 @@ Your mission is to:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
     
     !!! Note
         We haven't changed the flow behavior yet as Working Hours covers the current time. You can make a call and accept it on agent desktop to verify.

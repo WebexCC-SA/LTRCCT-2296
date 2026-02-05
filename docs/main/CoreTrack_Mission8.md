@@ -30,12 +30,12 @@ The Debug Tool is an essential feature in the Webex Contact Center Flow Designer
 2. You can view the calls you've made today during the previous exercises. Please click on the one at the top.
     
     > 
-    > 1. You can search your call by **Intercation ID**
+    > 1. You can search your call by **Interaction ID**
     > 
     > 2. Filter by **Date Range** and by **Label**
 
     !!! Note
-        You might see an allert as on the following screenshot. Click refresh button to reload the diagram. 
+        You might see an alert as on the following screenshot. Click refresh button to reload the diagram. 
         ![profiles](../graphics/Lab1/DebugRefresh.jpg)       
 
 3. Observe the execution path, with visual indicators highlighting the flow nodes being executed. You can switch between Event Flows and Main Flows to see all nodes executed.
@@ -83,7 +83,7 @@ Flow Analytics feature is designed to provide flow developer, administrators and
     
     - Execution paths and their frequency
     
-    - Average flow duraion
+    - Average flow duration
     
     - Average activities per contact
     
@@ -97,7 +97,7 @@ Flow Analytics feature is designed to provide flow developer, administrators and
 
     ![profiles](../graphics/Lab1/FlowAnalytics2.gif)
 
-6. Observe older flow versions by selecting **Version History**. Then expand **Other Versions**. Choose anyone you like and click **View**. You might need to specify DateTime range again if the selected flow version was never executed withing the chosen range in **Step 2**.
+6. Observe older flow versions by selecting **Version History**. Then expand **Other Versions**. Choose anyone you like and click **View**. You might need to specify DateTime range again if the selected flow version was never executed within the chosen range in **Step 2**.
 
     ![profiles](../graphics/Lab1/FlowAnalytics3.gif)
 

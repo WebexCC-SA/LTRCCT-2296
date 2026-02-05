@@ -31,7 +31,7 @@ Your mission is to:
 !!! Note
     The Skill Definition and Skill Profile are preconfigured for you and linked to your agent account. Your task is to focus on configuring the flow and ensuring the agent is selected properly depending on current skill requirements.
 
-### Pre-configured entities      
+### Preconfigured entities      
      
 - Skill Definition: **Webex CC Lab Expert**.
 - Skill Profile: **Webex CC Lab Skill Profile** with **Webex CC Lab Expert** skill set as 5.
@@ -67,7 +67,7 @@ Your mission is to:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
 ### Checkpoint Test
 
@@ -105,7 +105,7 @@ Your mission is to:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
 ### Checkpoint Test #2
 
@@ -155,7 +155,7 @@ Your mission is to:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
 ### Final mission test
 
@@ -192,7 +192,7 @@ Your mission is to:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
 3. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state.
 4. Make another test call to the Support Number and confirm that the caller hears the welcome message, and then the call is instantly assigned to your agent after entering the queue.

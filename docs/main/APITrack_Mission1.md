@@ -14,13 +14,13 @@ In this mission we are going to create a control script for Supervisors that cha
 
   ![Profiles](../graphics/Lab2/ChangeGV.png) 
 
-## Pre-requisites:
-- In this mission, we will modify the behavior of the main flow by adjusting the value of a Global Variable through a separate mangement flow.
+## Prerequisites:
+- In this mission, we will modify the behavior of the main flow by adjusting the value of a Global Variable through a separate management flow.
 - The management flow will be created within the scope of this mission below.
 - <span style="color: red;">[Important!]</span> The creation of the main flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span></span>** is outlined in the first part of the **Mission 1** of **CORE TRACK** (Steps #1-12). Please complete that part to continue with this mission.
 
 ## Call Flow Overview
-1. Supervisor calls to management flow and provide it's PIN code.
+1. Supervisor calls to management flow and provide its PIN code.
 2. If the PIN correct, a PUT API request will be triggered to change a Global Variable default setting from **False** to **True**.
 3. A caller makes a call to contact center where **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** checks the global variable and transfer the call further based on settings.
 
@@ -80,9 +80,9 @@ Your mission is to:
     >
     > - Connect the output node edge from the **Collect Digits** node to this node
     >
-    > - In the Expression section write an expresion ***{{CollectPIN.DigitsEntered == '1111'}}***<span class="copy-static" data-copy-text="{{CollectPIN.DigitsEntered == '1111'}}"><span class="copy" title="Click to copy!"></span></span>
+    > - In the Expression section write an expression ***{{CollectPIN.DigitsEntered == '1111'}}***<span class="copy-static" data-copy-text="{{CollectPIN.DigitsEntered == '1111'}}"><span class="copy" title="Click to copy!"></span></span>
     
-    <span style="color: orange;">[Optional]</span> You can verify the expresion result by clicking on **Test Expression** icon in the Expresion section
+    <span style="color: orange;">[Optional]</span> You can verify the expression result by clicking on **Test Expression** icon in the Expression section
         
     ![Profiles](../graphics/Lab2/BM1-4-PIN_Expresion.gif)
     
@@ -131,7 +131,7 @@ Your mission is to:
     > 
     > - Connect the output node edge from the **HTTP_PUT** node to this node
     >
-    > - In the Expression section write an expresion ***{{HTTP_PUT.httpStatusCode == 200}}***<span class="copy-static" data-copy-text="{{HTTP_PUT.httpStatusCode == 200}}"><span class="copy" title="Click to copy!"></span></span>
+    > - In the Expression section write an expression ***{{HTTP_PUT.httpStatusCode == 200}}***<span class="copy-static" data-copy-text="{{HTTP_PUT.httpStatusCode == 200}}"><span class="copy" title="Click to copy!"></span></span>
     
     ![Profiles](../graphics/Lab2/BM1-7-HTTPStatus.gif)
 
@@ -178,13 +178,13 @@ Your mission is to:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
     
 12. Map your flow to your inbound channel
     
     > - Navigate to Control Hub > Contact Center > Channels
     > 
-    > - Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > - Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     > 
     > - Select the Routing Flow: **<span class="attendee-id-container">EmergencyGV_<span class="attendee-id-placeholder" data-prefix="EmergencyGV_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     > 
@@ -220,7 +220,7 @@ Your mission is to:
     > 
     > - Connect the output False node edge from the **Condition** node to **Set Variable** node
     > 
-    > - In the Expression section write an expresion <span class="attendee-id-container">***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***<span class="copy" title="Click to copy!"></span></span>
+    > - In the Expression section write an expression <span class="attendee-id-container">***{{EmergencyGV_<span class="attendee-id-placeholder">Your_Attendee_ID</span> == true}}***<span class="copy" title="Click to copy!"></span></span>
 
     <details><summary>Optional</summary>You can Verify the expresion result by Clicking on **Test Expression** icon in the Expresion section.</details>
 
@@ -231,7 +231,7 @@ Your mission is to:
 
 7. Add a **Play Message** node and **Disconnect Contact** node.
     
-    > - Connect the **TRUE** output node edge of the **Condition Node** node to **Play Message** node
+    > - Connect the **TRUE** output node edge of the **Condition** node to **Play Message** node
     > 
     > - Connect the output node edge of **Play Message** node to **Disconnect Contact** node.
     > 
@@ -257,7 +257,7 @@ Your mission is to:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**. 
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
 9. Because we are using only one number to make calls we need to map your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** back to the **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     

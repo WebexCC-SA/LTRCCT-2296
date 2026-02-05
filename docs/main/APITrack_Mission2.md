@@ -25,7 +25,7 @@ Your mission is to:
 
 1. Create a new flow by using pre-defined flow template.
 2. Request the data from external database and parse it into flow variables which are coming with a flow template.
-3. You do not need to create Business Hours, Channels and additional Flows as they have been pre-configured for you.
+3. You do not need to create Business Hours, Channels and additional Flows as they have been preconfigured for you.
 
 **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
 We are going to imitate a real API server by providing realistic responses to requests. For that we chose Server [**MockAPI**](https://mockapi.io/){:target="_blank"}.
@@ -57,7 +57,7 @@ For more information of how you can use MockAPI please watch these Vidcasts:
     - All **Play Message** and **Play Music** nodes have been preconfigured to play TTS messages taken from respective API response
     - **BusinessHours_os2** node set to **bussinessHours** variable which is your business hour entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours**
     - **QueueContact_a62** node set to **queue** variable which is your queue entity **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Queue**
-    - Some **GoTo** nodes are configured to use variables and some have statice values. We will adjust them while going through further steps. 
+    - Some **GoTo** nodes are configured to use variables and some have static values. We will adjust them while going through further steps. 
 
     ![Profiles](../graphics/Lab2/BM2-7-ObserveFlow.gif)
 
@@ -121,7 +121,7 @@ For more information of how you can use MockAPI please watch these Vidcasts:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
 14. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
     
@@ -146,7 +146,7 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 
     ![profiles](../graphics/Lab1/L1M1_Agent_Login.gif)
 
-4. Make a call to test you flow. If everyhing configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally the call should land on the ***$[0].queue***
+4. Make a call to test you flow. If everything configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally, the call should land on the ***$[0].queue***
 
 ### <span style="color: orange;">[Optional]</span> Test other variables
 
@@ -157,7 +157,7 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 
     ![Profiles](../graphics/Lab1/12-Overrides_Config.gif)
 
-6. Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for calling. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Good bye."**
+6. Make a new call to be redirected to flow ***$[0].goToFlow*** where the following message can be heard: **"Thanks you for calling. You are now on Error Handling flow and will be redirected to Global Support line in a moment. Goodbye."**
 
 7. Now we need to revert the configuration we made in Step 1. Open **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Bussiness_Hours** in **Control Hub**, scroll down to **Additional Settings** and select **None** from **Override** dropdown list. Then click **Save**.
 

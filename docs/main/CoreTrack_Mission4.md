@@ -93,7 +93,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
     ![profiles](../graphics/Lab1/L1M3_ScreenPop.gif)
 
@@ -114,7 +114,7 @@ We recommend removing the ScreenPop node after testing. Otherwise, every time yo
 
 1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
 
-2. Navigate to **Even Flows** and delete **Screenpop** node.
+2. Navigate to **Even Flows** and delete **ScreenPop** node.
 
 3. Validate and publish the flow:
 
@@ -122,7 +122,7 @@ We recommend removing the ScreenPop node after testing. Otherwise, every time yo
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
 ![profiles](../graphics/Lab1/AM2_Screenpop_delete.gif)
 

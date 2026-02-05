@@ -46,19 +46,19 @@ Your mission is to:
 !!! Note
     The survey is prebuilt and includes key questions designed to gather actionable insights from customers. Your task is to focus on configuring the flow and ensuring the survey is triggered seamlessly during the customer journey.
 
-### Pre-configured entities      
+### Preconfigured entities      
      
 - Survey: **Webex CC 2025**
 - System defined GlobalVariable: **Global_FeedbackSurveyOptIn**
 
 <span style="color: orange;">[Optional]</span>
-    In case you don't want to use pre-configured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to **Build** section below
+    In case you don't want to use preconfigured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to **Build** section below
 
 **<details><summary>Create your own Survey <span style="color: orange;">[Optional]</span></summary>**
 
 - Download audio prompts from the [shared folder](https://drive.google.com/drive/folders/1vS2aXgaCzorGAmGdQ7bP2NJMHNQx2ais?usp=sharing){:target="_blank"}.
 
-- In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Expirience**. Then click **Create new survey**.
+- In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Experience**. Then click **Create new survey**.
 
 - Enter survey name as **PCS_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in **Survey name** field. Make sure **IVR survey** is selected. Then click next.
 
@@ -102,7 +102,7 @@ Your mission is to:
 
 6. Add a Post Call Survey functionality to the flow:
 
-    > - Open **Event FLows**  tab and locate pre-defined **AgentDisconected** event node marked with light green crossed-out headset icon. If you completed previous mission you should have **HTTP Request** node connected to it.
+    > - Open **Event Flows** tab and locate predefined **AgentDisconected** event node marked with light green crossed-out headset icon. If you completed previous mission you should have **HTTP Request** node connected to it.
     >
     > - Delete the connection between **HTTP Request** and **DisconnectContact** nodes.
     >
@@ -136,16 +136,16 @@ Your mission is to:
     >
     > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Label Label(s)** list, then click **Publish Flow**.
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
     ![profiles](../graphics/Lab1/L1M4_PCS_PlayMessage.gif) 
 
 ## Testing
 1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
 2. Make a test call to the Support Number and accept the call by Agent.
-3. Finish the call by Agent so the caller could stay on the line. 
+3. Finish the call by Agent, so the caller could stay on the line. 
 4. Now the caller should hear prompts configured in **Webex CC PCS**. Complete the survey.
-5. To check survey responses, switch to the **Control Hub** and navigate to the **Surveys** under **Customer Experience** section. Locate the **Webex CC PCS** survey and click on the **Download** button on the right hand side to download a CSV file with the provided Survey responses.
+5. To check survey responses, switch to the **Control Hub** and navigate to the **Surveys** under **Customer Experience** section. Locate the **Webex CC PCS** survey and click on the **Download** button on the right-hand side to download a CSV file with the provided Survey responses.
     
     !!! Note
         If you create your own survey, as described in the Optional section of this mission, you might not see the survey responses immediately, as there is a delay in edited surveys.
