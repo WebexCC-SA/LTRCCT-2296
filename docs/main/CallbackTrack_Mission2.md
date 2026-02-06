@@ -159,6 +159,7 @@ Your mission is to: </br>
     >
     > Connect the output of this **Play Message** node to **Disconnect Contact** node
 
+
 8. Add **Disconnect Contact** and connect the output of the **Play Message** node you created at step #7 to this **Disconnect Contact** node
 
     ![profiles](../graphics/Lab1/AM1-SetCallBack.gif)
