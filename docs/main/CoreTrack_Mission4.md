@@ -114,9 +114,11 @@ We recommend removing the ScreenPop node after testing. Otherwise, every time yo
 
 1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
 
-2. Navigate to **Even Flows** and delete **ScreenPop** node.
+2. Navigate to **Event Flows** and delete **ScreenPop** node connected to the **AgentAnswered** event node.
 
-3. Validate and publish the flow:
+3. Connect **AgentAnswered** event node to the corresponding **EndFlow** node.
+
+4. Validate and publish the flow:
 
     > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
     >
