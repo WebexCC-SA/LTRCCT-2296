@@ -127,7 +127,7 @@ nav:
   - CALLBACK TRACK:
       - Lab Guide:
             - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CallbackTrack_Mission1.md ## Same as CoreTrack Mission1
-            - "Mission 2: Adding Call-back functionality to your flow": ./main/CallbackTrack_Mission2.md ## Same as CoreTrack Mission3
+            - "Mission 2: Adding Callback Functionality": ./main/CallbackTrack_Mission2.md ## Same as CoreTrack Mission3
             - "Mission 3: CallBack on Global Error": ./main/CallbackTrack_Mission3.md
             - "Mission 4: Preventing Callback duplication": ./main/CallbackTrack_Mission4.md
             - "Mission 5: Adding Scheduled IVR Callback": ./main/CallbackTrack_Mission5.md
