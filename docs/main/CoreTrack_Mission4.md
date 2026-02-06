@@ -26,7 +26,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
 3. Configure an API call to trigger on the AgentDisconnect event.</br>
 
 !!! Note
-    In this mission, we’ll utilize **[Webhook-Test Site](https://webhook-test.com/){:target="_blank"}**, a free online tool that generates a temporary, unique URL for capturing and inspecting HTTP requests. It’s widely used by developers and testers for debugging and testing webhooks or other HTTP-based APIs.
+    In this mission, we’ll utilize **[UseWebhook site](https://usewebhook.com/){:target="_blank"}**, a free online tool that generates a temporary, unique URL for capturing and inspecting HTTP requests. It’s widely used by developers and testers for debugging and testing webhooks or other HTTP-based APIs.
 
 ## Build
 
@@ -40,7 +40,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
     ![profiles](../graphics/Lab1/AM2_GV.gif)
     
 
-3. Open New Browser tab and paste the following URL **[Webhook-Test Site](https://webhook-test.com/){:target="_blank"}**. Then click on purple copy icon next to **Your Unique Webhook URL** to make a copy of URL.
+3. Open New Browser tab and paste the following URL **[UseWebhook site](https://usewebhook.com/){:target="_blank"}**. Then click on **Copy URL** button next to the webhook URL at the top of the page to make a copy of URL.
 **<span style="color: red;">Please keep this browser tab open to avoid changing your unique Webhook URL.</span>**
 
     ![profiles](../graphics/Lab1/L1M3_Webhook_Site.gif)
@@ -57,7 +57,7 @@ Event flows enable a wide range of scenarios, with one common use case being the
     
     > - Use Authenticated Endpoint: **Off**
     >
-    > - Request URL: *<span style="color: red;">Paste your unique URL copied on Step 3 from https://webhook-test.com/</span>*
+    > - Request URL: *<span style="color: red;">Paste your unique URL copied on Step 3 from https://usewebhook.com/</span>*
     >
     > - Method: **POST**
     >
@@ -102,8 +102,8 @@ Event flows enable a wide range of scenarios, with one common use case being the
 1. Make sure you're logged into Webex CC Desktop application as Agent **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and set status to **Available**.
 2. Make a call to the Support Number and if success you should hear Welcome message and then accept the call by agent.
 3. Upon accepting the call, a new browser tab will be opened with the Screen Pop URL configured in **Step 4**.
-3. Switch back to the Agent Desktop. In agent interaction panel change **Who Is Calling?** to any name you like then click **Save** and <span style="color: red;">**end the call in the agent desktop**</span>.
-4. Switch to the **[Webhook-Test Site](https://webhook-test.com/){:target="_blank"}** tab in your browser - you should see the request which came right after Agent dropped the call with all the needed data.
+4. Switch back to the Agent Desktop. In agent interaction panel change **Who Is Calling?** to any name you like then click **Save** and <span style="color: red;">**end the call in the agent desktop**</span>.
+5. Switch to the **[UseWebhook site](https://usewebhook.com/){:target="_blank"}** tab in your browser - you should see the request which came right after Agent dropped the call with all the needed data.
 
 ![profiles](../graphics/Lab1/L1M3_Test.gif)
 
