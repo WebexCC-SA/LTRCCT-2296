@@ -73,7 +73,8 @@ For more information of how you can use MockAPI please watch these Vidcasts:
     
     1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
     
-    2. Replace DNIS with the provided DNIS number stripping **+1**. <span style="color: orange;">[For example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
+    2. Replace DNIS with the provided DNIS number stripping **+1**.
+        <span style="color: orange;">[For example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
     
     3. Open Chrome browser, paste your Get query URL into the Browser address line and press Enter. You should get the JSON response like this:
     

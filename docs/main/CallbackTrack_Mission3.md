@@ -30,14 +30,15 @@ Your mission is to:
     - Outdial queue **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** to which your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team** has been assigned. </br>
 4. Simulate a real API server. You will use [**MockAPI**](https://mockapi.io/){:target="_blank"} to retrieve the Outdial channel ID and the target callback number. The retrieved Outdial channel ID will then be used in the Callback API POST request.
 
-> **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
->
-> We are starting to use Webex Contact Center APIs in this mission. More information can be found in the [**Webex Contact Center for Developers**](https://developer.webex.com/){:target="_blank"} portal.
-> 
-> For more information of how you can use MockAPI please watch these Vidcasts: 
-[**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"} and [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
-> 
-> </details>
+    **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+
+      We are starting to use Webex Contact Center APIs in this mission. More information can be found in the [**Webex Contact Center for Developers**](https://developer.webex.com/){:target="_blank"} portal.
+ 
+      - [**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"}
+
+      - [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
+
+    </details>
 
 
 ## Build
@@ -56,7 +57,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
     
     - Custom ANI variable:
       
@@ -65,7 +66,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
 
     - HTTP GET Result variable:
       
@@ -74,7 +75,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
 
     - Simulated Error variable:
       
@@ -83,7 +84,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
 
     ![profiles](../graphics/Lab2/AM1_AddFlowVars.gif)
 
@@ -95,7 +96,7 @@ Your mission is to:
     
     ![profiles](../graphics/Lab2/AM2_AddOption3.gif)
 
-4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Channel/Entry Point ID and custom ANI. Remember we used the same Cisco Worldwide Support contact number in Mission 3 of Fundamental labs.
+4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Channel/Entry Point ID and custom ANI. Remember we used the same Cisco Worldwide Technical Support contact number in Mission 2 of a Callback Track - "Adding Callback Functionality".
     
     >
     > Connect **WantCallback** Option 3 to this HTTP node
@@ -128,28 +129,26 @@ Your mission is to:
 
     ![profiles](../graphics/Lab2/AM2_HTTPRequest1.gif)
 
-    > **<details><summary>**Test your API Source**<span style="color: orange;">[Optional]</span></summary>**
-    > 
-    > 1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
-    > 
-    > 2. Replace {DNIS} with the provided DNIS number stripping +1
-    >
-    > <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
-    >
-    > 3. Open Chrome browser and past your URL. You should get the follwoing result
-    > 
-    > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
-    > 
-    > 4. Test JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
-    > 
-    > 5. Paste your GET URL into the Browser address line and copy the output in square brackets (including brackets)
-    >
-    > 6. Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
-    >
-    > 7. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
-    >
-    > ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
-    > </details>
+    <details><summary>**Test your API Source <span style="color: orange;">[Optional]</span>**</summary>
+    
+    1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
+    
+    2. Replace DNIS with the provided DNIS number stripping **+1**.
+        <span style="color: orange;">[For example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
+    
+    3. Open Chrome browser, paste your Get query URL into the Browser address line and press Enter. You should get the JSON response like this:
+    
+        ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    
+    4. Open the new browser tab and navigate to [JSONPath Online Evaluator](https://jsonpath.com/){:target="_blank"}
+    
+    5. Copy the JSON response (including square brackets) you obtained above and paste it into **Document** window of **JSONPath Online Evaluator**.
+    
+    6. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results. For example, **$[0].businessHours**
+    
+        ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+    
+    </details>
 
 
 5. Add **Set Variable** node
@@ -163,7 +162,7 @@ Your mission is to:
     >
     > Variable: **getresult**<span class="copy-static" data-copy-text="getresult"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Set To Variable: **GET_CBID.httpResponseBody**<span class="copy-static" data-copy-text="GET_CBID.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
+    > Set Variable: **GET_CBID.httpResponseBody**<span class="copy-static" data-copy-text="GET_CBID.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
     >
 
     ![profiles](../graphics/Lab2/AM2_SetGetResult.gif)
@@ -175,7 +174,7 @@ Your mission is to:
     >
     > Connect **SetGetResult** to this node
     >
-    > Connect this node to **Disconnect Contact**
+    > Connect this node to **Disconnect Contact** node
     >
     > Variable: **simulatederror**<span class="copy-static" data-copy-text="simulatederror"><span class="copy" title="Click to copy!"></span></span>
     >
@@ -227,7 +226,13 @@ Your mission is to:
     >
     > In the Expression section write an expresion ***{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
     
-10. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+10. Validate and publish the flow:
+
+    > Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
     ![profiles](../graphics/Lab2/AM2_EventCondition.gif) 
 
