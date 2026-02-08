@@ -178,11 +178,11 @@ Your mission is to: </br>
     
 1. Make sure you're logged into the Webex CC Desktop application as an Agent and set the status to **Not Available**. In this case, the call will not be assigned to an agent, and a callback will be proposed to the caller.
 2. Make a call to the Support Number provided to you. If your flow is set up correctly, you should hear a message that you configured, offering you the option to schedule a callback.
-3. When callback is proposed, press 1 on Webex App dial pad to request a callback. 
-4. When asked, provide a new number for a callback. Because in the current lab we have number limitations, we are going to provide a well-known Cisco Worldwide Technical Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use the dial pad in Webex app to provide the Cisco Technical Support number, then confirm when asked.
+3. When callback is proposed, press 1 on Webex App Keypad to request a callback. 
+4. When asked, provide a new number for a callback. Because in the current lab we have number limitations, we are going to provide a well-known Cisco Worldwide Technical Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use the Keypad in Webex app to provide the Cisco Technical Support number, then confirm when asked.
 5. Once done, another message about successful scheduling should play.
 6. Make your agent **Available**. Webex Contact Center will reserve you right away and propose to answer a callback call.
-7. Answer the call and wait until you are connected to a Cisco Technical Support IVR and hear a welcome prompt. Then disconnect the call in agent desktop.  
+7. Answer the call and wait until you are connected to a Cisco Technical Support IVR and hear a welcome prompt. Then disconnect the call in agent desktop.
 
 ---
 <p style="text-align:center"><strong>Congratulations, you have succesfully completed Adding Callback Functionality mission! 🎉🎉 </strong></p>

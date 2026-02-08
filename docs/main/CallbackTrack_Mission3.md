@@ -249,22 +249,28 @@ Your mission is to:
 
 
 1. Make sure you're logged into Webex CC Desktop application as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
+
 2. Make a call to the Support Number and if success you should hear configured messages.
 
-3. Next message will propose you options to request callback, stay in queue or simulate an error. Press 3 on Webex App DialPad to simulate an error. 
+3. Next message will propose you options to request callback, stay in queue or simulate an error. Press **3** on Webex App Keypad to simulate an error. 
 
 4. If everything configured correctly your call should be disconnected.
+
 5. Open Debug tool in your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and click on first call in the list which should be the last call you made. Look for **WantCallback** in Activity Name column and make sure the call left **WantCallback** out of Option 3 and continue through **GET_CBID**.
 
-6. Click on either **GET_CBID** node of the flow or on Activity Name **GET_CBID** n the Debug tool and scroll to the bottom the right hand side section of Debug tool. Under **Modified Variables** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a well known Cisco Worldwide Support contact number **1 408 526 7209**. The same number we used in previous exercise.  This time we used an external database as well as GET API call to extract that number.
+6. Click on either **GET_CBID** node of the flow or on Activity Name **GET_CBID** in the Debug tool and scroll to the bottom the right-hand side section of Debug tool. Under **Modified Variables** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a well known Cisco Worldwide Support contact number **1 408 526 7209**. The same number we used in previous exercise.  This time we used an external database as well as GET API call to extract that number.
 
 7. While still on Debug tool, click on **SetGetResult** to see full response from HTTP request that we wrote into **getresult** flow variable.
-8. Make sure **SimulateGlobalError** activity name has an **Error** next to it in **Outcome** column. That mean you succesfully simulated **Global Error** event.
 
-9. Click on next activity name **GlobalErrorHandling** which goes after **SimulateGlobalError** activity name. Flow Designer automaticaly will open **Event Flows** tab.
+8. Make sure **SimulateGlobalError** activity name has an **Error** next to it in **Outcome** column. That mean you successfully simulated **Global Error** event.
 
-10. Observe **Condition** node to make sure exit went out via **True** exit. This tells you that HTTP response is **201 Created** and callback has been scheduled succesfully. 
+9. Click on next activity name **GlobalErrorHandling** which goes after **SimulateGlobalError** activity name. Flow Designer automatically will open **Event Flows** tab.
 
-11. On Webex Desktop, make your agent **Available**. Contact Center will reserve your agent right away and propose to answer a callback call.
+10. Observe **Condition** node to make sure exit went out via **True** exit. This tells you that HTTP response is **201 Created** and callback has been scheduled successfully. 
 
-**Congratulations on completing another mission.**
+11. On Webex Desktop, make your agent **Available**. Webex Contact Center will reserve your agent right away and propose to answer a callback call.
+
+12. Answer the call and wait until you are connected to a Cisco Technical Support IVR and hear a welcome prompt. Then disconnect the call in agent desktop.
+
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Callback on Global Error mission! 🎉🎉 </strong></p>
