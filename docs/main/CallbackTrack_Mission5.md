@@ -5,7 +5,7 @@ icon: material/medal
 
 
 
-# Mission 5: Adding Scheduled IVR Callback **<span style="color: red;">[To Verify]</span>**
+# Mission 5: Adding Scheduled IVR Callback
 
 
 ## Story 
@@ -19,7 +19,7 @@ In this lab, you will build a Scheduled IVR Callback flow that allows callers to
 2. The flow executes the logic configured in previous steps.</br>
 3. The call is routed to the appropriate queue, but no agents are available.</br>
 4. Since no agents are available, a callback option is offered to the caller.</br>
-5. Caller provides prefered date and time for a Callback /br>
+5. Caller provides prefered date and time for a Callback. </br>
 6. When time comes and agent becomes available, the callback is initiated to the provided number.
 
 ## Mission Details
@@ -28,33 +28,34 @@ Your mission is to:
 
 1. At this stage, if you have completed either of the Core or Callback tracks so far, your Main Flow has likely grown significantly. To simplify navigation, we will create a new flow dedicated specifically to the scheduled IVR callback.
  
-2. Use preconfigured subflow **Scheduled_CallbackSubflow**<span class="copy-static" data-copy-text="Scheduled_CallbackSubflow"><span class="copy" title="Click to copy!"></span></span>. Existing **Scheduled_CallbackSubflow** must be used without any modifications. This subflow is shared across all lab attendees and should remain unchanged.
+2. Use preconfigured subflow **Scheduled_CallbackSubflow**<span class="copy-static" data-copy-text="Scheduled_CallbackSubflow"><span class="copy" title="Click to copy!"></span></span> **<span style="color: red;">[Important!]</span></summary>** Existing **Scheduled_CallbackSubflow** must be used without any modifications. This subflow is shared across all lab attendees and should remain unchanged.
 
-**<details><summary>Scheduled Callback Subflow details. <span style="color: orange;">[Optional]</span></summary>**
+**<details><summary>Scheduled Callback Subflow details <span style="color: orange;">[Optional]</span></summary>**
 
 **Scheduled_CallbackSubflow** has already been preconfigured for you. However, the steps below explain how this subflow can be created and configured manually for reference.
 
-1. Switch to Control Hub, then navigate to **Flows**, open the **Manage Flows** drop-down list, and select **Create Flows**.
-2. A new tab will open. Navigate to **Flow Templates**.
-3. Switch to **Subflow**, then click on **Subflow Templates**.
+1. Switch to Control Hub, then navigate to **Flows** and switch to **Subflows** at the top of the page.
+2. Open the **Manage Subflows** dropdown list in the top right corner, and select **Create Subflows**.
+3. A new tab will open. Navigate to **Subflow Templates**.
 4. Select **Register Scheduled Callback Subflow** and click **View Details**.
 5. The template details window provides detailed information about the subflow structure, its description, and other useful insights into the subflow logic.
+6. Click **Next** after selecting the template, then provide a new name and press **Create Subflow** button.
 
 </details>
 
 ## Build
 
-1. Switch to Control Hub, then navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**
+1. Switch to Control Hub, then navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**.
 
-2. New tab will be opened. Navigate to **Flow Templates**
+2. New tab will be opened. Navigate to **Flow Templates**.
 
 3. Choose **Simple Inbound Call to Queue** and click **Next**. You can open **View Details** and to see observe flow structure and read flow description.
 
-4. Name you flow as **<span class="attendee-id-container">Scheduled_IVR_CallBack_<span class="attendee-id-placeholder" data-prefix="DynamicVariables_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then click on Create Flow.
+4. Name you flow as **<span class="attendee-id-container">Scheduled_IVR_CallBack_<span class="attendee-id-placeholder" data-prefix="Scheduled_IVR_CallBack_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** Then click on Create Flow.
 
     ![Profiles](../graphics/Lab2/SCB_1_IVRCallBackCreate.gif)
 
-5. On the right-hand side, in the **Global Flow Properties** panel, scroll down to locate the **Flow Variables** section under **Custom Variables**. Click the **Add Flow Variable** button and add the following 3 flow variables: 
+5. On the right-hand side, in the **Global Flow Properties** panel, scroll down to locate the **Flow Variables** section under **Custom Variables**. Click the **Add Flow Variable** button and add the following flow variable: 
 
     - Callback Number variable:
       >
@@ -62,15 +63,15 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
   
     ![Profiles](../graphics/Lab2/SCB_2_IVRCallBackVarCreate.gif)
 
-6. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the drop down list.
+6. Select **Queue** node and navigate to the **General settings** panel on the right-hand side. Keep **Static Queue** checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the dropdown list.
 
-7. Remove the **Music** node, then move the **PlayMessage** and **End** nodes to the right to create space for additional nodes that will be added in the next steps.
+7. Remove the **Music** node from the flow canvas, then move the **PlayMessage** and **EndFlow** nodes to the right to create space for additional nodes that will be added in the next steps.
 
-8. Drag **Collect Digits** nodes
+8. Drag **Collect Digits** node.
     
     > Rename Activity Label to **NewCallBackNumber**<span class="copy-static" title="Click to copy!" data-copy-text="NewCallBackNumber"><span class="copy"></span></span>
     >
@@ -78,40 +79,44 @@ Your mission is to:
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***All agents are currently busy. Please enter your 11 digits phone number to which we should call you back.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are currently busy. Please enter your 11 digits phone number to which we should call you back."><span class="copy"></span></span>
+    > Click the **Add Text-to-Speech Message** button and paste text: ***All agents are currently busy. Please enter your 11 digits phone number to which we should call you back.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are currently busy. Please enter your 11 digits phone number to which we should call you back."><span class="copy"></span></span>
     >
     > Delete the selection for Audio File
+    >
+    > Set **Make Prompt Interruptible** checkbox
     >   
     > Advanced Settings:
     >
-    >> No-Input Timeout:  **5** 
+    >> No-Input Timeout: **5** 
     >>
-    >> Make Prompt Interruptible: **True**
+    >> Inter-Digit Timeout: **3**
     >>
     >> Minimum Digits: **11**
     >>
     >> Maximum Digits: **11**
     >       
-    > Connect **No-Input Timeout** to the front of the **NewCallBackNumber** node
+    > Connect **No-Input Timeout** output of this **NewCallBackNumber** node to its input
     >
-    > Connect **Unmatched Entry** to the front of the **NewCallBackNumber** node
+    > Connect **Unmatched Entry** output of this **NewCallBackNumber** node to its input
     >
-    > Connect **Undefined Error** to the front of the **NewCallBackNumber** node
+    > Connect the output of **Queue** node to the input of this **NewCallBackNumber** node
+    >
+    > Connect **Undefined Error** to the front of the **EndFlow** node, which was disconnected at step #7 above.
     >
 
     ![profiles](../graphics/Lab2/SCB_3_NewCallBackNode.gif)
 
 
-8. Add **Set Veriable** node.
+8. Add **Set Variable** node.
 
     >
-    > Connect **NewCallBackNumber** to this node
+    > Connect the output of **NewCallBackNumber** to this node
     >
-    > We will connct **Set Variable** node in next step
+    > We will connect the output of this **Set Variable** node in next step
     >
     > Variable: **callbackNumber**<span class="copy-static" data-copy-text="callbackNumber"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Set To Variable: **+{{NewCallBackNumber.DigitsEntered}}**<span class="copy-static" data-copy-text="+{{NewCallBackNumber.DigitsEntered}}"><span class="copy" title="Click to copy!"></span></span>
+    > Set Value: **+{{NewCallBackNumber.DigitsEntered}}**<span class="copy-static" data-copy-text="+{{NewCallBackNumber.DigitsEntered}}"><span class="copy" title="Click to copy!"></span></span>
     >
 
     ![profiles](../graphics/Lab2/SCB_4_AddPlusVar.gif)
@@ -120,9 +125,9 @@ Your mission is to:
 10. Switch to **Subflows** tab in the left menu. Then drag **Scheduled_CallBack_Subflow** node to the canvas. 
 
     >
-    > Connect **Set Veriable** to this node
+    > Connect the output of **Set Variable** node created at the step 8 above to the input of this subflow node
     >
-    > Connect this node to **Play Message** node
+    > Connect the output of this subflow node to the input of the **Play Message** node, which was disconnected at step #7 above.
     >
     > Connect **Undefined Error** to any of available **EndFlow** nodes.
     >
@@ -140,6 +145,8 @@ Your mission is to:
     > - Current flow variable: **callbackNumber**<span class="copy-static" data-copy-text="callbackNumber"><span class="copy" title="Click to copy!"></span></span>
     > - Subflow Input Variable: **CallbackNumber**<span class="copy-static" data-copy-text="CallbackNumber"><span class="copy" title="Click to copy!"></span></span>
     > <br/><br/>
+    > Press **+ Add New** to add the next variable mapping
+    > <br/><br/>
     > - Current flow variable: **Queue.QueueId**<span class="copy-static" data-copy-text="Queue.QueueId"><span class="copy" title="Click to copy!"></span></span>
     > - Subflow Input Variable: **CallbackQueue**<span class="copy-static" data-copy-text="CallbackQueue"><span class="copy" title="Click to copy!"></span></span>
     >
@@ -149,21 +156,21 @@ Your mission is to:
 
 12. Click on **Play Message** modify Text-to-Speech Message by replacing existing text to the following: ***Your callback has been successfully scheduled.***<span class="copy-static" title="Click to copy!" data-copy-text="Your callback has been successfully scheduled."><span class="copy"></span></span>
 
-13. Add **Disconnect Contact** and node:
+13. Add **Disconnect Contact** node and connect the output of **Play Message** to the input of this **Disconnect Contact** node.
 
-    > 
-    > Connect **Play Message** to **Disconnect Contact** node
+14. Validate and publish the flow:
+
+    > Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
     >
-
-14. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+    > If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
     ![profiles](../graphics/Lab2/SCB_7_Publish.gif)
 
-15. Return back to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+15. Return to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
 
-16. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-
-17. In **Entry Point** settings section change the following, then click **Save** button:
+16. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**. In **Entry point settings** section change the following, then click **Save** button:
 
     > - Routing flow: **Scheduled_IVR_CallBack_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     >
