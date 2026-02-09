@@ -196,7 +196,7 @@ Your mission is to:
 
 4. After providing all inputs, you will hear a confirmation message indicating that your callback has been successfully scheduled.
 
-5. To receive the callback, ensure you set your agent desktop to **Available** during the scheduled time window.
+5. To receive the callback, ensure you set your agent desktop to **Available** during the scheduled time frame.
 
 !!! Note
     You may proceed with other tasks without waiting for the callback time. When the time comes, please remember to make yourself available to accept the call.
@@ -211,18 +211,22 @@ Your mission is to:
 
     ![profiles](../graphics/Lab2/DevPortalLogin.gif)
 
-3. On Menu pannel on the left, scroll down to **API Reference** section, expand **Desktop** and then expand **CallBack Schedule**
+3. On Menu panel on the left, scroll down to **API Reference** section, expand **Desktop** and then expand **Callback Schedule**
 
 4. Click on **Get scheduled callbacks** to open an endpand description page.
 
     ![profiles](../graphics/Lab2/DevPortalOpenCallback.gif)
 
-5. On the right hand side under **Query Params** set a checkbox next to ***callbackNumber***, then type 11 digit number you provided while were doing the test call. 
+5. On the right-hand side under **Query Params** set a checkbox next to ***callbackNumber***, then type 11-digit number you provided while were doing the test call.
+
+    !!! Note
+        Please note that if you submitted a callback request via IVR using the number format without the leading "+" symbol (for example, 14085267209), you still need to enter the number with the leading "+" (for example, +14085267209) when searching for a callback via **Get scheduled callbacks** API.
+
 6. Then click **Run**.
 
     ![profiles](../graphics/Lab2/DevPortalRunCallback.gif)
 
-7. Verify output of the executed API call. Observe the important keys:
+7. Verify output of the executed API call and observe the important keys. Here is an example of some response fields:
 
     ``` JSON
       {
@@ -233,11 +237,12 @@ Your mission is to:
           "scheduleDate": "2026-01-19",                         // Date for the callback in ISO format (YYYY-MM-DD).
           "startTime": "18:45:00",                              // Scheduled start time in ISO 8601 format (HH:mm:ss), local to the specified timezone. 
           "endTime": "19:20:00",                                // Scheduled end time in ISO 8601 format (HH:mm:ss), local to the specified timezone.
-          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79"     // Identifier for the queue to route the callback request.
-          //<ommitted>               
+          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79"     // Identifier for the queue to route the callback request.           
       }    
     ```   
     Full Schema Definition can be found in the [**API Reference**](https://developer.webex.com/webex-contact-center/docs/api/v1/callback-schedule/get-scheduled-callbacks){:target="_blank"} for this API call.
   
+8. Please remember to make your agent available within the callback timeframe to take the callback and clean up the schedule.
+
 ---
 <p style="text-align:center"><strong>Congratulations, you have succesfully completed Preventing Callback Duplication mission! 🎉🎉 </strong></p>
