@@ -178,23 +178,25 @@ Your mission is to:
 
 ## Testing
     
-1. Ensure that your agent is either **Logged Out** or set to **Not Available**. In this state, the call will not be assigned to an agent, and the system will offer the callback option to the caller.
+1. Ensure that your agent state is set to **Not Available**. In this state, the call will not be assigned to an agent, and the system will offer the callback option to the caller.
 
-3. With your agent remaining in **Not Available** place a test call to your support number.
-4. To successfully schedule a callback, you must provide the following information when prompted using your phone’s dial pad:
+2. With your agent remaining in **Not Available** place a test call to your support number.
+
+3. To successfully schedule a callback, you must provide the following information when prompted using your Webex app’s Keypad:
     
-    > a.  **An 11 digit phone number.** This can be your personal mobile number or a known Cisco Worldwide Support number, such as **1 408 526 7209**. Use the dial pad to enter the Cisco TAC number.
+    > a.  **An 11-digit phone number.** This can be your personal mobile number or a known Cisco Worldwide Technical Support number, such as **1 408 526 7209**. Use the dial pad to enter the Cisco TAC number.
     >
-    > b. Preferred date in ***YYYYMMDD*** format. Example: Enter DialPad enter ***20260212***.
+    > b. Preferred date in ***YYYYMMDD*** format. Example: If you want to schedule a callback for February 12, 2026, enter ***20260212***.
     >
-    > c. Preferred start time for your callback in ***HHMM*** format. <span style="color: red;">Selected time should be at least 30 minutes from now.</span>.
+    > c. Preferred start time for your callback should be in ***HHMM*** 24-hour format. <span style="color: red;">Selected time should be at least 30 minutes from now.</span>
     >
-    > d. Preferred end time for your callback in ***HHMM*** format. <span style="color: red;">The call between window must be at least 30 minutes and no more than 8 hours</span>.
+    > d. Preferred end time for your callback should be in ***HHMM*** 24-hour format. <span style="color: red;">The time between start and end time must be at least 30 minutes and no more than 8 hours</span>.
     >
-    > e. **Callback timezone.**. For EMEA press **1**.
+    > e. **Callback timezone**. For EMEA press **1**.
 
-5. After providing all inputs, you will hear a confirmation message indicating that your callback has been successfully scheduled.
-6. To receive the callback, ensure you set your agent desktop to **Available** during the scheduled time window.
+4. After providing all inputs, you will hear a confirmation message indicating that your callback has been successfully scheduled.
+
+5. To receive the callback, ensure you set your agent desktop to **Available** during the scheduled time window.
 
 !!! Note
     You may proceed with other tasks without waiting for the callback time. When the time comes, please remember to make yourself available to accept the call.
@@ -237,4 +239,5 @@ Your mission is to:
     ```   
     Full Schema Definition can be found in the [**API Reference**](https://developer.webex.com/webex-contact-center/docs/api/v1/callback-schedule/get-scheduled-callbacks){:target="_blank"} for this API call.
   
-**Congratulations on completing another mission.**
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Preventing Callback Duplication mission! 🎉🎉 </strong></p>
