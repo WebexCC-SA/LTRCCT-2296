@@ -226,20 +226,62 @@ Your mission is to:
 
     ![profiles](../graphics/Lab2/DevPortalRunCallback.gif)
 
-7. Verify output of the executed API call and observe the important keys. Here is an example of some response fields:
+7. Verify output of the executed API call and observe the important keys. Here is an example of the most important response fields:
 
     ``` JSON
       {
-          "id": "3824bcea-03c7-41b8-957d-5d62ecda3b82",         // Unique identifier for the scheduled callback.
-          "customerName": "+48575638602",                       // Customer Name. Uses Callback Number if not provided specifically
-          "callbackNumber": "+48575638602",                     // Phone number provided for the callback.
+          "id": "190f7f91-bd48-4247-9e47-f9747559f6f5",         // Unique identifier for the scheduled callback.
+          "customerName": "+14085267209",                       // Customer Name. Uses Callback Number if not provided specifically
+          "callbackNumber": "+14085267209",                     // Phone number provided for the callback.
           "timezone": "Europe/Amsterdam",                       // Timezone in which the callback is scheduled.
-          "scheduleDate": "2026-01-19",                         // Date for the callback in ISO format (YYYY-MM-DD).
-          "startTime": "18:45:00",                              // Scheduled start time in ISO 8601 format (HH:mm:ss), local to the specified timezone. 
-          "endTime": "19:20:00",                                // Scheduled end time in ISO 8601 format (HH:mm:ss), local to the specified timezone.
-          "queueId": "ee46583c-8d0d-4c09-8829-8c0b79c11a79"     // Identifier for the queue to route the callback request.           
+          "scheduleDate": "2026-02-10",                         // Date for the callback in ISO format (YYYY-MM-DD).
+          "startTime": "08:30:00",                              // Scheduled start time in ISO 8601 format (HH:mm:ss), local to the specified timezone. 
+          "endTime": "09:30:00",                                // Scheduled end time in ISO 8601 format (HH:mm:ss), local to the specified timezone.
+          "queueId": "f8007be2-3e53-40e0-a1d0-a58a97ed784b"     // Identifier for the queue to route the callback request.           
       }    
     ```   
+    
+    **<details><summary>Example of the full response of *Get scheduled callbacks* API</summary>**
+
+        ``` JSON
+            {
+                "meta": {
+                    "orgId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
+                    "page": 0,
+                    "pageSize": 50,
+                    "totalPages": 1,
+                    "totalRecords": 1,
+                    "links": {
+                        "self": "/v1/callbacks/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/scheduled-callback?callbackNumber=%2B14085267209&page=0&pageSize=50&sortBy=scheduledTime&sortOrder=asc"
+                    }
+                },
+                "data": [
+                    {
+                        "id": "190f7f91-bd48-4247-9e47-f9747559f6f5",
+                        "customerName": "+14085267209",
+                        "callbackNumber": "+14085267209",
+                        "timezone": "Europe/Amsterdam",
+                        "scheduleDate": "2026-02-10",
+                        "startTime": "08:30:00",
+                        "endTime": "09:30:00",
+                        "queueId": "f8007be2-3e53-40e0-a1d0-a58a97ed784b",
+                        "callbackReason": null,
+                        "sourceInteraction": "efd7e86c-c095-4e58-9c75-9354668080e0",
+                        "callbackOrigin": "IVR",
+                        "createdTimestamp": 1770670959758,
+                        "lastUpdatedTimestamp": 1770670959758,
+                        "assigneeAgent": null,
+                        "assignedTime": null,
+                        "orgId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
+                        "campaignId": null,
+                        "callbackType": "scheduled"
+                    }
+                ]
+            }
+        ```
+
+    </details>
+    
     Full Schema Definition can be found in the [**API Reference**](https://developer.webex.com/webex-contact-center/docs/api/v1/callback-schedule/get-scheduled-callbacks){:target="_blank"} for this API call.
   
 8. Please remember to make your agent available within the callback timeframe to take the callback and clean up the schedule.
