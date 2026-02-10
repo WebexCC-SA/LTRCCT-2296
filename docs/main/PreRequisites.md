@@ -2,9 +2,9 @@
 #icon: material/folder-open-outline
 icon: material/bullseye-arrow
 ---
-
+ID 017 - LTRCCT-2296 Credentials
 ## Learning Objectives
-1. Ensure that you have **"POD <span class="attendee-id-placeholder">Your_Attendee_ID</span>.pdf"** file on your desktop with instructions and credentials to access your lab. If you do not, please ask your lab proctor now.
+1. Ensure that you have **<span class="attendee-id-container">ID<span class="attendee-id-placeholder" data-prefix="ID" data-suffix=" - LTRCCT-2296 Credentials.txt">Your_Attendee_ID</span> - LTRCCT-2296 Credentials.txt<span class="copy"></span></span>** file on your desktop with instructions and credentials to access your lab. If you do not, please ask your lab proctor now.
 2. Understand your configuration instructions
 3. Familiarize yourself how we will use Google Chrome profiles to simulate various scenarios covered in the next labs.
 
